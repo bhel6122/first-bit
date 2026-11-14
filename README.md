@@ -198,7 +198,10 @@ app/public/js/        前端模块，无构建步骤
   craft.js            拼装关：排序拖拽 + 连线
   terminal.js         故障终端
   tutor.js            答题浮层导师
-  i18n.js + lang/     中英切换：t() + 渲染后 DOM 翻译
+  login.js            登录与注册
+  admin.js            管理端：账号与课程的增删改查
+  i18n.js + lang/     中英切换：t() + 渲染后 DOM 翻译，覆盖全部页面（含登录、管理端）
+lib/auth.mjs          scrypt 密码哈希与 HMAC 会话签名
 lib/course.mjs        归一化与结构检查
 lib/generate.mjs      大纲 / 板书 / 追问 / 导师的 prompt
 lib/llm.mjs           模型调用唯一入口，JSON 容错解析
