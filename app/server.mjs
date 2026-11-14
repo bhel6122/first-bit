@@ -24,6 +24,8 @@ import {
   refreshStore, flushNow,
   userById, userByName, addUser, countUsers, claimOrphans, setPassword, touchUser,
   noteSignup, spendGeneration, usageOf,
+  isAdmin, adminCount, listUsers, renameUser, setRole, removeUser,
+  listAllCourses, courseOutlineForAdmin, updateCourseMeta, cloneCourse,
 } from "./store.mjs";
 import { kvReady, kvGet, kvSet, kvPrefix } from "./kv.mjs";
 import {
@@ -301,6 +303,9 @@ async function currentUser(req) {
    form out of a 401, and the health check is for the platform, not for people. */
 const OPEN_PATHS = new Set(["/api/auth/register", "/api/auth/login", "/api/auth/logout", "/api/auth/me", "/api/config"]);
 
+/* One definition of a legal account name, used by sign-up and by the console. */
+const NAME_RE = /^[\w\u4e00-\u9fa5-]{3,16}$/u;
+
 /* ---------------------------- rate limit policy --------------------------- */
 
 const SIGNUP_WINDOW_MS = 10 * 60_000;
@@ -338,7 +343,7 @@ export async function handler(req, res) {
     const me = await currentUser(req);
 
     if (req.method === "GET" && path === "/healthz") {
-      return json(res, 200, { ok: true, model: llmState(), store: storeInfo(), counts: { ...countAll(), users: countUsers() }, uptime: Math.round(process.uptime()) });
+      return json(res, 200, { ok: true, model: llmState(), store: storeInfo(), counts: { ...countAll(), users: countUsers(), admins: adminCount() }, uptime: Math.round(process.uptime()) });
     }
 
     /* -------------------------------- accounts ------------------------------- */
@@ -348,7 +353,7 @@ export async function handler(req, res) {
       const name = String(body.name ?? "").trim();
       const password = String(body.password ?? "");
 
-      if (!/^[\w\u4e00-\u9fa5-]{3,16}$/u.test(name)) {
+      if (!NAME_RE.test(name)) {
         return json(res, 400, { error: "用户名用 3–16 位字母、数字、下划线或中文。" });
       }
       if (password.length < 6 || password.length > 72) {
@@ -363,13 +368,16 @@ export async function handler(req, res) {
       }
 
       const { salt, hash } = await hashPassword(password);
-      const user = addUser({ name, salt, hash });
+      /* The first account on an empty deployment is the administrator: someone
+         has to be able to open the console, and there is nobody to invite them. */
+      const first = countUsers() === 0;
+      const user = addUser({ name, salt, hash, role: first ? "admin" : "user" });
       /* The very first account inherits anything written before accounts
          existed, so an upgrade does not orphan the existing courses. */
       if (countUsers() === 1) claimOrphans(user.id);
       await flushNow();
 
-      return json(res, 200, { user: { id: user.id, name: user.name } }, {
+      return json(res, 200, { user: { id: user.id, name: user.name, role: user.role } }, {
         "set-cookie": sessionCookie(issueSession({ uid: user.id, ver: user.ver })),
       });
     }
@@ -382,7 +390,7 @@ export async function handler(req, res) {
       if (!user || !(await verifyPassword(String(body.password ?? ""), user.salt, user.hash))) {
         return json(res, 401, { error: "用户名或密码不对。" });
       }
-      return json(res, 200, { user: { id: user.id, name: user.name } }, {
+      return json(res, 200, { user: { id: user.id, name: user.name, role: user.role } }, {
         "set-cookie": sessionCookie(issueSession({ uid: user.id, ver: user.ver })),
       });
     }
@@ -394,7 +402,7 @@ export async function handler(req, res) {
     if (req.method === "GET" && path === "/api/auth/me") {
       if (!me) return json(res, 200, { user: null });
       return json(res, 200, {
-        user: { id: me.id, name: me.name, createdAt: me.createdAt },
+        user: { id: me.id, name: me.name, role: me.role ?? "user", createdAt: me.createdAt },
         player: getPlayer(me.id),
       });
     }
@@ -403,6 +411,140 @@ export async function handler(req, res) {
        and are deliberately not gated: the login page has to be able to load. */
     if (!me && path.startsWith("/api/") && !OPEN_PATHS.has(path)) {
       return json(res, 401, { error: "先登录。" });
+    }
+
+    /* -------------------------------- console -------------------------------- */
+
+    /* The console is a plain CRUD screen: accounts on one tab, courses on the
+       other. It deliberately cannot generate anything — an operator copying a
+       course is instant, an operator waiting 60 seconds for the model is a bug
+       report waiting to happen. */
+    if (path.startsWith("/api/admin/")) {
+      /* 404, not 403: for everyone else this endpoint is not there at all, and
+         the front end never links to it for them. */
+      if (!isAdmin(me)) return json(res, 404, { error: "接口不存在" });
+
+      const seg = path.split("/").filter(Boolean); // api | admin | users | :id
+      const target = seg.length > 3 ? decodeURIComponent(seg[3]) : null;
+
+      if (req.method === "GET" && path === "/api/admin/overview") {
+        const courses = listAllCourses();
+        return json(res, 200, {
+          users: listUsers(),
+          courses,
+          stats: {
+            users: countUsers(),
+            admins: adminCount(),
+            courses: courses.length,
+            lessons: courses.reduce((n, c) => n + c.generated, 0),
+            answers: countAll().answers,
+            views: countAll().views,
+            usageToday: usageOf(me.id).total,
+          },
+          store: storeInfo(),
+        });
+      }
+
+      if (req.method === "POST" && path === "/api/admin/users") {
+        const body = await readBody(req);
+        const name = String(body.name ?? "").trim();
+        const password = String(body.password ?? "");
+        if (!NAME_RE.test(name)) return json(res, 400, { error: "用户名用 3–16 位字母、数字、下划线或中文。" });
+        if (password.length < 6 || password.length > 72) return json(res, 400, { error: "密码至少 6 位。" });
+        if (userByName(name)) return json(res, 409, { error: "这个名字已经有人用了。" });
+
+        const { salt, hash } = await hashPassword(password);
+        const created = addUser({ name, salt, hash, role: body.role === "admin" ? "admin" : "user" });
+        await flushNow();
+        return json(res, 200, { user: { id: created.id, name: created.name, role: created.role }, users: listUsers() });
+      }
+
+      if (req.method === "PATCH" && seg[2] === "users" && target) {
+        const body = await readBody(req);
+        const u = userById(target);
+        if (!u) return json(res, 404, { error: "没有这个账号。" });
+
+        if (body.name != null) {
+          const name = String(body.name).trim();
+          if (!NAME_RE.test(name)) return json(res, 400, { error: "用户名用 3–16 位字母、数字、下划线或中文。" });
+          const clash = userByName(name);
+          if (clash && clash.id !== u.id) return json(res, 409, { error: "这个名字已经有人用了。" });
+          renameUser(u.id, name);
+        }
+
+        if (body.password != null) {
+          const password = String(body.password);
+          if (password.length < 6 || password.length > 72) return json(res, 400, { error: "密码至少 6 位。" });
+          const { salt, hash } = await hashPassword(password);
+          /* Bumps `ver`, which signs this account out everywhere. That is the
+             point of a password reset, and it is the only revocation this
+             stateless session has. */
+          setPassword(u.id, { salt, hash });
+        }
+
+        if (body.role != null) {
+          const role = body.role === "admin" ? "admin" : "user";
+          if (role === "user" && u.role === "admin" && adminCount() <= 1) {
+            return json(res, 400, { error: "最后一个管理员不能降级，否则没人能再进这个页面。" });
+          }
+          setRole(u.id, role);
+        }
+
+        await flushNow();
+        return json(res, 200, { users: listUsers() });
+      }
+
+      if (req.method === "DELETE" && seg[2] === "users" && target) {
+        if (target === me.id) return json(res, 400, { error: "不能删除当前登录的账号。" });
+        const u = userById(target);
+        if (!u) return json(res, 404, { error: "没有这个账号。" });
+        if (u.role === "admin" && adminCount() <= 1) {
+          return json(res, 400, { error: "最后一个管理员不能删除。" });
+        }
+        removeUser(target);
+        await flushNow();
+        return json(res, 200, { users: listUsers(), courses: listAllCourses() });
+      }
+
+      if (req.method === "GET" && seg[2] === "courses" && target) {
+        const outline = courseOutlineForAdmin(target);
+        return outline ? json(res, 200, outline) : json(res, 404, { error: "没有这门课。" });
+      }
+
+      if (req.method === "POST" && path === "/api/admin/courses") {
+        const body = await readBody(req);
+        const from = String(body.from ?? "");
+        if (!rawCourse(from)) return json(res, 404, { error: "要复制的课程不存在。" });
+        const owner = body.owner ? String(body.owner) : null;
+        if (owner && !userById(owner)) return json(res, 400, { error: "归属账号不存在。" });
+        const copy = cloneCourse(from, { owner, title: body.title ? String(body.title) : null });
+        await flushNow();
+        return json(res, 200, { course: courseOutlineForAdmin(copy.id), courses: listAllCourses() });
+      }
+
+      if (req.method === "PATCH" && seg[2] === "courses" && target) {
+        const body = await readBody(req);
+        if (!rawCourse(target)) return json(res, 404, { error: "没有这门课。" });
+        if (body.owner != null && body.owner !== "" && !userById(String(body.owner))) {
+          return json(res, 400, { error: "归属账号不存在。" });
+        }
+        const patch = {};
+        for (const k of ["title", "subtitle", "promise", "owner", "demo"]) {
+          if (body[k] !== undefined) patch[k] = body[k];
+        }
+        updateCourseMeta(target, patch);
+        await flushNow();
+        return json(res, 200, { course: courseOutlineForAdmin(target), courses: listAllCourses() });
+      }
+
+      if (req.method === "DELETE" && seg[2] === "courses" && target) {
+        if (!rawCourse(target)) return json(res, 404, { error: "没有这门课。" });
+        removeCourse(target);
+        await flushNow();
+        return json(res, 200, { courses: listAllCourses(), users: listUsers() });
+      }
+
+      return json(res, 404, { error: "接口不存在" });
     }
 
     if (req.method === "GET" && path === "/api/config") {

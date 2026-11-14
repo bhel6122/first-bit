@@ -171,6 +171,9 @@ export function topbar(active = "") {
       <a href="#/" class="${active === "home" ? "active" : ""}">${esc(t("我的课程"))}</a>
       <a href="#/world" class="${active === "world" ? "active" : ""}">${esc(t("闯关地图"))}</a>
       <a href="#/create" class="${active === "create" ? "active" : ""}">${esc(t("跟课学"))}</a>
+      ${state.user?.role === "admin"
+        ? `<a href="#/admin" class="${active === "admin" ? "active" : ""}">${esc(t("管理"))}</a>`
+        : ""}
     </nav>
     <div class="topbar-right">
       <span class="provider ${online ? "" : "offline"}" title="${esc(model.model ?? "")}">

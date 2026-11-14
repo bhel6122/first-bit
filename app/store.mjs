@@ -544,7 +544,7 @@ export const userByName = (name) =>
 
 export const countUsers = () => state.users.length;
 
-export function addUser({ name, salt, hash }) {
+export function addUser({ name, salt, hash, role = "user" }) {
   const now = new Date().toISOString();
   const user = {
     id: id("u"),
@@ -552,6 +552,7 @@ export function addUser({ name, salt, hash }) {
     nameLower: String(name).trim().toLowerCase(),
     salt,
     hash,
+    role: role === "admin" ? "admin" : "user",
     /* Bumping this invalidates every session cookie already handed out, which
        is the only way to revoke a stateless session. */
     ver: 1,
@@ -601,6 +602,200 @@ export function claimOrphans(uid) {
   }
   if (claimed) flush();
   return claimed;
+}
+
+/* --------------------------------- admin ---------------------------------- */
+
+/* Who may open the console. The role lives on the account and is read fresh on
+   every request, so promoting somebody takes effect on their next click rather
+   than on their next login — there is no role claim inside the session cookie.
+
+   The first account to register is the administrator. It is a blunt rule, but
+   an empty deployment needs exactly one account that can open the door, and a
+   "set ADMIN_EMAIL somewhere" step is one more thing to get wrong at 2am. */
+export const isAdmin = (u) => u?.role === "admin";
+
+export const adminCount = () => state.users.filter((u) => u.role === "admin").length;
+
+/* A store that predates roles has accounts but no administrator, which would
+   lock everyone out of the console for good. Promote the oldest account on
+   load; once any role exists this is a no-op. */
+export function ensureAdmin() {
+  if (!state.users.length) return 0;
+  if (state.users.some((u) => u.role === "admin")) return 0;
+  const oldest = [...state.users].sort((a, b) =>
+    String(a.createdAt ?? "").localeCompare(String(b.createdAt ?? "")),
+  )[0];
+  oldest.role = "admin";
+  console.log(`[admin] promoted "${oldest.name}" — first account on record`);
+  flush();
+  return 1;
+}
+ensureAdmin();
+
+/* The console needs one row per account, with the numbers an operator actually
+   asks about: how much this person made, and how much of today's quota is
+   gone. */
+export function listUsers() {
+  return state.users
+    .map((u) => {
+      const courses = state.courses.filter((c) => c.owner === u.id);
+      const lessons = courses.reduce((n, c) => n + Object.keys(c.lessons ?? {}).length, 0);
+      return {
+        id: u.id,
+        name: u.name,
+        role: u.role ?? "user",
+        createdAt: u.createdAt ?? null,
+        lastSeen: u.lastSeen ?? null,
+        courses: courses.length,
+        lessons,
+        answers: state.answers.filter((a) => a.learner === u.id).length,
+        xp: Math.max(0, Math.round(Number(state.players?.[u.id]?.xp) || 0)),
+        usedToday: usageOf(u.id).used,
+      };
+    })
+    .sort((a, b) => String(a.createdAt ?? "").localeCompare(String(b.createdAt ?? "")));
+}
+
+export function renameUser(uid, name) {
+  const u = userById(uid);
+  if (!u) return null;
+  u.name = String(name).trim();
+  u.nameLower = u.name.toLowerCase();
+  flush();
+  return u;
+}
+
+export function setRole(uid, role) {
+  const u = userById(uid);
+  if (!u) return null;
+  u.role = role === "admin" ? "admin" : "user";
+  flush();
+  return u;
+}
+
+/* Deleting an account also deletes what it made. Anything else would leave
+   courses pointing at an owner id that no longer exists — invisible to every
+   shelf, still counted in the admin list, undeletable through the UI. */
+export function removeUser(uid) {
+  const u = userById(uid);
+  if (!u) return false;
+  for (const c of [...state.courses]) {
+    if (c.owner === uid) removeCourse(c.id);
+  }
+  state.users = state.users.filter((x) => x.id !== uid);
+  state.views = state.views.filter((v) => v.learner !== uid);
+  state.answers = state.answers.filter((a) => a.learner !== uid);
+  state.projects = state.projects.filter((p) => p.learner !== uid);
+  state.reviews = state.reviews.filter((r) => r.learner !== uid);
+  for (const key of Object.keys(state.notes)) {
+    if (key.endsWith(`:${uid}`)) delete state.notes[key];
+  }
+  delete state.players?.[uid];
+  delete state.gates?.usage?.[uid];
+  flush();
+  return true;
+}
+
+/* ------------------------------ admin: courses ---------------------------- */
+
+export function listAllCourses() {
+  return state.courses
+    .map((c) => {
+      const owner = c.owner ? userById(c.owner) : null;
+      const lessons = (c.units ?? []).flatMap((u) => u.lessons ?? []);
+      return {
+        id: c.id,
+        title: c.title,
+        subtitle: c.subtitle ?? "",
+        owner: c.owner ?? null,
+        ownerName: owner?.name ?? (c.demo ? "内置示例" : "无归属"),
+        demo: Boolean(c.demo),
+        confirmed: Boolean(c.confirmed),
+        mode: c.mode ?? "self",
+        lang: c.lang ?? "zh",
+        track: c.track ?? null,
+        units: (c.units ?? []).length,
+        lessons: lessons.length,
+        generated: Object.keys(c.lessons ?? {}).length,
+        createdAt: c.createdAt ?? null,
+        updatedAt: c.updatedAt ?? null,
+      };
+    })
+    .sort((a, b) => String(b.updatedAt ?? "").localeCompare(String(a.updatedAt ?? "")));
+}
+
+/* The console reads a course outline, not the rendered lessons: a generated
+   lesson is 6–10k of prose and the list would be unusable. */
+export function courseOutlineForAdmin(courseId) {
+  const c = rawCourse(courseId);
+  if (!c) return null;
+  const owner = c.owner ? userById(c.owner) : null;
+  return {
+    id: c.id,
+    title: c.title,
+    subtitle: c.subtitle ?? "",
+    promise: c.promise ?? "",
+    owner: c.owner ?? null,
+    ownerName: owner?.name ?? (c.demo ? "内置示例" : "无归属"),
+    demo: Boolean(c.demo),
+    confirmed: Boolean(c.confirmed),
+    mode: c.mode ?? "self",
+    lang: c.lang ?? "zh",
+    createdAt: c.createdAt ?? null,
+    updatedAt: c.updatedAt ?? null,
+    units: (c.units ?? []).map((u) => ({
+      id: u.id,
+      title: u.title,
+      lessons: (u.lessons ?? []).map((l) => ({
+        id: l.id,
+        title: l.title,
+        generated: Boolean(c.lessons?.[l.id]),
+      })),
+    })),
+  };
+}
+
+const ADMIN_COURSE_FIELDS = new Set(["title", "subtitle", "promise", "owner", "demo"]);
+
+export function updateCourseMeta(courseId, patch = {}) {
+  const c = rawCourse(courseId);
+  if (!c) return null;
+  for (const [k, v] of Object.entries(patch)) {
+    if (!ADMIN_COURSE_FIELDS.has(k)) continue;
+    if (k === "demo") c.demo = Boolean(v);
+    else if (k === "owner") c.owner = v ? String(v) : null;
+    else c[k] = String(v ?? "").slice(0, 300);
+  }
+  c.updatedAt = new Date().toISOString();
+  flush();
+  return c;
+}
+
+/* Making a course for somebody else means copying one that already exists:
+   the alternative is waiting a minute for the model, which is exactly the
+   thing an operator does not want to do from a console. */
+export function cloneCourse(courseId, { owner = null, title = null } = {}) {
+  const src = rawCourse(courseId);
+  if (!src) return null;
+  const copy = JSON.parse(JSON.stringify(src));
+  const now = new Date().toISOString();
+  Object.assign(copy, {
+    id: id("c"),
+    title: title ? String(title).slice(0, 120) : `${src.title}（副本）`,
+    owner: owner ?? null,
+    demo: false,
+    game: { stars: {}, cleared: [], attempts: {}, terminals: {}, builds: {} },
+    terminals: {},
+    crafts: {},
+    createdAt: now,
+    updatedAt: now,
+  });
+  /* A copy starts with the lessons but not with anybody's history: stars,
+     wrong answers and notes all key off the old course id anyway. */
+  state.courses.push(copy);
+  flush();
+  return copy;
 }
 
 /* --------------------------------- gates --------------------------------- */

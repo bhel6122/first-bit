@@ -3,6 +3,7 @@
 import { state, loadSession } from "./core.js";
 import { bindLangSwitch, translateDom, watchDom, t } from "./i18n.js";
 import { renderLogin } from "./login.js";
+import { renderAdmin } from "./admin.js";
 import { renderHome, renderCreate, renderBuild } from "./home.js";
 import { renderCourse } from "./course.js";
 import { renderLesson } from "./classroom.js";
@@ -56,6 +57,15 @@ async function route() {
 
     if (!parts.length) return await renderHome(app);
     if (parts[0] === "create") return await renderCreate(app);
+    /* The console is gated twice on purpose: here so a normal learner is simply
+       sent home, and again on every API call, because the URL is guessable. */
+    if (parts[0] === "admin") {
+      if (state.user?.role !== "admin") {
+        location.hash = "/";
+        return;
+      }
+      return await renderAdmin(app);
+    }
     if (parts[0] === "build" && parts[1]) return await renderBuild(app, decodeURIComponent(parts[1]));
     if (parts[0] === "course" && parts[1]) return await renderCourse(app, decodeURIComponent(parts[1]));
     if (parts[0] === "lesson" && parts[1] && parts[2])
