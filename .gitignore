@@ -10,3 +10,6 @@ data/
 # vercel
 .vercel/
 .hz.txt
+
+# headless chrome profiles used by the screenshot and i18n checks
+.chrome-*/

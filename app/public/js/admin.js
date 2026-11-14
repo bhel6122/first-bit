@@ -10,8 +10,12 @@
    stale "delete" button is the kind of bug that costs an account. */
 
 import { state, api, esc, icon, toast, topbar, modal } from "./core.js";
+import { t } from "./i18n.js";
 
-const ROLE_LABEL = { admin: "管理员", user: "学习者" };
+/* Labels built around a name or a count go through t() here: the DOM pass only
+   sees finished text, and "3 个账号" would otherwise need a regular expression
+   per sentence. Static labels are left to the DOM pass. */
+const roleLabel = (role) => t(role === "admin" ? "管理员" : "学习者");
 
 const when = (iso) => {
   if (!iso) return "—";
@@ -31,7 +35,7 @@ export async function renderAdmin(app) {
       </div>
       <div class="adm-tabs" role="tablist">
         <button type="button" data-tab="users" class="active">${icon("user", 14)} 用户</button>
-        <button type="button" data-tab="courses">${icon("book", 14)} 课程</button>
+        <button type="button" data-tab="courses">${icon("book", 14)} ${t("全部课程")}</button>
       </div>
     </header>
     <section class="adm-stats" id="adm-stats"></section>
@@ -56,10 +60,10 @@ export async function renderAdmin(app) {
   function paintStats() {
     const s = data?.stats ?? {};
     const cells = [
-      ["账号", s.users ?? 0, `${s.admins ?? 0} 个管理员`],
-      ["课程", s.courses ?? 0, `${s.lessons ?? 0} 讲已生成`],
-      ["答题记录", s.answers ?? 0, `${s.views ?? 0} 条阅读`],
-      ["今日生成", s.usageToday ?? 0, data?.store?.engine === "redis" ? "数据：Redis" : "数据：本地文件"],
+      ["账号", s.users ?? 0, t(`${s.admins ?? 0} 个管理员`)],
+      ["课程", s.courses ?? 0, t(`${s.lessons ?? 0} 讲已生成`)],
+      ["答题记录", s.answers ?? 0, t(`${s.views ?? 0} 条阅读`)],
+      ["今日生成", s.usageToday ?? 0, data?.store?.engine === "redis" ? t("数据：Redis") : t("数据：本地文件")],
     ];
     stats.innerHTML = cells
       .map(([label, value, note]) => `<div class="adm-stat">
@@ -83,7 +87,7 @@ export async function renderAdmin(app) {
     const rows = data?.users ?? [];
     if (!rows.length) return `<p class="adm-empty">还没有账号。</p>`;
     return `<div class="adm-bar">
-        <span class="adm-count">${rows.length} 个账号</span>
+        <span class="adm-count">${esc(t(`${rows.length} 个账号`))}</span>
         <button class="btn btn-primary btn-sm" id="new-user">${icon("user", 14)} 新建账号</button>
       </div>
       <div class="adm-scroll"><table class="adm-table">
@@ -96,7 +100,7 @@ export async function renderAdmin(app) {
               <span class="adm-name">${esc(u.name)}</span>
               ${u.id === state.user?.id ? `<span class="adm-tag">你</span>` : ""}
             </td>
-            <td><span class="adm-role ${u.role === "admin" ? "is-admin" : ""}">${esc(ROLE_LABEL[u.role] ?? u.role)}</span></td>
+            <td><span class="adm-role ${u.role === "admin" ? "is-admin" : ""}">${esc(roleLabel(u.role))}</span></td>
             <td class="adm-dim">${when(u.createdAt)}</td>
             <td class="adm-num">${u.courses}</td>
             <td class="adm-num">${u.lessons}</td>
@@ -124,14 +128,14 @@ export async function renderAdmin(app) {
         const u = data.users.find((x) => x.id === b.dataset.role);
         if (!u) return;
         const next = u.role === "admin" ? "user" : "admin";
-        if (next === "user" && !confirm(`取消「${u.name}」的管理员权限？`)) return;
+        if (next === "user" && !confirm(t("取消「{name}」的管理员权限？", { name: u.name }))) return;
         try {
           data.users = (await api(`/api/admin/users/${encodeURIComponent(u.id)}`, {
             method: "PATCH",
             body: { role: next },
           })).users;
           paintBody();
-          toast(next === "admin" ? `「${u.name}」现在是管理员` : `「${u.name}」已取消管理员`, "ok");
+          toast(next === "admin" ? t("「{name}」现在是管理员", { name: u.name }) : t("「{name}」已取消管理员", { name: u.name }), "ok");
         } catch (e) {
           toast(e.message, "bad");
         }
@@ -143,9 +147,12 @@ export async function renderAdmin(app) {
         const u = data.users.find((x) => x.id === b.dataset.del);
         if (!u) return;
         const ok = await ask({
-          title: `删除「${u.name}」？`,
-          detail: `这个账号名下 ${u.courses} 门课程、${u.answers} 条答题记录会一起删掉，无法恢复。`,
-          confirm: "删除账号",
+          title: t("删除「{name}」？", { name: u.name }),
+          detail: t("这个账号名下 {courses} 门课程、{answers} 条答题记录会一起删掉，无法恢复。", {
+            courses: u.courses,
+            answers: u.answers,
+          }),
+          confirm: t("删除账号"),
         });
         if (!ok) return;
         try {
@@ -230,7 +237,7 @@ export async function renderAdmin(app) {
     const rows = data?.courses ?? [];
     if (!rows.length) return `<p class="adm-empty">还没有课程。</p>`;
     return `<div class="adm-bar">
-        <span class="adm-count">${rows.length} 门课程</span>
+        <span class="adm-count">${esc(t(`${rows.length} 门课程`))}</span>
       </div>
       <div class="adm-scroll"><table class="adm-table">
         <thead><tr>
@@ -289,9 +296,12 @@ export async function renderAdmin(app) {
         const c = data.courses.find((x) => x.id === b.dataset.del);
         if (!c) return;
         const ok = await ask({
-          title: `删除《${c.title}》？`,
-          detail: `归属：${c.ownerName}。已生成的 ${c.generated} 讲内容、答题记录和笔记会一起删掉。`,
-          confirm: "删除课程",
+          title: t("删除《{title}》？", { title: c.title }),
+          detail: t("归属：{owner}。已生成的 {n} 讲内容、答题记录和笔记会一起删掉。", {
+            owner: c.ownerName,
+            n: c.generated,
+          }),
+          confirm: t("删除课程"),
         });
         if (!ok) return;
         try {
@@ -371,7 +381,7 @@ export async function renderAdmin(app) {
       </div>
       <div class="adm-form">
         <p class="adm-hint">复制会带上全部单元、课时和已生成的内容，但不带任何人的进度。</p>
-        <label>新标题<input id="f-title" maxlength="120" value="${esc(`${course.title}（副本）`)}"></label>
+        <label>新标题<input id="f-title" maxlength="120" value="${esc(course.title + t("（副本）"))}"></label>
         <label>归属<select id="f-owner">${ownerOptions(course.owner)}</select></label>
         <p class="adm-err" id="f-err"></p>
       </div>

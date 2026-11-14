@@ -124,6 +124,24 @@ const HAND = {
   "删除「{name}」？进度、笔记和已生成的讲次都会一并删除。":
     "Delete “{name}”? Progress, notes and generated lessons go with it.",
   "删除「{name}」及其中的讲次？": "Delete “{name}” and the lessons inside it?",
+
+  /* ---- console and sign-in ----
+     Sentences assembled around a name or a count. They are called with t() so
+     the numbers and names never reach the DOM pass, which has no way to tell a
+     placeholder from a word. Static labels live in tools/ui-en-e.json. */
+  "已经有账号？": "Already have an account? ",
+  "第一次来？": "First time here? ",
+  "全部课程": "All courses",
+  "（副本）": " (copy)",
+  "取消「{name}」的管理员权限？": "Remove admin rights from “{name}”?",
+  "「{name}」现在是管理员": "“{name}” is now an admin",
+  "「{name}」已取消管理员": "“{name}” is no longer an admin",
+  "删除「{name}」？": "Delete “{name}”?",
+  "这个账号名下 {courses} 门课程、{answers} 条答题记录会一起删掉，无法恢复。":
+    "This account owns {courses} courses and {answers} answers — they go with it, and there is no undo.",
+  "删除《{title}》？": "Delete “{title}”?",
+  "归属：{owner}。已生成的 {n} 讲内容、答题记录和笔记会一起删掉。":
+    "Owner: {owner}. Its {n} built lessons, answers and notes go with it.",
 };
 
 /* Hand-written entries win: they were written against the string, whereas the
@@ -138,6 +156,13 @@ const RULES = [
   [/^(\d+) \/ (\d+) 讲$/, "$1 / $2 lessons"],
   [/^(\d+)\/(\d+) 讲$/, "$1/$2 lessons"],
   [/^(\d+) 讲$/, "$1 lessons"],
+  /* Console counts: one noun behind a number, so the plural has to be decided
+     after the number is known. The Chinese side reads the same either way. */
+  [/^(\d+) 个管理员$/, (m, n) => `${n} admin${n === "1" ? "" : "s"}`],
+  [/^(\d+) 个账号$/, (m, n) => `${n} account${n === "1" ? "" : "s"}`],
+  [/^(\d+) 门课程$/, (m, n) => `${n} course${n === "1" ? "" : "s"}`],
+  [/^(\d+) 讲已生成$/, (m, n) => `${n} lesson${n === "1" ? "" : "s"} built`],
+  [/^(\d+) 条阅读$/, (m, n) => `${n} page read${n === "1" ? "" : "s"}`],
   [/^(\d+) 分钟$/, "$1 min"],
   [/^(\d+) 颗星$/, "$1 stars"],
   [/^连击 ×(\d+)$/, "Combo ×$1"],

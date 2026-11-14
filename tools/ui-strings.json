@@ -6,6 +6,18 @@
   "n": 9
  },
  {
+  "s": "取消",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 6
+ },
+ {
+  "s": "已保存",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 6
+ },
+ {
   "s": "回首页",
   "kind": "text",
   "file": "battle.js",
@@ -24,21 +36,27 @@
   "n": 6
  },
  {
+  "s": "关闭",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 5
+ },
+ {
   "s": "发送",
   "kind": "str",
   "file": "classroom.js",
   "n": 5
  },
  {
-  "s": "已保存",
-  "kind": "str",
-  "file": "classroom.js",
-  "n": 5
+  "s": "删除",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 4
  },
  {
-  "s": "关闭",
+  "s": "已复制",
   "kind": "str",
-  "file": "core.js",
+  "file": "admin.js",
   "n": 4
  },
  {
@@ -72,6 +90,30 @@
   "n": 4
  },
  {
+  "s": "课程",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 3
+ },
+ {
+  "s": "归属",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 3
+ },
+ {
+  "s": "复制",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 3
+ },
+ {
+  "s": "保存",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 3
+ },
+ {
   "s": "语速",
   "kind": "text",
   "file": "classroom.js",
@@ -90,10 +132,118 @@
   "n": 3
  },
  {
+  "s": "登录",
+  "kind": "str",
+  "file": "login.js",
+  "n": 3
+ },
+ {
   "s": "故障终端",
   "kind": "text",
   "file": "map.js",
   "n": 3
+ },
+ {
+  "s": "管理",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 2
+ },
+ {
+  "s": "账号",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 2
+ },
+ {
+  "s": "课时",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 2
+ },
+ {
+  "s": "操作",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 2
+ },
+ {
+  "s": "改",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 2
+ },
+ {
+  "s": "用户名",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 2
+ },
+ {
+  "s": "密码",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 2
+ },
+ {
+  "s": "还没有课程。",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 2
+ },
+ {
+  "s": "单元",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 2
+ },
+ {
+  "s": "示例",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 2
+ },
+ {
+  "s": "学习者",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 2
+ },
+ {
+  "s": "账号已删除",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 2
+ },
+ {
+  "s": "3–16 位字母、数字、下划线或中文",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 2
+ },
+ {
+  "s": "至少 6 位",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 2
+ },
+ {
+  "s": "密码至少 6 位。",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 2
+ },
+ {
+  "s": "课程已删除",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 2
+ },
+ {
+  "s": "课程已更新",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 2
  },
  {
   "s": "再打一次",
@@ -234,14 +384,14 @@
   "n": 2
  },
  {
-  "s": "已复制",
-  "kind": "str",
-  "file": "classroom.js",
+  "s": "再试一次",
+  "kind": "text",
+  "file": "core.js",
   "n": 2
  },
  {
-  "s": "再试一次",
-  "kind": "text",
+  "s": "退出登录",
+  "kind": "str",
   "file": "core.js",
   "n": 2
  },
@@ -291,6 +441,24 @@
   "s": "现在没有到期的错题。先去学几讲、做做题。",
   "kind": "str",
   "file": "course.js",
+  "n": 2
+ },
+ {
+  "s": "让学习的开始",
+  "kind": "text",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "不再犹豫",
+  "kind": "text",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "不必再花时间挑选学习路线，只需要输入学习主题，即刻为你生成可行的学习路线和课程。让学习不再停留在“不知从何做起”这一步。",
+  "kind": "text",
+  "file": "home.js",
   "n": 2
  },
  {
@@ -486,12 +654,6 @@
   "n": 2
  },
  {
-  "s": "删除",
-  "kind": "str",
-  "file": "home.js",
-  "n": 2
- },
- {
   "s": "做什么、为什么值得做",
   "kind": "str",
   "file": "home.js",
@@ -576,13 +738,25 @@
   "n": 2
  },
  {
-  "s": "直接挑战",
+  "s": "建一个账号",
   "kind": "text",
-  "file": "map.js",
+  "file": "login.js",
   "n": 2
  },
  {
-  "s": "取消",
+  "s": "确认密码",
+  "kind": "str",
+  "file": "login.js",
+  "n": 2
+ },
+ {
+  "s": "注册并开始",
+  "kind": "str",
+  "file": "login.js",
+  "n": 2
+ },
+ {
+  "s": "直接挑战",
   "kind": "text",
   "file": "map.js",
   "n": 2
@@ -634,6 +808,306 @@
   "kind": "str",
   "file": "world.js",
   "n": 2
+ },
+ {
+  "s": "FIRST-BIT · 控制台",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "正在读取…",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "还没有账号。",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "角色",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "注册",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "答题",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "今日",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "你",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "管理员（可以进这个页面）",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "已生成",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "更新",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "未确认",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "查看",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "（无归属 · 公共）",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "编辑课程",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "标题",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "副标题",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "标记为公共示例（所有人可见）",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "复制课程",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "复制会带上全部单元、课时和已生成的内容，但不带任何人的进度。",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "新标题",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "未生成",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "这门课还没有单元。",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "不可撤销",
+  "kind": "text",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "管理员",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "全部课程",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "答题记录",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "今日生成",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "数据：Redis",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "数据：本地文件",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "取消管理员",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "设管理员",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "取消「{name}」的管理员权限？",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "「{name}」现在是管理员",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "「{name}」已取消管理员",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "删除「{name}」？",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "这个账号名下 {courses} 门课程、{answers} 条答题记录会一起删掉，无法恢复。",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "删除账号",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "新建账号",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "编辑账号",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "给一个人开个座位",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "留空则不修改",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "创建",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "用户名不能为空。",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "账号已创建",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "删除《{title}》？",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "归属：{owner}。已生成的 {n} 讲内容、答题记录和笔记会一起删掉。",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "删除课程",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "标题不能为空。",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
+ },
+ {
+  "s": "（副本）",
+  "kind": "str",
+  "file": "admin.js",
+  "n": 1
  },
  {
   "s": "页面没加载出来",
@@ -996,18 +1470,6 @@
   "n": 1
  },
  {
-  "s": "复制",
-  "kind": "text",
-  "file": "classroom.js",
-  "n": 1
- },
- {
-  "s": "保存",
-  "kind": "text",
-  "file": "classroom.js",
-  "n": 1
- },
- {
   "s": "概念",
   "kind": "str",
   "file": "classroom.js",
@@ -1261,6 +1723,12 @@
  },
  {
   "s": "演示模式 · 内置课程",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "退出",
   "kind": "str",
   "file": "core.js",
   "n": 1
@@ -1662,24 +2130,6 @@
   "n": 1
  },
  {
-  "s": "让学习的开始",
-  "kind": "text",
-  "file": "home.js",
-  "n": 1
- },
- {
-  "s": "不再犹豫",
-  "kind": "text",
-  "file": "home.js",
-  "n": 1
- },
- {
-  "s": "不必再花时间挑选学习路线，只需要输入学习主题，即刻为你生成可行的学习路线和课程。让学习不再停留在“不知从何做起”这一步。",
-  "kind": "text",
-  "file": "home.js",
-  "n": 1
- },
- {
   "s": "自由学 · 闯关地图",
   "kind": "text",
   "file": "home.js",
@@ -1728,12 +2178,6 @@
   "n": 1
  },
  {
-  "s": "还没有课程。",
-  "kind": "text",
-  "file": "home.js",
-  "n": 1
- },
- {
   "s": "在左边写下一个主题，四步就能开始。",
   "kind": "text",
   "file": "home.js",
@@ -1741,12 +2185,6 @@
  },
  {
   "s": "草案 · 待确认",
-  "kind": "text",
-  "file": "home.js",
-  "n": 1
- },
- {
-  "s": "示例",
   "kind": "text",
   "file": "home.js",
   "n": 1
@@ -1873,12 +2311,6 @@
  },
  {
   "s": "这份草案",
-  "kind": "text",
-  "file": "home.js",
-  "n": 1
- },
- {
-  "s": "单元",
   "kind": "text",
   "file": "home.js",
   "n": 1
@@ -3000,6 +3432,90 @@
   "n": 1
  },
  {
+  "s": "FIRST-BIT · 课程工坊",
+  "kind": "text",
+  "file": "login.js",
+  "n": 1
+ },
+ {
+  "s": "再输一次",
+  "kind": "text",
+  "file": "login.js",
+  "n": 1
+ },
+ {
+  "s": "去登录",
+  "kind": "text",
+  "file": "login.js",
+  "n": 1
+ },
+ {
+  "s": "` : `第一次来？",
+  "kind": "text",
+  "file": "login.js",
+  "n": 1
+ },
+ {
+  "s": "用户名会显示在顶栏，之后改不了。",
+  "kind": "str",
+  "file": "login.js",
+  "n": 1
+ },
+ {
+  "s": "接着上次的课往下走。",
+  "kind": "str",
+  "file": "login.js",
+  "n": 1
+ },
+ {
+  "s": "3–16 位，字母数字下划线或中文",
+  "kind": "str",
+  "file": "login.js",
+  "n": 1
+ },
+ {
+  "s": "你的用户名",
+  "kind": "str",
+  "file": "login.js",
+  "n": 1
+ },
+ {
+  "s": "你的密码",
+  "kind": "str",
+  "file": "login.js",
+  "n": 1
+ },
+ {
+  "s": "用户名和密码都要填。",
+  "kind": "str",
+  "file": "login.js",
+  "n": 1
+ },
+ {
+  "s": "两次输入的密码不一样。",
+  "kind": "str",
+  "file": "login.js",
+  "n": 1
+ },
+ {
+  "s": "正在建账号…",
+  "kind": "str",
+  "file": "login.js",
+  "n": 1
+ },
+ {
+  "s": "正在登录…",
+  "kind": "str",
+  "file": "login.js",
+  "n": 1
+ },
+ {
+  "s": "没成功，再试一次。",
+  "kind": "str",
+  "file": "login.js",
+  "n": 1
+ },
+ {
   "s": "地图还是空的",
   "kind": "text",
   "file": "map.js",
@@ -3092,12 +3608,6 @@
  {
   "s": "失败不扣心、不卡关——终端是练手，不是关卡屏障",
   "kind": "text",
-  "file": "map.js",
-  "n": 1
- },
- {
-  "s": "学习者",
-  "kind": "str",
   "file": "map.js",
   "n": 1
  },
