@@ -1,7 +1,8 @@
 /* Router. Hash-based so the app is one static shell plus JSON endpoints. */
 
-import { state } from "./core.js";
+import { state, loadSession } from "./core.js";
 import { bindLangSwitch, translateDom, watchDom, t } from "./i18n.js";
+import { renderLogin } from "./login.js";
 import { renderHome, renderCreate, renderBuild } from "./home.js";
 import { renderCourse } from "./course.js";
 import { renderLesson } from "./classroom.js";
@@ -38,6 +39,21 @@ async function route() {
   window.scrollTo({ top: 0 });
 
   try {
+    /* Nobody sees a shelf until we know whose shelf it is. The check happens
+       before any route renders, so a signed-out visitor never sees a flash of
+       someone else's course list. */
+    if (parts[0] === "login") {
+      if (await loadSession()) {
+        location.hash = "/";
+        return;
+      }
+      return await renderLogin(app);
+    }
+    if (!(await loadSession())) {
+      location.hash = "/login";
+      return;
+    }
+
     if (!parts.length) return await renderHome(app);
     if (parts[0] === "create") return await renderCreate(app);
     if (parts[0] === "build" && parts[1]) return await renderBuild(app, decodeURIComponent(parts[1]));

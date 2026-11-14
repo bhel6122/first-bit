@@ -15,15 +15,21 @@ import { generateCraft, publicCraft, scoreCraft } from "../lib/craft.mjs";
 import { extractPdfText } from "../lib/pdf.mjs";
 import { normalizeOutline, checkOutline, quizForLearner, neighbors, lessonMeta, boardText } from "../lib/course.mjs";
 import {
-  seedDemo, listCourses, rawCourse, createCourse, saveOutline, confirmCourse, removeCourse,
+  seedDemo, listCourses, rawCourse, ownedCourse, createCourse, saveOutline, confirmCourse, removeCourse,
   setLesson, recordPage, recordAnswer, answersFor, toggleProject, projectsDone,
   saveNotes, getNotes, progressFor, unitQuiz, activitySummary, storeInfo, countAll,
   dueReviews, reviewCount, wrongForUnit,
   getPlayer, savePlayerProfile, recordBattle, recordTerminal, cachedTerminal, saveTerminal, gameFor,
   recordCraft, cachedCraft, saveCraft,
   refreshStore, flushNow,
+  userById, userByName, addUser, countUsers, claimOrphans, setPassword, touchUser,
+  noteSignup, spendGeneration, usageOf,
 } from "./store.mjs";
 import { kvReady, kvGet, kvSet, kvPrefix } from "./kv.mjs";
+import {
+  hashPassword, verifyPassword, issueSession, readSession,
+  parseCookies, sessionCookie, clearCookie, COOKIE, SESSION_MS,
+} from "../lib/auth.mjs";
 
 const PORT = Number(process.env.PORT || 5200);
 const PUBLIC = fileURLToPath(new URL("./public/", import.meta.url));
@@ -35,8 +41,12 @@ if (seeded && kvReady) await flushNow();
 
 /* -------------------------------- helpers -------------------------------- */
 
-const json = (res, code, data) => {
-  res.writeHead(code, { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" });
+const json = (res, code, data, headers = {}) => {
+  res.writeHead(code, {
+    "content-type": "application/json; charset=utf-8",
+    "cache-control": "no-store",
+    ...headers,
+  });
   res.end(JSON.stringify(data));
 };
 
@@ -205,7 +215,7 @@ export async function drainJobs(maxMs = 270_000) {
 
 /* -------------------------------- views -------------------------------- */
 
-function courseView(course, learner = "me") {
+function courseView(course, learner) {
   const p = progressFor(course, learner);
   const done = projectsDone(course.id, learner);
   const nextLesson = p.lastLesson
@@ -272,7 +282,47 @@ function courseView(course, learner = "me") {
   };
 }
 
-/* -------------------------------- routes -------------------------------- */
+/* -------------------------------- identity ------------------------------- */
+
+/* Resolve the cookie to a user on every request. Three things have to line up:
+   the signature, the user still existing, and `ver` still matching — the last
+   one is what makes a password change sign the old cookie out. */
+async function currentUser(req) {
+  const token = parseCookies(req.headers.cookie)[COOKIE];
+  const s = readSession(token);
+  if (!s) return null;
+  const u = userById(s.uid);
+  if (!u || (u.ver ?? 1) !== s.ver) return null;
+  touchUser(u.id);
+  return u;
+}
+
+/* Routes that answer without a session: the front end cannot render a login
+   form out of a 401, and the health check is for the platform, not for people. */
+const OPEN_PATHS = new Set(["/api/auth/register", "/api/auth/login", "/api/auth/logout", "/api/auth/me", "/api/config"]);
+
+/* ---------------------------- rate limit policy --------------------------- */
+
+const SIGNUP_WINDOW_MS = 10 * 60_000;
+const SIGNUP_PER_IP = Number(process.env.SIGNUP_PER_IP || 3);
+const GEN_PER_DAY = Number(process.env.GEN_PER_DAY || 20);
+const GEN_PER_DAY_GLOBAL = Number(process.env.GEN_PER_DAY_GLOBAL || 120);
+
+/* The model key is shared by everyone who signs up, so generation is metered.
+   Check first, spend second: a rejected call has to cost nothing. */
+function spendGenerationOrRefuse(me) {
+  const before = usageOf(me.id);
+  if (before.total >= GEN_PER_DAY_GLOBAL) {
+    return { error: `今天全站的生成额度（${GEN_PER_DAY_GLOBAL} 次）用完了，明天再来，或者自己部署一份。` };
+  }
+  if (before.used >= GEN_PER_DAY) {
+    return { error: `你今天的生成额度（${GEN_PER_DAY} 次）用完了，明天重置。` };
+  }
+  spendGeneration(me.id);
+  return null;
+}
+
+/* --------------------------------- routes -------------------------------- */
 
 /* One request handler, two hosts: a long-running server (`npm start`) and a
    serverless function (`api/index.mjs`). Keeping it a plain (req, res) function
@@ -285,15 +335,82 @@ export async function handler(req, res) {
   const path = url.pathname;
 
   try {
+    const me = await currentUser(req);
+
     if (req.method === "GET" && path === "/healthz") {
-      return json(res, 200, { ok: true, model: llmState(), store: storeInfo(), counts: countAll(), uptime: Math.round(process.uptime()) });
+      return json(res, 200, { ok: true, model: llmState(), store: storeInfo(), counts: { ...countAll(), users: countUsers() }, uptime: Math.round(process.uptime()) });
+    }
+
+    /* -------------------------------- accounts ------------------------------- */
+
+    if (req.method === "POST" && path === "/api/auth/register") {
+      const body = await readBody(req);
+      const name = String(body.name ?? "").trim();
+      const password = String(body.password ?? "");
+
+      if (!/^[\w\u4e00-\u9fa5-]{3,16}$/u.test(name)) {
+        return json(res, 400, { error: "用户名用 3–16 位字母、数字、下划线或中文。" });
+      }
+      if (password.length < 6 || password.length > 72) {
+        return json(res, 400, { error: "密码至少 6 位。" });
+      }
+      if (userByName(name)) {
+        return json(res, 409, { error: "这个名字已经有人用了，换一个。" });
+      }
+      const ip = String(req.headers["x-forwarded-for"] ?? req.socket?.remoteAddress ?? "?").split(",")[0].trim();
+      if (noteSignup(ip, SIGNUP_WINDOW_MS) > SIGNUP_PER_IP) {
+        return json(res, 429, { error: "同一网络注册太频繁，过一会儿再试。" });
+      }
+
+      const { salt, hash } = await hashPassword(password);
+      const user = addUser({ name, salt, hash });
+      /* The very first account inherits anything written before accounts
+         existed, so an upgrade does not orphan the existing courses. */
+      if (countUsers() === 1) claimOrphans(user.id);
+      await flushNow();
+
+      return json(res, 200, { user: { id: user.id, name: user.name } }, {
+        "set-cookie": sessionCookie(issueSession({ uid: user.id, ver: user.ver })),
+      });
+    }
+
+    if (req.method === "POST" && path === "/api/auth/login") {
+      const body = await readBody(req);
+      const user = userByName(body.name);
+      /* Same message either way: telling the visitor which half was wrong
+         turns a login form into a user directory. */
+      if (!user || !(await verifyPassword(String(body.password ?? ""), user.salt, user.hash))) {
+        return json(res, 401, { error: "用户名或密码不对。" });
+      }
+      return json(res, 200, { user: { id: user.id, name: user.name } }, {
+        "set-cookie": sessionCookie(issueSession({ uid: user.id, ver: user.ver })),
+      });
+    }
+
+    if (req.method === "POST" && path === "/api/auth/logout") {
+      return json(res, 200, { ok: true }, { "set-cookie": clearCookie() });
+    }
+
+    if (req.method === "GET" && path === "/api/auth/me") {
+      if (!me) return json(res, 200, { user: null });
+      return json(res, 200, {
+        user: { id: me.id, name: me.name, createdAt: me.createdAt },
+        player: getPlayer(me.id),
+      });
+    }
+
+    /* Everything below needs a session. Static files are served further down
+       and are deliberately not gated: the login page has to be able to load. */
+    if (!me && path.startsWith("/api/") && !OPEN_PATHS.has(path)) {
+      return json(res, 401, { error: "先登录。" });
     }
 
     if (req.method === "GET" && path === "/api/config") {
       return json(res, 200, {
         provider: providerLabel(),
         model: llmState(),
-        courses: listCourses("me"),
+        signedIn: Boolean(me),
+        courses: me ? listCourses(me.id) : listCourses("__nobody__"),
       });
     }
 
@@ -342,10 +459,15 @@ export async function handler(req, res) {
       if (mode === "school" && !materials.length && String(answers.topic).length < 4) {
         return json(res, 400, { error: "跟课学需要至少一份材料，或者写清课程名。" });
       }
+      /* Demo mode costs nothing, so it is not metered. */
+      if (hasModel()) {
+        const refusal = spendGenerationOrRefuse(me);
+        if (refusal) return json(res, 429, refusal);
+      }
 
       const job = await runJob("outline", null, async (phase) => {
         const { outline, report, stats, chosen, alternatives } = await buildOutline({ answers: { ...answers, track }, mode, materials }, phase);
-        const course = createCourse(outline, { mode, answers, materials, track });
+        const course = createCourse(outline, { mode, answers, materials, track, owner: me.id });
         /* Kept in the job payload: which shape won, and by how much, is the only
            way to tell later whether the double draft was worth its cost. */
         console.log(`[outline] chose ${chosen} of ${alternatives.map((a) => `${a.shape}:${a.score}`).join(" ")}`);
@@ -374,19 +496,19 @@ export async function handler(req, res) {
     /* -------------------------------- course -------------------------------- */
 
     if (req.method === "GET" && path === "/api/courses") {
-      return json(res, 200, listCourses("me"));
+      return json(res, 200, listCourses(me.id));
     }
 
     if (req.method === "GET" && path.startsWith("/api/course/") && path.split("/").length === 4) {
       const courseId = decodeURIComponent(path.split("/")[3]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       if (!course) return json(res, 404, { error: "没有这门课" });
-      return json(res, 200, { course: courseView(course), materials: course.materials ?? [] });
+      return json(res, 200, { course: courseView(course, me.id), materials: course.materials ?? [] });
     }
 
     if (req.method === "PATCH" && /^\/api\/course\/[^/]+\/outline$/.test(path)) {
       const courseId = decodeURIComponent(path.split("/")[3]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       if (!course) return json(res, 404, { error: "没有这门课" });
       const body = await readBody(req);
 
@@ -404,12 +526,12 @@ export async function handler(req, res) {
       if (!report.ok) return json(res, 400, { error: report.errors[0], report });
 
       saveOutline(courseId, outline);
-      return json(res, 200, { ok: true, course: courseView(rawCourse(courseId)), report });
+      return json(res, 200, { ok: true, course: courseView(ownedCourse(courseId, me.id), me.id), report });
     }
 
     if (req.method === "POST" && /^\/api\/course\/[^/]+\/outline\/ask$/.test(path)) {
       const courseId = decodeURIComponent(path.split("/")[3]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       if (!course) return json(res, 404, { error: "没有这门课" });
 
       const { question, unitId, lessonId = "" } = await readBody(req, 60_000);
@@ -428,7 +550,7 @@ export async function handler(req, res) {
       const courseId = decodeURIComponent(path.split("/")[3]);
       const course = confirmCourse(courseId);
       if (!course) return json(res, 404, { error: "没有这门课" });
-      return json(res, 200, { ok: true, course: courseView(course) });
+      return json(res, 200, { ok: true, course: courseView(course, me.id) });
     }
 
     if (req.method === "DELETE" && /^\/api\/course\/[^/]+$/.test(path)) {
@@ -442,13 +564,18 @@ export async function handler(req, res) {
       const parts = path.split("/");
       const courseId = decodeURIComponent(parts[3]);
       const lessonId = decodeURIComponent(parts[5]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       const found = course ? lessonMeta(course, lessonId) : null;
       if (!found) return json(res, 404, { error: "没有这一讲" });
 
       const force = url.searchParams.get("force") === "1";
       if (!force && course.lessons?.[lessonId]) {
         return json(res, 200, { cached: true, lessonId });
+      }
+      /* Cached reads above cost nothing; a real generation is what gets metered. */
+      if (hasModel()) {
+        const refusal = spendGenerationOrRefuse(me);
+        if (refusal) return json(res, 429, refusal);
       }
 
       const job = await runJob("lesson", `${courseId}:${lessonId}`, async (phase) => {
@@ -474,7 +601,7 @@ export async function handler(req, res) {
       const parts = path.split("/");
       const courseId = decodeURIComponent(parts[3]);
       const lessonId = decodeURIComponent(parts[5]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       const found = course ? lessonMeta(course, lessonId) : null;
       if (!found) return json(res, 404, { error: "没有这一讲" });
       const data = course.lessons?.[lessonId];
@@ -489,7 +616,7 @@ export async function handler(req, res) {
         });
       }
 
-      const answers = answersFor(courseId, lessonId, "me");
+      const answers = answersFor(courseId, lessonId, me.id);
       return json(res, 200, {
         generated: true,
         lesson: {
@@ -500,7 +627,7 @@ export async function handler(req, res) {
         },
         answered: answers.map((a) => ({ qid: a.qid, option: a.option, correct: a.correct })),
         neighbors: neighbors(course, lessonId),
-        progress: progressFor(course, "me").perLesson[lessonId],
+        progress: progressFor(course, me.id).perLesson[lessonId],
         meta: found.lesson,
         unit: { id: found.unit.id, title: found.unit.title, goal: found.unit.goal },
         course: { id: course.id, title: course.title },
@@ -511,7 +638,7 @@ export async function handler(req, res) {
       const parts = path.split("/");
       const courseId = decodeURIComponent(parts[3]);
       const lessonId = decodeURIComponent(parts[5]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       const found = course ? lessonMeta(course, lessonId) : null;
       const data = course?.lessons?.[lessonId];
       if (!found || !data) return json(res, 404, { error: "这一讲还没生成" });
@@ -559,7 +686,7 @@ export async function handler(req, res) {
       const parts = path.split("/");
       const courseId = decodeURIComponent(parts[3]);
       const lessonId = decodeURIComponent(parts[5]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       const data = course?.lessons?.[lessonId];
       if (!data) return json(res, 404, { error: "这一讲还没生成" });
 
@@ -570,8 +697,8 @@ export async function handler(req, res) {
       if (!chosen) return json(res, 400, { error: "选项不存在" });
 
       const correctIndex = q.options.findIndex((o) => o.correct);
-      recordAnswer({ courseId, lessonId, qid, option: Number(option), correct: chosen.correct === true });
-      const p = progressFor(course, "me");
+      recordAnswer({ courseId, lessonId, learner: me.id, qid, option: Number(option), correct: chosen.correct === true });
+      const p = progressFor(course, me.id);
 
       return json(res, 200, {
         correct: chosen.correct === true,
@@ -587,24 +714,24 @@ export async function handler(req, res) {
       const parts = path.split("/");
       const courseId = decodeURIComponent(parts[3]);
       const lessonId = decodeURIComponent(parts[5]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       if (!course?.lessons?.[lessonId]) return json(res, 404, { error: "这一讲还没生成" });
       const { page, seconds = 0, complete = false } = await readBody(req, 60_000);
       const total = course.lessons[lessonId].pages.length;
       if (!Number.isInteger(page) || page < 1 || page > total) return json(res, 400, { error: "页码不对" });
-      recordPage({ courseId, lessonId, page, seconds, complete });
-      return json(res, 200, { ok: true, progress: progressFor(course, "me").perLesson[lessonId] });
+      recordPage({ courseId, lessonId, learner: me.id, page, seconds, complete });
+      return json(res, 200, { ok: true, progress: progressFor(course, me.id).perLesson[lessonId] });
     }
 
     if (req.method === "POST" && /^\/api\/course\/[^/]+\/lesson\/[^/]+\/complete$/.test(path)) {
       const parts = path.split("/");
       const courseId = decodeURIComponent(parts[3]);
       const lessonId = decodeURIComponent(parts[5]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       if (!course?.lessons?.[lessonId]) return json(res, 404, { error: "这一讲还没生成" });
       const { seconds = 0 } = await readBody(req, 60_000);
-      recordPage({ courseId, lessonId, page: course.lessons[lessonId].pages.length, seconds, complete: true });
-      const p = progressFor(course, "me");
+      recordPage({ courseId, lessonId, learner: me.id, page: course.lessons[lessonId].pages.length, seconds, complete: true });
+      const p = progressFor(course, me.id);
       return json(res, 200, {
         ok: true,
         progress: p.percent,
@@ -614,7 +741,7 @@ export async function handler(req, res) {
 
     if (req.method === "GET" && /^\/api\/course\/[^/]+\/lesson\/[^/]+\/notes$/.test(path)) {
       const parts = path.split("/");
-      const notes = getNotes(decodeURIComponent(parts[3]), decodeURIComponent(parts[5]));
+      const notes = getNotes(decodeURIComponent(parts[3]), decodeURIComponent(parts[5]), me.id);
       return json(res, 200, notes ?? { markdown: "", updatedAt: null });
     }
 
@@ -623,7 +750,7 @@ export async function handler(req, res) {
       const courseId = decodeURIComponent(parts[3]);
       const lessonId = decodeURIComponent(parts[5]);
       const { markdown = "" } = await readBody(req);
-      return json(res, 200, { ok: true, notes: saveNotes(courseId, lessonId, String(markdown).slice(0, 60_000)) });
+      return json(res, 200, { ok: true, notes: saveNotes(courseId, lessonId, String(markdown).slice(0, 60_000), me.id) });
     }
 
     /* -------------------------------- project -------------------------------- */
@@ -632,20 +759,20 @@ export async function handler(req, res) {
       const parts = path.split("/");
       const courseId = decodeURIComponent(parts[3]);
       const unitId = decodeURIComponent(parts[5]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       if (!course?.units?.some((u) => u.id === unitId)) return json(res, 404, { error: "没有这个单元" });
       const { done } = await readBody(req, 60_000);
-      toggleProject({ courseId, unitId, done });
-      return json(res, 200, { ok: true, course: courseView(course) });
+      toggleProject({ courseId, unitId, learner: me.id, done });
+      return json(res, 200, { ok: true, course: courseView(course, me.id) });
     }
 
     /* --------------------------------- tests --------------------------------- */
 
     if (req.method === "GET" && /^\/api\/course\/[^/]+\/unit\/[^/]+\/test$/.test(path)) {
       const parts = path.split("/");
-      const course = rawCourse(decodeURIComponent(parts[3]));
+      const course = ownedCourse(decodeURIComponent(parts[3]), me.id);
       if (!course) return json(res, 404, { error: "没有这门课" });
-      const test = unitQuiz(course, decodeURIComponent(parts[5]));
+      const test = unitQuiz(course, decodeURIComponent(parts[5]), me.id);
       return test ? json(res, 200, test) : json(res, 404, { error: "没有这个单元" });
     }
 
@@ -653,9 +780,9 @@ export async function handler(req, res) {
 
     if (req.method === "GET" && /^\/api\/course\/[^/]+\/review$/.test(path)) {
       const courseId = decodeURIComponent(path.split("/")[3]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       if (!course) return json(res, 404, { error: "没有这门课" });
-      return json(res, 200, dueReviews(courseId));
+      return json(res, 200, dueReviews(courseId, me.id));
     }
 
     /* ------------------------------- diagnose ------------------------------- */
@@ -664,14 +791,14 @@ export async function handler(req, res) {
       const parts = path.split("/");
       const courseId = decodeURIComponent(parts[3]);
       const unitId = decodeURIComponent(parts[5]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       if (!course) return json(res, 404, { error: "没有这门课" });
       const unit = (course.units ?? []).find((u) => u.id === unitId);
       if (!unit) return json(res, 404, { error: "没有这个单元" });
 
-      const wrong = wrongForUnit(course, unitId);
-      const t = unitQuiz(course, unitId);
-      const p = progressFor(course, "me");
+      const wrong = wrongForUnit(course, unitId, me.id);
+      const t = unitQuiz(course, unitId, me.id);
+      const p = progressFor(course, me.id);
       const stats = {
         done: unit.lessons.filter((l) => p.perLesson[l.id]?.complete).length,
         total: unit.lessons.length,
@@ -685,14 +812,14 @@ export async function handler(req, res) {
     /* --------------------------------- game --------------------------------- */
 
     if (req.method === "GET" && path === "/api/player") {
-      return json(res, 200, getPlayer());
+      return json(res, 200, getPlayer(me.id));
     }
 
     if (req.method === "POST" && path === "/api/player/profile") {
       const body = await readBody(req, 200_000);
       const track = ["frontend", "backend", "ui"].includes(body.track) ? body.track : null;
       const mixed = ["frontend", "backend", "ui"].includes(body.mixed) ? body.mixed : null;
-      return json(res, 200, savePlayerProfile({
+      return json(res, 200, savePlayerProfile(me.id, {
         scores: body.scores && typeof body.scores === "object" ? body.scores : null,
         fit: body.fit && typeof body.fit === "object" ? body.fit : null,
         track, mixed, answers: body.answers ?? null,
@@ -714,7 +841,7 @@ export async function handler(req, res) {
       const parts = path.split("/");
       const courseId = decodeURIComponent(parts[3]);
       const lessonId = decodeURIComponent(parts[5]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       if (!course) return json(res, 404, { error: "没有这门课" });
       // "u:<unitId>" is a region boss; anything else must be a generated lesson.
       const isBossKey = lessonId.startsWith("u:");
@@ -733,7 +860,7 @@ export async function handler(req, res) {
       const prev = Number(gameFor(course).stars?.[lessonId]) || 0;
       const xp = failed || prev > 0 ? 0 : 10 * firstCorrect + 30 + (stars === 3 ? 15 : stars === 2 ? 8 : 3);
 
-      if (failed) return json(res, 200, { ok: false, stars: 0, xp: 0, player: getPlayer(), firstClear: false });
+      if (failed) return json(res, 200, { ok: false, stars: 0, xp: 0, player: getPlayer(me.id), firstClear: false });
       const out = recordBattle(courseId, lessonId, { stars, xp });
       return json(res, 200, { ok: true, xp, ...out });
     }
@@ -742,7 +869,7 @@ export async function handler(req, res) {
       const parts = path.split("/");
       const courseId = decodeURIComponent(parts[3]);
       const unitId = decodeURIComponent(parts[5]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       if (!course) return json(res, 404, { error: "没有这门课" });
       const unit = (course.units ?? []).find((u) => u.id === unitId);
       if (!unit) return json(res, 404, { error: "没有这个区域" });
@@ -767,7 +894,7 @@ export async function handler(req, res) {
       const parts = path.split("/");
       const courseId = decodeURIComponent(parts[3]);
       const unitId = decodeURIComponent(parts[5]);
-      if (!rawCourse(courseId)) return json(res, 404, { error: "没有这门课" });
+      if (!ownedCourse(courseId, me.id)) return json(res, 404, { error: "没有这门课" });
 
       const { solved = false, attempts = 0 } = await readBody(req, 60_000);
       const tries = Math.max(0, Math.min(99, Number(attempts) || 0));
@@ -787,7 +914,7 @@ export async function handler(req, res) {
       const parts = path.split("/");
       const courseId = decodeURIComponent(parts[3]);
       const lessonId = decodeURIComponent(parts[5]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       if (!course) return json(res, 404, { error: "没有这门课" });
 
       const units = course.units ?? [];
@@ -823,7 +950,7 @@ export async function handler(req, res) {
       const parts = path.split("/");
       const courseId = decodeURIComponent(parts[3]);
       const lessonId = decodeURIComponent(parts[5]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       if (!course) return json(res, 404, { error: "没有这门课" });
 
       const cached = cachedCraft(courseId, lessonId);
@@ -857,7 +984,7 @@ export async function handler(req, res) {
        ground the answer, and never hands over an answer key. */
     if (req.method === "POST" && /^\/api\/course\/[^/]+\/tutor$/.test(path)) {
       const courseId = decodeURIComponent(path.split("/")[3]);
-      const course = rawCourse(courseId);
+      const course = ownedCourse(courseId, me.id);
       if (!course) return json(res, 404, { error: "没有这门课" });
 
       const body = await readBody(req, 300_000);
@@ -899,8 +1026,8 @@ export async function handler(req, res) {
 
     if (req.method === "GET" && path.startsWith("/api/course/")) {
       const courseId = decodeURIComponent(path.split("/")[3]);
-      const course = rawCourse(courseId);
-      return course ? json(res, 200, courseView(course)) : json(res, 404, { error: "没有这门课" });
+      const course = ownedCourse(courseId, me.id);
+      return course ? json(res, 200, courseView(course, me.id)) : json(res, 404, { error: "没有这门课" });
     }
 
     if (path.startsWith("/api/")) return json(res, 404, { error: "接口不存在" });

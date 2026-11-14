@@ -30,9 +30,14 @@ const STORE_KEY = process.env.STORE_KEY || `${kvPrefix}:store`;
 const STALE_MS = Number(process.env.STORE_STALE_MS || 700);
 
 const empty = () => ({
-  courses: [], views: [], answers: [], projects: [], notes: {}, reviews: [], seq: 0,
-  // The game layer: one player per machine, experience shared across courses.
-  player: { xp: 0, profile: null, track: null, mixed: null, createdAt: null, updatedAt: null },
+  users: [], courses: [], views: [], answers: [], projects: [], notes: {}, reviews: [], seq: 0,
+  /* One player per account, keyed by user id: experience, star totals and the
+     intake profile follow the person, not the browser. Older single-user files
+     carried a bare `player` object; `migratePlayer()` folds it into the map. */
+  players: {},
+  /* Rate-limit bookkeeping for the public deployment: recent signup stamps per
+     IP, and how many generations each user spent today. */
+  gates: { signups: [], usage: {} },
 });
 let state = empty();
 let writable = true;
@@ -172,6 +177,16 @@ export function seedDemo() {
 
 export const rawCourse = (courseId) => state.courses.find((c) => c.id === courseId) ?? null;
 
+/* Ownership check for every route that takes a course id. The sample course has
+   no owner and is readable by anyone; anything created by a user belongs to
+   exactly one account. */
+export const ownedCourse = (courseId, owner) => {
+  const course = rawCourse(courseId);
+  if (!course) return null;
+  if (course.owner == null) return course;
+  return course.owner === owner ? course : null;
+};
+
 function courseCard(course, learner) {
   const p = progressFor(course, learner);
   return {
@@ -193,6 +208,7 @@ function courseCard(course, learner) {
 
 export const listCourses = (learner = "me") =>
   state.courses
+    .filter((c) => c.owner == null || c.owner === learner)
     .map((c) => courseCard(c, learner))
     .sort((a, b) => String(b.updatedAt ?? "").localeCompare(String(a.updatedAt ?? "")))
     .sort((a, b) => Number(b.confirmed) - Number(a.confirmed));
@@ -201,6 +217,9 @@ export function createCourse(outline, meta = {}) {
   const course = {
     id: id("c"),
     ...outline,
+    /* Who may read and edit this course. `null` means the sample course that
+       ships with the repo: visible to everyone, read-only in practice. */
+    owner: meta.owner ?? null,
     confirmed: false,
     mode: meta.mode ?? "self",
     /* The course keeps its own content language; the UI language is separate. */
@@ -512,6 +531,128 @@ export const storeInfo = () => (kvReady
   : { path: FILE, writable, engine: "json" });
 export const countAll = () => ({ courses: state.courses.length, views: state.views.length, answers: state.answers.length });
 
+/* --------------------------------- users --------------------------------- */
+
+/* Accounts live in the same JSON document as everything else: one file, one
+   key in Redis, one atomic write. No join, no migration, and the whole
+   workspace still restores from a single backup. */
+
+export const userById = (uid) => state.users.find((u) => u.id === uid) ?? null;
+
+export const userByName = (name) =>
+  state.users.find((u) => u.nameLower === String(name ?? "").trim().toLowerCase()) ?? null;
+
+export const countUsers = () => state.users.length;
+
+export function addUser({ name, salt, hash }) {
+  const now = new Date().toISOString();
+  const user = {
+    id: id("u"),
+    name: String(name).trim(),
+    nameLower: String(name).trim().toLowerCase(),
+    salt,
+    hash,
+    /* Bumping this invalidates every session cookie already handed out, which
+       is the only way to revoke a stateless session. */
+    ver: 1,
+    createdAt: now,
+    lastSeen: now,
+  };
+  state.users.push(user);
+  flush();
+  return user;
+}
+
+export function touchUser(uid) {
+  const u = userById(uid);
+  if (!u) return null;
+  /* Written at most once an hour: this is a "last seen" hint, not an audit log,
+     and every touch would otherwise cost a Redis write. */
+  const now = Date.now();
+  if (now - Date.parse(u.lastSeen ?? 0) < 3600_000) return u;
+  u.lastSeen = new Date(now).toISOString();
+  flush();
+  return u;
+}
+
+export function setPassword(uid, { salt, hash }) {
+  const u = userById(uid);
+  if (!u) return null;
+  Object.assign(u, { salt, hash, ver: (u.ver ?? 1) + 1 });
+  flush();
+  return u;
+}
+
+/* The first account to exist adopts the courses written before accounts did.
+   Without this a fresh deploy would leave the owner-less history visible to
+   every visitor instead of to the person who made it. */
+export function claimOrphans(uid) {
+  let claimed = 0;
+  for (const c of state.courses) {
+    if (c.owner == null && !c.demo) {
+      c.owner = uid;
+      claimed++;
+    }
+  }
+  if (state.player && !state.players[uid]) {
+    state.players[uid] = { ...state.player };
+    delete state.player;
+    claimed++;
+  }
+  if (claimed) flush();
+  return claimed;
+}
+
+/* --------------------------------- gates --------------------------------- */
+
+/* Three counters, all in the same document so they survive a cold start:
+   signups per IP in a sliding window, generations per account per day, and the
+   site-wide daily total that keeps a shared model key from running away. */
+
+/* Quota days roll over at Beijing midnight, not UTC: a learner who runs out at
+   7am local should not get a fresh allowance at 8am because the host is UTC. */
+const dayKey = (t = Date.now()) => new Date(t + 8 * 3600_000).toISOString().slice(0, 10);
+
+export function noteSignup(ip, windowMs) {
+  const now = Date.now();
+  const gates = (state.gates ??= { signups: [], usage: {} });
+  gates.signups = (gates.signups ?? []).filter((s) => now - s.at < windowMs);
+  gates.signups.push({ ip: String(ip ?? "?"), at: now });
+  if (gates.signups.length > 500) gates.signups.splice(0, gates.signups.length - 500);
+  flush();
+  return gates.signups.filter((s) => s.ip === String(ip ?? "?")).length;
+}
+
+/* Both counters roll over at UTC midnight. Checking and spending are two
+   separate calls on purpose: a refused request must not consume quota, or a
+   learner who retries once burns their own allowance on nothing. */
+function gateState() {
+  const gates = (state.gates ??= { signups: [], usage: {} });
+  const day = dayKey();
+  if (gates.day !== day) {
+    /* Yesterday's counters are dead weight; drop them on the first request of
+       a new day instead of accumulating forever. */
+    gates.day = day;
+    gates.usage = {};
+  }
+  return gates;
+}
+
+export function usageOf(uid) {
+  const g = gateState();
+  return {
+    used: g.usage[uid] ?? 0,
+    total: Object.values(g.usage).reduce((n, v) => n + v, 0),
+  };
+}
+
+export function spendGeneration(uid) {
+  const g = gateState();
+  g.usage[uid] = (g.usage[uid] ?? 0) + 1;
+  flush();
+  return usageOf(uid);
+}
+
 /* --------------------------------- player -------------------------------- */
 
 /* Level n costs 100 + 50(n-1); totals are cumulative so xp is never rewritten. */
@@ -535,21 +676,28 @@ export const levelFor = (xp) => {
 const TITLES = ["学徒", "工匠", "匠师", "大师", "传奇"];
 const titleFor = (level) => TITLES[Math.min(TITLES.length - 1, Math.floor((level - 1) / 5))];
 
-export function totalStars() {
+export function totalStars(learner = "me") {
   let n = 0;
   for (const c of state.courses) {
+    if (c.owner != null && c.owner !== learner) continue;
     for (const v of Object.values(c.game?.stars ?? {})) n += Number(v) || 0;
   }
   return n;
 }
 
-export function getPlayer() {
-  const p = state.player ?? {};
+/* The player record is created on first write, so a fresh account costs nothing
+   until it earns its first point. */
+const playerOf = (learner) => (state.players[learner] ??= {
+  xp: 0, profile: null, track: null, mixed: null, createdAt: null, updatedAt: null,
+});
+
+export function getPlayer(learner = "me") {
+  const p = state.players[learner] ?? {};
   const xp = Math.max(0, Math.round(Number(p.xp) || 0));
   const level = levelFor(xp);
   const base = totalFor(level);
   return {
-    xp, level, title: titleFor(level), stars: totalStars(),
+    xp, level, title: titleFor(level), stars: totalStars(learner),
     into: xp - base, next: needFor(level),
     profile: p.profile ?? null,
     track: p.track ?? null,
@@ -557,26 +705,28 @@ export function getPlayer() {
   };
 }
 
-export function savePlayerProfile({ scores = null, fit = null, track = null, mixed = null, answers = null } = {}) {
+export function savePlayerProfile(learner, { scores = null, fit = null, track = null, mixed = null, answers = null } = {}) {
   const now = new Date().toISOString();
-  state.player = {
-    ...(state.player ?? {}),
-    xp: Math.max(0, Number(state.player?.xp) || 0),
+  const prev = playerOf(learner);
+  state.players[learner] = {
+    ...prev,
+    xp: Math.max(0, Number(prev.xp) || 0),
     profile: { scores, fit, answers },
-    track: track ?? state.player?.track ?? null,
+    track: track ?? prev.track ?? null,
     mixed: mixed ?? null,
-    createdAt: state.player?.createdAt ?? now,
+    createdAt: prev.createdAt ?? now,
     updatedAt: now,
   };
   flush();
-  return getPlayer();
+  return getPlayer(learner);
 }
 
-export function addXp(amount) {
+export function addXp(learner, amount) {
   const n = Math.max(0, Math.round(Number(amount) || 0));
-  state.player = { ...(state.player ?? {}), xp: Math.max(0, Number(state.player?.xp) || 0) + n };
+  const prev = playerOf(learner);
+  state.players[learner] = { ...prev, xp: Math.max(0, Number(prev.xp) || 0) + n };
   flush();
-  return getPlayer();
+  return getPlayer(learner);
 }
 
 /* --------------------------------- game ---------------------------------- */
@@ -601,7 +751,7 @@ export function recordBattle(courseId, lessonId, { stars = 1, xp = 0, cleared = 
   if (cleared && !g.cleared.includes(lessonId)) g.cleared.push(lessonId);
   g.attempts[lessonId] = (g.attempts[lessonId] ?? 0) + 1;
   course.updatedAt = new Date().toISOString();
-  const player = addXp(xp);
+  const player = addXp(course.owner ?? "me", xp);
   return { stars: best, firstClear: prev === 0, player, attempts: g.attempts[lessonId] };
 }
 
@@ -618,7 +768,7 @@ export function recordTerminal(courseId, unitId, { solved = false, xp = 0, attem
     };
   }
   course.updatedAt = new Date().toISOString();
-  const player = prev.solved ? getPlayer() : addXp(solved ? xp : 0);
+  const player = prev.solved ? getPlayer(course.owner ?? "me") : addXp(course.owner ?? "me", solved ? xp : 0);
   return { terminal: g.terminals[unitId], player, firstSolve: solved && !prev.solved };
 }
 
@@ -668,6 +818,6 @@ export function recordCraft(courseId, lessonId, { solved = false, stars = 0, xp 
     g.builds[lessonId] = { ...prev, attempts: (prev.attempts ?? 0) + 1 };
   }
   course.updatedAt = new Date().toISOString();
-  const player = prev.solved ? getPlayer() : addXp(solved ? xp : 0);
+  const player = prev.solved ? getPlayer(course.owner ?? "me") : addXp(course.owner ?? "me", solved ? xp : 0);
   return { build: g.builds[lessonId], player, firstSolve: solved && !prev.solved };
 }

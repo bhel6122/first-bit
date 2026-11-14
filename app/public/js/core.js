@@ -4,6 +4,10 @@ import { t, langSwitch } from "./i18n.js";
 
 export const state = {
   config: null,
+  /* undefined means "not asked yet"; null means "asked, nobody is signed in".
+     The router uses that difference to avoid flashing the login page at a
+     returning visitor while /api/auth/me is still in flight. */
+  user: undefined,
   intake: {
     step: 1,
     mode: "self",
@@ -39,11 +43,30 @@ export async function api(path, { method = "GET", body } = {}) {
     /* non-JSON means the server died; the message below is still useful */
   }
   if (!res.ok) {
+    /* The session expired or was revoked on another device. Remember it once,
+       here, so every caller does not have to handle the same case. Auth routes
+       are exempt: there a 401 means "wrong password", not "signed out". */
+    if (res.status === 401 && !path.startsWith("/api/auth/")) {
+      state.user = null;
+      if (!location.hash.startsWith("#/login")) location.hash = "/login";
+    }
     const err = new Error(data.error || `请求失败（${res.status}）`);
     err.status = res.status;
     throw err;
   }
   return data;
+}
+
+export async function loadSession(force = false) {
+  if (state.user !== undefined && !force) return state.user;
+  try {
+    const d = await api("/api/auth/me");
+    state.user = d.user ?? null;
+    state.me = d.player ?? null;
+  } catch {
+    state.user = null;
+  }
+  return state.user;
 }
 
 export async function loadConfig(force = false) {
@@ -114,6 +137,7 @@ const PATHS = {
   sound: '<path d="M4 10v4h3l4 3V7L7 10z"/><path d="M15 9.5a4 4 0 010 5M17.5 7a7 7 0 010 10"/>',
   mute: '<path d="M4 10v4h3l4 3V7L7 10z"/><path d="M15 10l4 4M19 10l-4 4"/>',
   help: '<circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.5a2.5 2.5 0 114.2 1.9c-.8.7-1.7 1.2-1.7 2.3"/><path d="M12 17h.01"/>',
+  user: '<circle cx="12" cy="8.2" r="3.6"/><path d="M5 20c0-3.4 3.1-5.6 7-5.6s7 2.2 7 5.6"/>',
 };
 
 export const icon = (name, size = 16, stroke = 1.7) =>
@@ -153,9 +177,30 @@ export function topbar(active = "") {
         <i></i>${online ? esc(model.model) : esc(t("演示模式 · 内置课程"))}
       </span>
       ${langSwitch()}
+      ${state.user
+        ? `<span class="who" title="${esc(state.user.name)}">
+             <span class="who-avatar">${icon("user", 12, 1.9)}</span>
+             <span class="who-name">${esc(state.user.name)}</span>
+           </span>
+           <button class="who-out" type="button" onclick="window.__fbSignOut()" title="退出登录">${esc(t("退出"))}</button>`
+        : ""}
     </div>
   </header>`;
 }
+
+/* Signing out is a top-bar concern that every page shares, so it lives on the
+   window rather than in each renderer's event list. The reload is deliberate:
+   courses, notes and xp all belonged to the account that just left. */
+window.__fbSignOut = async () => {
+  try {
+    await api("/api/auth/logout", { method: "POST" });
+  } catch {
+    /* a dead session is the same as a signed-out one */
+  }
+  state.user = null;
+  location.hash = "/login";
+  location.reload();
+};
 
 /* ------------------------------- job overlay ------------------------------- */
 

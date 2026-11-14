@@ -113,6 +113,7 @@ flowchart LR
 | 动手 | `POST .../battle/:key` 判分，`GET`/`POST .../craft/:lid` 拼装，`GET`/`POST .../terminal/:uid` 故障终端 |
 | 导师 | `POST /api/course/:id/tutor` 答题时的提示，只指路不交卷 |
 | 素材与学习者 | `POST /api/pdf-text` 解析 PDF，`GET /api/sample` 内置样例，`GET /api/player`、`POST /api/player/profile`、`POST /api/game/topic` |
+| 账号 | `POST /api/auth/register`、`/login`、`/logout`，`GET /api/auth/me`；除这些与 `/api/config`、`/healthz` 外，其余接口无会话一律 401 |
 
 ### 配置
 
@@ -122,9 +123,29 @@ flowchart LR
 | `OPENAI_BASE_URL` | `https://api.openai.com/v1` | 任何 OpenAI 兼容端点；`env.example` 里填的是智谱 |
 | `LLM_MODEL` | `gpt-4o-mini` | 跟随所选端点；仓库自用配置是 `glm-4-plus`，想免费可换 `glm-4-flash` |
 | `LLM_TIMEOUT_MS` | 90000 | `env.example` 给的是 120000，留足冷启动时间 |
+| `SESSION_SECRET` | 开发占位值 | 会话签名的 HMAC 密钥；线上必须设，否则每次重新部署都会把所有人登出 |
+| `SIGNUP_PER_IP` | 3 | 同一 IP 十分钟内的注册上限 |
+| `GEN_PER_DAY` | 20 | 每个账号每天的生成次数 |
+| `GEN_PER_DAY_GLOBAL` | 120 | 全站每天的生成次数，防止共享 key 被刷 |
 | `PORT` | 5200 | |
 
 数据默认只落在一个 JSON 文件（`data/store.json`）。写入走临时文件 + `rename`，避免写到一半断电把整份数据写坏；文件不可写时降级为只读，界面仍能浏览。
+
+## 🔑 账号与额度
+
+账号存在的理由很窄：课程、笔记、答题记录得有个归属，别人打开链接看不到也不改不了。所以没有"注册即用"之外的流程——没有邮箱验证，没有找回密码，也没有管理员后台。
+
+密码用 `node:crypto` 的 `scrypt` 加 16 字节随机盐，不落明文；会话是无状态签名 cookie（`uid|ver|过期时间` + HMAC-SHA256），服务端不存 session 表。理由是部署在 serverless 上：实例随时冻结、请求随时落到另一个实例，任何"服务端会话表"都会莫名掉线，而验签是纯本地计算。
+
+代价说清楚：**单个会话没法主动踢掉**。改密码会把用户记录上的 `ver` 加一，旧 cookie 随即失效；轮换 `SESSION_SECRET` 则是全员登出。
+
+| 闸门 | 挡什么 |
+|---|---|
+| 同 IP 十分钟 3 个号 | 脚本批量注册 |
+| 每人每天 20 次生成 | 一个号把共享的模型额度吃光 |
+| 全站每天 120 次 | 你睡一觉起来发现欠费 |
+
+额度先判后扣：被拒的请求不计数，否则重试两次就把自己的份额烧完了。计数按北京时间跨日重置。
 
 ## ☁️ 部署到 serverless
 
