@@ -60,6 +60,10 @@ async function route() {
     /* The console is gated twice on purpose: here so a normal learner is simply
        sent home, and again on every API call, because the URL is guessable. */
     if (parts[0] === "admin") {
+      /* Being promoted happens in another tab or another person's browser, so
+         the cached session may still say "user". Re-ask the server once before
+         bouncing somebody who was just made an administrator. */
+      if (state.user?.role !== "admin") await loadSession(true);
       if (state.user?.role !== "admin") {
         location.hash = "/";
         return;
