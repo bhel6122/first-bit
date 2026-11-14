@@ -7,6 +7,8 @@
 ![build](https://img.shields.io/badge/build-none-lightgrey)
 ![storage](https://img.shields.io/badge/storage-single%20JSON-8a6d3b)
 
+在线版：<https://first-bit-beta.vercel.app>（Vercel 免费档，冷启动后首次访问约 1 秒）
+
 ## 这是什么
 
 first-bit 是一个自托管的课程生成器。你给一个主题或一份学校大纲，它先问五个问题——基础、侧重、目标、规模、内容语言——生成一份可编辑的课程蓝图；确认后逐讲生成板书：老师一边讲，板书一边一句句写出来。每讲配三道诊断题和一个动手关。
