@@ -1,0 +1,4016 @@
+{
+ "course": {
+  "id": "c_mwdcc9rag",
+  "title": "像素风个人主页制作",
+  "subtitle": "从零开始，动手边学边做，12讲独立完成项目",
+  "promise": "学完能独立设计并实现一个完整的像素风个人主页，包含动画效果和响应式布局",
+  "audience": "了解基本网页术语但缺乏实践经验的初学者，需要动手实践的学习者",
+  "mode": "self",
+  "scale": "standard",
+  "units": [
+   {
+    "id": "u1",
+    "title": "像素风基础",
+    "goal": "如何用HTML和CSS创建基础的像素风格布局？",
+    "lessons": [
+     {
+      "id": "u1l1",
+      "title": "用HTML搭建像素页面骨架",
+      "summary": "学会创建基本HTML结构，理解像素风页面的布局特点",
+      "prereq": "",
+      "minutes": 12,
+      "kind": "lesson"
+     },
+     {
+      "id": "u1l2",
+      "title": "CSS像素风格样式实现",
+      "summary": "掌握CSS盒模型和定位，实现像素风格的视觉效果",
+      "prereq": "用HTML搭建像素页面骨架",
+      "minutes": 12,
+      "kind": "lesson"
+     },
+     {
+      "id": "u1l3",
+      "title": "像素字体与颜色搭配技巧",
+      "summary": "学会选择合适的像素字体和配色方案，保持视觉一致性",
+      "prereq": "CSS像素风格样式实现",
+      "minutes": 12,
+      "kind": "lesson"
+     }
+    ],
+    "project": {
+     "title": "像素风格个人简介页",
+     "brief": "创建一个包含个人基本信息和头像的像素风格页面，学习基础布局和样式",
+     "deliverables": [
+      "HTML文件",
+      "CSS文件",
+      "预览截图"
+     ],
+     "rubric": [
+      {
+       "criterion": "像素风格实现度",
+       "weight": 50
+      }
+     ]
+    }
+   },
+   {
+    "id": "u2",
+    "title": "像素元素设计",
+    "goal": "如何创建自定义像素图形和图标？",
+    "lessons": [
+     {
+      "id": "u2l1",
+      "title": "用CSS绘制像素图标",
+      "summary": "学会使用CSS创建简单的像素风格图标和装饰元素",
+      "prereq": "像素字体与颜色搭配技巧",
+      "minutes": 12,
+      "kind": "lesson"
+     },
+     {
+      "id": "u2l2",
+      "title": "像素角色与场景设计",
+      "summary": "掌握使用CSS创建像素风格的角色和简单场景",
+      "prereq": "用CSS绘制像素图标",
+      "minutes": 12,
+      "kind": "lesson"
+     },
+     {
+      "id": "u2l3",
+      "title": "像素动画效果实现",
+      "summary": "学会添加简单的像素风格动画效果，如眨眼、移动等",
+      "prereq": "像素角色与场景设计",
+      "minutes": 12,
+      "kind": "lesson"
+     }
+    ],
+    "project": {
+     "title": "像素风格角色与场景",
+     "brief": "创建一个包含像素风格角色和互动场景的页面，练习图形设计和动画",
+     "deliverables": [
+      "带动画的像素角色",
+      "互动场景页面",
+      "动画效果说明"
+     ],
+     "rubric": [
+      {
+       "criterion": "像素图形创意度",
+       "weight": 50
+      }
+     ]
+    }
+   },
+   {
+    "id": "u3",
+    "title": "页面交互设计",
+    "goal": "如何为像素风页面添加交互效果？",
+    "lessons": [
+     {
+      "id": "u3l1",
+      "title": "像素风格按钮与链接",
+      "summary": "学会创建像素风格的交互元素，并添加悬停效果",
+      "prereq": "像素动画效果实现",
+      "minutes": 12,
+      "kind": "lesson"
+     },
+     {
+      "id": "u3l2",
+      "title": "像素风格表单设计",
+      "summary": "掌握设计像素风格的表单元素，包括输入框和按钮",
+      "prereq": "像素风格按钮与链接",
+      "minutes": 12,
+      "kind": "lesson"
+     },
+     {
+      "id": "u3l3",
+      "title": "像素风格导航菜单",
+      "summary": "学会创建像素风格的导航菜单，并实现页面内跳转",
+      "prereq": "像素风格表单设计",
+      "minutes": 12,
+      "kind": "lesson"
+     }
+    ],
+    "project": {
+     "title": "像素风格联系表单",
+     "brief": "创建一个包含像素风格表单的页面，实现用户交互功能",
+     "deliverables": [
+      "像素风格表单页面",
+      "表单交互说明",
+      "预览截图"
+     ],
+     "rubric": [
+      {
+       "criterion": "交互实现完整性",
+       "weight": 50
+      }
+     ]
+    }
+   },
+   {
+    "id": "u4",
+    "title": "响应式与优化",
+    "goal": "如何让像素风页面适配不同设备？",
+    "lessons": [
+     {
+      "id": "u4l1",
+      "title": "像素风页面响应式布局",
+      "summary": "学会使用媒体查询实现像素风格页面的响应式布局",
+      "prereq": "像素风格导航菜单",
+      "minutes": 12,
+      "kind": "lesson"
+     },
+     {
+      "id": "u4l2",
+      "title": "像素图片优化与加载",
+      "summary": "掌握像素图片的优化方法，提升页面加载速度",
+      "prereq": "像素风页面响应式布局",
+      "minutes": 12,
+      "kind": "lesson"
+     },
+     {
+      "id": "u4l3",
+      "title": "像素风格页面性能优化",
+      "summary": "学会优化CSS和JavaScript，提升页面整体性能",
+      "prereq": "像素图片优化与加载",
+      "minutes": 12,
+      "kind": "lesson"
+     }
+    ],
+    "project": {
+     "title": "响应式像素风个人主页",
+     "brief": "完成一个完整的响应式像素风个人主页，适配不同设备尺寸",
+     "deliverables": [
+      "完整HTML页面",
+      "响应式CSS",
+      "多设备预览截图"
+     ],
+     "rubric": [
+      {
+       "criterion": "响应式实现效果",
+       "weight": 50
+      }
+     ]
+    }
+   }
+  ],
+  "confirmed": true,
+  "answers": {
+   "topic": "从零做一个像素风个人主页",
+   "level": "some",
+   "focus": "practice",
+   "goal": "build",
+   "scale": "standard",
+   "track": "frontend"
+  },
+  "materials": [],
+  "demo": true,
+  "lessons": {
+   "u1l1": {
+    "title": "用HTML搭建像素页面骨架",
+    "pages": [
+     {
+      "id": "p1",
+      "title": "像素风网页基础",
+      "kind": "concept",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素风页面由一个个小方块组成，像游戏画面一样"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "每个元素都是矩形",
+         "没有圆角和渐变",
+         "清晰可见的边界"
+        ]
+       },
+       {
+        "type": "code",
+        "code": "<!DOCTYPE html>\n<html>\n<head>\n  <title>像素风主页</title>\n</head>\n<body>\n  <h1>我的像素世界</h1>\n</body>\n</html>",
+        "lang": "html"
+       }
+      ],
+      "steps": [
+       {
+        "say": "今天我们要学习如何创建一个像素风格的个人主页，就像游戏中的角色一样清晰可见。",
+        "reveal": 1
+       },
+       {
+        "say": "像素风的特点是每个元素都是由小方块组成的，没有圆角和模糊的渐变效果。",
+        "reveal": 2
+       },
+       {
+        "say": "首先，我们需要创建一个基本的HTML结构，这是所有网页的骨架。",
+        "reveal": 3
+       }
+      ]
+     },
+     {
+      "id": "p2",
+      "title": "HTML结构搭建",
+      "kind": "code",
+      "blocks": [
+       {
+        "type": "code",
+        "code": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <title>像素风主页</title>\n</head>\n<body>\n  <div class=\"container\">\n    <header>\n      <h1>我的像素世界</h1>\n    </header>\n    <main>\n      <section>\n        <h2>关于我</h2>\n        <p>我是像素艺术家</p>\n      </section>\n    </main>\n  </div>\n</body>\n</html>",
+        "lang": "html"
+       },
+       {
+        "type": "text",
+        "text": "像素风页面需要清晰的容器结构，每个部分都有明确边界"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "使用div作为容器",
+         "header包含标题",
+         "main包含主要内容"
+        ]
+       }
+      ],
+      "steps": [
+       {
+        "say": "现在我们来看一个完整的HTML结构，这是创建像素风页面的基础。",
+        "reveal": 1
+       },
+       {
+        "say": "注意我们使用了div作为容器，header和main等语义化标签来组织内容。",
+        "reveal": 2
+       },
+       {
+        "say": "每个部分都有明确的边界，这是像素风设计的关键特点。",
+        "reveal": 3
+       }
+      ]
+     },
+     {
+      "id": "p3",
+      "title": "像素风vs普通网页",
+      "kind": "compare",
+      "blocks": [
+       {
+        "type": "compare",
+        "left": {
+         "h": "普通网页",
+         "items": [
+          "圆角设计",
+          "渐变效果",
+          "模糊阴影"
+         ]
+        },
+        "right": {
+         "h": "像素风网页",
+         "items": [
+          "直角设计",
+          "纯色填充",
+          "硬边阴影"
+         ]
+        }
+       },
+       {
+        "type": "text",
+        "text": "像素风追求清晰可见的边界，每个元素都有明确的形状"
+       },
+       {
+        "type": "table",
+        "head": [
+         "特点",
+         "实现方式"
+        ],
+        "rows": [
+         [
+          "直角",
+          "使用border-radius:0"
+         ],
+         [
+          "纯色",
+          "使用solid颜色"
+         ],
+         [
+          "硬边阴影",
+          "使用box-shadow: x y 0 color"
+         ]
+        ]
+       }
+      ],
+      "steps": [
+       {
+        "say": "像素风网页和普通网页在视觉上有明显区别，我们来看看它们的不同之处。",
+        "reveal": 1
+       },
+       {
+        "say": "普通网页喜欢使用圆角、渐变和柔和的阴影，而像素风则使用直角、纯色和硬边阴影。",
+        "reveal": 2
+       },
+       {
+        "say": "实现像素风效果的关键是避免任何模糊和过渡效果，每个元素都要有清晰的边界。",
+        "reveal": 3
+       }
+      ]
+     },
+     {
+      "id": "p4",
+      "title": "判断方法",
+      "kind": "summary",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "判断是否为像素风页面：检查每个元素是否都是矩形且边界清晰"
+       },
+       {
+        "type": "flow",
+        "items": [
+         "检查元素形状",
+         "检查边界是否清晰",
+         "检查颜色是否纯色",
+         "检查阴影是否硬边"
+        ]
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "记住：像素风的核心是清晰可见的边界和直角设计"
+       }
+      ],
+      "steps": [
+       {
+        "say": "今天我们学习了如何创建一个基本的像素风HTML结构，这是像素风网页的骨架。",
+        "reveal": 1
+       },
+       {
+        "say": "判断一个页面是否是像素风，就看每个元素是否都是矩形且边界清晰，没有圆角和渐变效果。",
+        "reveal": 2
+       },
+       {
+        "say": "下一节课我们将学习如何用CSS为这个骨架添加像素风格的样式，让页面真正变成像素风。",
+        "reveal": 3
+       }
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "id": "q1",
+      "q": "在设计一个像素风网页时，以下哪种CSS属性设置最能体现像素风的特点？",
+      "options": [
+       {
+        "text": "border-radius: 50%;",
+        "distractor": true
+       },
+       {
+        "text": "border-radius: 10px;",
+        "distractor": true
+       },
+       {
+        "text": "border-radius: 0;",
+        "correct": true
+       }
+      ],
+      "explain": "正确答案是border-radius: 0，因为像素风强调直角设计，没有圆角。选错的人通常混淆了现代网页设计中的圆角美学与像素风追求的清晰直角边界。",
+      "page": 3
+     },
+     {
+      "id": "q2",
+      "q": "在创建像素风网页时，以下哪种阴影效果最符合像素风的设计理念？",
+      "options": [
+       {
+        "text": "box-shadow: 5px 5px 0 #000;",
+        "correct": true
+       },
+       {
+        "text": "box-shadow: none;",
+        "distractor": true
+       },
+       {
+        "text": "box-shadow: 5px 5px 10px rgba(0,0,0,0.5);",
+        "distractor": true
+       }
+      ],
+      "explain": "正确答案是box-shadow: 5px 5px 0 #000，因为它创建了硬边阴影，符合像素风追求的清晰边界。选错的人可能误以为模糊的阴影效果能增强像素感，实际上模糊效果会破坏像素风的清晰度。",
+      "page": 3
+     },
+     {
+      "id": "q3",
+      "q": "当你检查一个网页是否为像素风设计时，以下哪个检查步骤最关键？",
+      "options": [
+       {
+        "text": "检查页面是否使用了像素字体",
+        "distractor": true
+       },
+       {
+        "text": "检查所有元素是否都是矩形且边界清晰",
+        "correct": true
+       },
+       {
+        "text": "检查页面是否使用了复古色彩方案",
+        "distractor": true
+       }
+      ],
+      "explain": "正确答案是检查所有元素是否都是矩形且边界清晰，因为这是像素风的核心特征。选错的人可能将像素风简单地理解为复古风格或特定字体使用，而忽略了形状和边界这一本质特征。",
+      "page": 4
+     }
+    ],
+    "generatedAt": "2026-11-12T09:24:12.196Z"
+   },
+   "u1l2": {
+    "title": "CSS像素风格样式实现",
+    "pages": [
+     {
+      "id": "p1",
+      "title": "CSS盒模型基础",
+      "kind": "concept",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "上一讲我们已经搭建了像素风页面的骨架，现在让我们添加样式"
+       },
+       {
+        "type": "code",
+        "code": "div {\n  width: 100px;\n  height: 100px;\n  background-color: #ff0000;\n  border: 2px solid #000000;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "text",
+        "text": "CSS盒模型由内容区、内边距、边框和外边距组成"
+       },
+       {
+        "type": "compare",
+        "left": {
+         "h": "标准盒模型",
+         "items": [
+          "width = 内容区宽度",
+          "height = 内容区高度"
+         ]
+        },
+        "right": {
+         "h": "替代盒模型",
+         "items": [
+          "width = 内容区+内边距+边框",
+          "height = 内容区+内边距+边框"
+         ]
+        }
+       }
+      ],
+      "steps": [
+       {
+        "say": "上一讲我们已经搭建了像素风页面的骨架，现在让我们添加样式，使这些元素真正呈现出像素风格。",
+        "reveal": 1
+       },
+       {
+        "say": "看这个简单的CSS代码，我们创建了一个100x100像素的红色方块，带有2像素宽的黑色边框。这就是像素风的基础元素。",
+        "reveal": 2
+       },
+       {
+        "say": "要理解如何精确控制这些元素，你需要了解CSS盒模型。它由内容区、内边距、边框和外边距四个部分组成。",
+        "reveal": 3
+       },
+       {
+        "say": "盒模型有两种模式：标准盒模型和替代盒模型。区别在于width和height属性是否包含内边距和边框。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p2",
+      "title": "盒模型计算",
+      "kind": "formula",
+      "blocks": [
+       {
+        "type": "formula",
+        "text": "总宽度 = 内容宽度 + 左内边距 + 右内边距 + 左边框 + 右边框 + 左外边距 + 右外边距",
+        "caption": "盒模型宽度计算公式"
+       },
+       {
+        "type": "code",
+        "code": ".pixel-box {\n  box-sizing: border-box;\n  width: 100px;\n  padding: 10px;\n  border: 2px solid black;\n  margin: 5px;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "text",
+        "text": "box-sizing: border-box让width包含内容、内边距和边框"
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "像素风设计推荐使用border-box盒模型"
+       }
+      ],
+      "steps": [
+       {
+        "say": "现在让我们深入了解盒模型的计算方式。总宽度等于内容宽度加上所有内边距、边框和外边距。",
+        "reveal": 1
+       },
+       {
+        "say": "在像素风设计中，我们通常使用box-sizing: border-box。这样设置后，width属性会包含内容、内边距和边框的总宽度。",
+        "reveal": 2
+       },
+       {
+        "say": "看这个例子：我们设置宽度为100px，内边距10px，边框2px，外边距5px。使用border-box后，实际占用的空间就是100px加上左右外边距共10px。",
+        "reveal": 3
+       },
+       {
+        "say": "记住，像素风设计推荐使用border-box盒模型，这样更容易控制元素的实际大小，避免意外的空间占用。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p3",
+      "title": "像素定位技巧",
+      "kind": "code",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素风需要精确控制元素位置，CSS定位是关键"
+       },
+       {
+        "type": "code",
+        "code": ".container {\n  position: relative;\n}\n\n.pixel-element {\n  position: absolute;\n  top: 20px;\n  left: 30px;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "position: relative - 作为定位参考",
+         "position: absolute - 相对于最近的relative父元素定位",
+         "top/left - 控制元素位置"
+        ]
+       },
+       {
+        "type": "text",
+        "text": "像素风定位：使用整数像素值，避免小数"
+       }
+      ],
+      "steps": [
+       {
+        "say": "像素风设计需要精确控制元素的位置，CSS定位是实现这一目标的关键技术。",
+        "reveal": 1
+       },
+       {
+        "say": "看这个例子：我们设置容器为relative定位，然后让像素元素相对于容器进行absolute定位，top为20px，left为30px。",
+        "reveal": 2
+       },
+       {
+        "say": "记住三种定位方式：static是默认定位，relative是相对定位，absolute是绝对定位。像素风通常使用relative和absolute组合。",
+        "reveal": 3
+       },
+       {
+        "say": "在像素风设计中，定位值一定要使用整数像素，避免使用小数或百分比，这样才能保持像素的清晰边界。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p4",
+      "title": "像素风样式判断",
+      "kind": "summary",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "判断一个页面是否为像素风风格的三个关键点"
+       },
+       {
+        "type": "table",
+        "head": [
+         "特征",
+         "实现方式",
+         "像素风要求"
+        ],
+        "rows": [
+         [
+          "形状",
+          "border-radius",
+          "必须为0"
+         ],
+         [
+          "颜色",
+          "background",
+          "纯色，无渐变"
+         ],
+         [
+          "阴影",
+          "box-shadow",
+          "硬边阴影，无模糊"
+         ]
+        ]
+       },
+       {
+        "type": "flow",
+        "items": [
+         "检查元素形状",
+         "检查颜色纯度",
+         "检查阴影样式"
+        ]
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "像素风核心：清晰可见的边界和直角设计"
+       }
+      ],
+      "steps": [
+       {
+        "say": "现在我们已经学习了CSS盒模型和定位，掌握了实现像素风样式的基础。让我们总结一下如何判断一个页面是否为像素风风格。",
+        "reveal": 1
+       },
+       {
+        "say": "判断像素风有三个关键点：首先检查元素形状，所有元素必须是矩形，border-radius必须为0；其次检查颜色，必须是纯色填充，不能有渐变；最后检查阴影，必须是硬边阴影，不能有模糊效果。",
+        "reveal": 2
+       },
+       {
+        "say": "记住像素风的核心原则：清晰可见的边界和直角设计。每个元素都应该像游戏画面中的像素一样，有明确的形状和边界。",
+        "reveal": 3
+       },
+       {
+        "say": "下一讲我们将学习像素字体与颜色搭配技巧，让你的像素风页面更加生动有趣。记住，像素风不是简单的复古，而是对清晰边界的追求。",
+        "reveal": 4
+       }
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "id": "q1",
+      "q": "小明正在创建一个像素风格的按钮，他需要确保按钮有清晰的直角。他应该使用以下哪个CSS属性？",
+      "options": [
+       {
+        "text": "border-radius: 5px;",
+        "distractor": true
+       },
+       {
+        "text": "border-radius: 0;",
+        "correct": true
+       },
+       {
+        "text": "border-radius: 50%;",
+        "distractor": true
+       }
+      ],
+      "explain": "正确答案是border-radius: 0;，因为像素风格要求所有元素都是直角，没有圆角。选错的人通常误解了像素风的设计理念，认为轻微的圆角也能接受，或者混淆了现代UI设计风格与像素风格的区别。",
+      "page": 4
+     },
+     {
+      "id": "q2",
+      "q": "小华设计了一个像素风游戏界面，他需要确保一个100px×100px的盒子包含内容、10px的内边距和2px的边框。他应该使用哪个box-sizing值？",
+      "options": [
+       {
+        "text": "box-sizing: inherit;",
+        "distractor": true
+       },
+       {
+        "text": "box-sizing: content-box;",
+        "distractor": true
+       },
+       {
+        "text": "box-sizing: border-box;",
+        "correct": true
+       }
+      ],
+      "explain": "正确答案是box-sizing: border-box;，因为border-box盒模型会将内边距和边框计算在总宽度内，确保盒子总尺寸为100px×100px。选错的人通常不理解盒模型的计算方式，认为content-box也能达到同样的效果，或者混淆了两种盒模型的实际应用场景。",
+      "page": 2
+     },
+     {
+      "id": "q3",
+      "q": "小李在创建像素风角色，需要将一个角色元素精确放置在距离容器顶部20px、左侧30px的位置。他应该使用哪种定位方式？",
+      "options": [
+       {
+        "text": "position: absolute; top: 20px; left: 30px;",
+        "correct": true
+       },
+       {
+        "text": "position: relative; top: 20px; left: 30px;",
+        "distractor": true
+       },
+       {
+        "text": "position: fixed; top: 20px; left: 30px;",
+        "distractor": true
+       }
+      ],
+      "explain": "正确答案是position: absolute; top: 20px; left: 30px;，因为绝对定位可以让元素相对于最近的relative父元素进行精确位置控制，这对于像素风设计至关重要。选错的人通常混淆了relative和absolute定位的实际效果，认为relative也能实现绝对定位的效果，或者不理解relative定位实际上是作为定位参考点而不是改变元素位置本身。",
+      "page": 3
+     }
+    ],
+    "generatedAt": "2026-11-12T09:24:40.665Z"
+   },
+   "u1l3": {
+    "title": "像素字体与颜色搭配技巧",
+    "pages": [
+     {
+      "id": "p1",
+      "title": "像素字体选择",
+      "kind": "concept",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素字体是像素风设计的核心元素"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "等宽字体确保对齐",
+         "字体大小应为整数倍",
+         "避免抗锯齿效果"
+        ]
+       },
+       {
+        "type": "code",
+        "code": "@font-face {\n  font-family: 'PixelFont';\n  src: url('pixel-font.woff2');\n}\n.pixel-text {\n  font-family: 'PixelFont', monospace;\n  font-size: 16px;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "text",
+        "text": "推荐像素字体：Press Start 2P、VT323、Pixelify Sans"
+       }
+      ],
+      "steps": [
+       {
+        "say": "上一讲我们已经掌握了像素风样式的基本实现，现在让我们来看看如何选择合适的像素字体来增强我们的设计。",
+        "reveal": 1
+       },
+       {
+        "say": "像素字体与普通字体最大的不同在于它没有抗锯齿效果，每个像素都是清晰可见的方块，这样才能保持像素风的一致性。",
+        "reveal": 2
+       },
+       {
+        "say": "在CSS中，我们可以通过@font-face引入自定义像素字体，或者使用Google Fonts提供的免费像素字体。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p2",
+      "title": "字体大小技巧",
+      "kind": "compare",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素字体大小选择原则"
+       },
+       {
+        "type": "compare",
+        "left": {
+         "h": "正确做法",
+         "items": [
+          "使用整数像素大小",
+          "基于8px倍数",
+          "保持一致性"
+         ]
+        },
+        "right": {
+         "h": "避免做法",
+         "items": [
+          "使用非整数大小",
+          "混合不同字体",
+          "随意缩放"
+         ]
+        }
+       },
+       {
+        "type": "code",
+        "code": ".header {\n  font-size: 24px;\n}\n.body-text {\n  font-size: 16px;\n}\n.caption {\n  font-size: 12px;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "所有字体大小都应是8的倍数"
+       }
+      ],
+      "steps": [
+       {
+        "say": "选择合适的像素字体后，我们还需要注意字体大小的设置，这是很多初学者容易忽略的细节。",
+        "reveal": 1
+       },
+       {
+        "say": "在像素设计中，所有元素的大小都应该是整数，特别是字体大小，最好是基于8px的倍数，这样才能保持网格对齐。",
+        "reveal": 2
+       },
+       {
+        "say": "看看这个例子，标题24px，正文16px，说明文字12px，它们都是8的倍数，这样在视觉上会非常协调。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p3",
+      "title": "像素风配色原则",
+      "kind": "concept",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素风配色方案特点"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "限制颜色数量",
+         "使用纯色无渐变",
+         "保持高对比度"
+        ]
+       },
+       {
+        "type": "table",
+        "head": [
+         "颜色类型",
+         "使用场景",
+         "示例"
+        ],
+        "rows": [
+         [
+          "主色",
+          "#3D5A80",
+          "用于主要元素"
+         ],
+         [
+          "强调色",
+          "#98C1D9",
+          "用于按钮和链接"
+         ],
+         [
+          "背景色",
+          "#E0FBFC",
+          "用于页面背景"
+         ],
+         [
+          "文字色",
+          "#293241",
+          "用于正文"
+         ]
+        ]
+       },
+       {
+        "type": "callout",
+        "tone": "note",
+        "text": "建议使用不超过5种颜色"
+       }
+      ],
+      "steps": [
+       {
+        "say": "字体选择好了，接下来我们来看看像素风设计中另一个重要元素——配色方案。",
+        "reveal": 1
+       },
+       {
+        "say": "像素风配色与普通网页设计不同，它强调使用有限的颜色数量和纯色填充，避免渐变和半透明效果。",
+        "reveal": 2
+       },
+       {
+        "say": "这个表格展示了像素风设计中常用的颜色类型和它们的使用场景，你可以根据这个框架来构建自己的配色方案。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p4",
+      "title": "像素风判断方法",
+      "kind": "summary",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "如何判断页面是否为像素风格"
+       },
+       {
+        "type": "flow",
+        "items": [
+         "检查字体选择",
+         "验证颜色纯度",
+         "确认无圆角和渐变",
+         "检查对齐方式"
+        ]
+       },
+       {
+        "type": "formula",
+        "text": "像素风指数 = 字体得分 + 颜色得分 + 形状得分 + 对齐得分",
+        "caption": "各项满分10分，总分≥30为合格像素风设计"
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "记住：像素风的核心是清晰可见的边界和直角设计"
+       }
+      ],
+      "steps": [
+       {
+        "say": "现在我们已经学习了像素字体选择和配色技巧，最后让我们总结一下如何判断一个页面是否为真正的像素风格设计。",
+        "reveal": 1
+       },
+       {
+        "say": "判断像素风的关键是检查四个方面：字体是否为像素风格且大小合适，颜色是否为纯色且数量有限，形状是否为直角且无圆角，以及对齐是否精确。",
+        "reveal": 2
+       },
+       {
+        "say": "你可以使用这个简单的评分系统来评估你的设计，总分达到30分以上就说明你已经掌握了像素风设计的精髓。",
+        "reveal": 4
+       }
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "id": "q1",
+      "q": "你正在为一个像素风格游戏设计UI，需要选择合适的字体。以下哪种做法是正确的？",
+      "options": [
+       {
+        "text": "使用非等宽字体，因为像素风格不需要严格的字体对齐",
+        "distractor": true
+       },
+       {
+        "text": "使用任意等宽字体，但添加轻微抗锯齿效果使其更易读",
+        "distractor": true
+       },
+       {
+        "text": "使用Press Start 2P字体，设置字体大小为16px",
+        "correct": true
+       }
+      ],
+      "explain": "正确选项使用了推荐的像素字体并设置了整数像素大小，符合像素风设计原则。选错的人通常不理解像素风需要清晰的边界，抗锯齿会破坏像素风的核心特性。",
+      "page": 1
+     },
+     {
+      "id": "q2",
+      "q": "在设计像素风格的网页时，你发现现有的标题文字大小为22px，正文为14px。根据课程建议，应该如何调整？",
+      "options": [
+       {
+        "text": "将标题调整为24px，正文调整为16px",
+        "correct": true
+       },
+       {
+        "text": "将标题调整为20px，正文调整为12px，使整体更紧凑",
+        "distractor": true
+       },
+       {
+        "text": "保持现有大小，因为22px和14px看起来已经很协调",
+        "distractor": true
+       }
+      ],
+      "explain": "正确选项将字体大小调整为8的倍数，保持了像素风的一致性和规范性。选错的人通常只关注视觉协调，而忽略了像素风对尺寸的特定要求。",
+      "page": 2
+     },
+     {
+      "id": "q3",
+      "q": "你正在评估一个设计稿，发现它使用了5种颜色，但其中一种颜色带有轻微渐变效果。根据课程内容，这个设计在像素风方面如何？",
+      "options": [
+       {
+        "text": "不符合像素风，因为颜色数量已经达到上限",
+        "distractor": true
+       },
+       {
+        "text": "不符合像素风，因为渐变效果破坏了纯色原则",
+        "correct": true
+       },
+       {
+        "text": "符合像素风，因为颜色数量没有超过5种限制",
+        "distractor": true
+       }
+      ],
+      "explain": "正确选项指出了渐变效果与像素风纯色原则的冲突，这是像素风设计的核心要求。选错的人通常只关注颜色数量而忽略了像素风对颜色纯度的严格要求。",
+      "page": 3
+     }
+    ],
+    "generatedAt": "2026-11-12T09:25:11.012Z"
+   },
+   "u2l1": {
+    "title": "用CSS绘制像素图标",
+    "pages": [
+     {
+      "id": "p1",
+      "title": "CSS像素图标基础",
+      "kind": "concept",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "上一讲我们学习了像素字体和颜色搭配，今天用纯CSS创建像素图标"
+       },
+       {
+        "type": "text",
+        "text": "CSS像素图标原理：使用border和背景色组合，形成像素块"
+       },
+       {
+        "type": "code",
+        "code": ".pixel-icon {\n  width: 32px;\n  height: 32px;\n  background-color: #3D5A80;\n  border: 4px solid #E0FBFC;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "使用整数尺寸",
+         "基于8px倍数",
+         "纯色填充",
+         "直角设计"
+        ]
+       }
+      ],
+      "steps": [
+       {
+        "say": "上一讲我们学习了像素字体和颜色搭配，今天我们用纯CSS来创建像素风格的图标和装饰元素。",
+        "reveal": 1
+       },
+       {
+        "say": "CSS像素图标的原理很简单，就是通过border和背景色的组合，形成一个个像素块。",
+        "reveal": 2
+       },
+       {
+        "say": "看这个基础代码，我们定义了一个32px×32px的方块，使用主色填充，背景色作为边框，形成像素效果。",
+        "reveal": 3
+       },
+       {
+        "say": "记住这些要点，它们是我们设计像素图标的基础原则。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p2",
+      "title": "绘制基础像素形状",
+      "kind": "code",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "从简单像素形状开始，逐步构建复杂图标"
+       },
+       {
+        "type": "code",
+        "code": ".pixel-square {\n  width: 16px;\n  height: 16px;\n  background-color: #98C1D9;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "code",
+        "code": ".pixel-circle {\n  width: 16px;\n  height: 16px;\n  background-color: #98C1D9;\n  border-radius: 0;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "text",
+        "text": "像素风格中，即使是圆形也使用直角设计"
+       }
+      ],
+      "steps": [
+       {
+        "say": "从最基础的像素形状开始，我们先学习如何用CSS绘制简单的像素方块和圆形。",
+        "reveal": 1
+       },
+       {
+        "say": "看这个像素方块的代码，我们使用16px×16px的大小，配合强调色填充，形成基础像素块。",
+        "reveal": 2
+       },
+       {
+        "say": "即使是圆形，在像素风格中我们也使用直角设计，这是像素风的核心特征。",
+        "reveal": 3
+       },
+       {
+        "say": "记住，像素风设计中，所有元素都应该是直角的，包括所谓的圆形。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p3",
+      "title": "组合像素元素",
+      "kind": "compare",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "通过组合基础像素形状，创建复杂图标"
+       },
+       {
+        "type": "compare",
+        "left": {
+         "h": "正确组合",
+         "items": [
+          "使用整数尺寸",
+          "保持对齐",
+          "颜色一致"
+         ]
+        },
+        "right": {
+         "h": "常见错误",
+         "items": [
+          "非整数尺寸",
+          "不对齐",
+          "颜色混杂"
+         ]
+        }
+       },
+       {
+        "type": "code",
+        "code": ".pixel-heart {\n  position: relative;\n  width: 24px;\n  height: 24px;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "code",
+        "code": ".pixel-heart::before,\n.pixel-heart::after {\n  content: '';\n  position: absolute;\n  width: 12px;\n  height: 12px;\n  background-color: #E040FB;\n}",
+        "lang": "css"
+       }
+      ],
+      "steps": [
+       {
+        "say": "现在我们学习如何组合基础像素形状，创建更复杂的图标，比如心形图标。",
+        "reveal": 1
+       },
+       {
+        "say": "组合像素元素时，左侧的做法是正确的，而右侧的做法会导致像素风格不纯。",
+        "reveal": 2
+       },
+       {
+        "say": "看这个心形图标的实现，我们使用伪元素创建两个像素块，然后通过定位组合成心形。",
+        "reveal": 3
+       },
+       {
+        "say": "注意所有尺寸都是整数，并且保持对齐，这样才能保证像素风格的纯粹性。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p4",
+      "title": "像素图标判断方法",
+      "kind": "summary",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "如何判断CSS创建的图标是否为像素风格？"
+       },
+       {
+        "type": "flow",
+        "items": [
+         "检查尺寸是否为整数",
+         "验证是否使用纯色",
+         "确认无圆角和渐变",
+         "检查对齐方式"
+        ]
+       },
+       {
+        "type": "formula",
+        "text": "像素风指数 = 尺寸得分 + 颜色得分 + 形状得分 + 对齐得分",
+        "caption": "各项满分10分，总分≥30为合格像素风设计"
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "记住：像素风的核心是清晰可见的边界和直角设计"
+       }
+      ],
+      "steps": [
+       {
+        "say": "最后，我们学习如何判断CSS创建的图标是否符合像素风格。",
+        "reveal": 1
+       },
+       {
+        "say": "按照这个流程检查，确保每个元素都符合像素风的标准。",
+        "reveal": 2
+       },
+       {
+        "say": "使用这个公式来量化评估你的像素图标设计，各项得分相加达到30分以上才算合格。",
+        "reveal": 3
+       },
+       {
+        "say": "记住，像素风的核心是清晰可见的边界和直角设计，这是判断的关键标准。",
+        "reveal": 4
+       }
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "id": "q1",
+      "q": "小明正在创建一个16x16像素的太阳图标，他使用了一个圆形作为太阳的主体，并添加了8条直线作为太阳光线。他的代码中使用了border-radius: 50%来创建圆形。为什么这个设计不符合像素风格？",
+      "options": [
+       {
+        "text": "像素图标必须使用纯色填充，不能使用渐变",
+        "distractor": true
+       },
+       {
+        "text": "像素图标的尺寸必须是32px的倍数，不能使用16px",
+        "distractor": true
+       },
+       {
+        "text": "像素风格要求所有形状都必须是直角设计，不能使用圆角",
+        "correct": true
+       }
+      ],
+      "explain": "正确项对是因为像素风格的核心是清晰可见的边界和直角设计，即使是圆形也应当使用直角设计。选错的人通常混淆了像素风格与普通矢量图形设计，认为只要使用纯色就是像素风格，而忽略了直角设计这一关键特征。",
+      "page": 2
+     },
+     {
+      "id": "q2",
+      "q": "小红正在创建一个24x24像素的心形图标，她使用了两个12x12像素的正方形作为心形的基础元素，但发现这两个正方形没有完全对齐，中间有1像素的间隙。她应该如何调整？",
+      "options": [
+       {
+        "text": "将两个正方形改为12.5x12.5像素，这样间隙会自然消失",
+        "distractor": true
+       },
+       {
+        "text": "调整其中一个正方形的位置，确保它们完全对齐，没有间隙",
+        "correct": true
+       },
+       {
+        "text": "保持间隙不变，因为这增加了像素风格的独特性",
+        "distractor": true
+       }
+      ],
+      "explain": "正确项对是因为像素图标要求元素完全对齐，保持清晰的边界。选错的人可能认为像素风格可以接受一些不完美，但实际上像素风格的核心是精确的像素对齐和清晰可见的边界。",
+      "page": 3
+     },
+     {
+      "id": "q3",
+      "q": "小李正在评估一个CSS创建的图标是否为像素风格，他发现图标的尺寸是32px，使用了纯色填充，但是有一个轻微的圆角效果。根据课程中的判断方法，这个图标是否为合格的像素风格设计？",
+      "options": [
+       {
+        "text": "不是，因为像素风格要求无圆角设计",
+        "correct": true
+       },
+       {
+        "text": "是，只要尺寸是整数且使用纯色填充就足够了",
+        "distractor": true
+       },
+       {
+        "text": "不是，因为尺寸必须是8px的倍数，32px不符合要求",
+        "distractor": true
+       }
+      ],
+      "explain": "正确项对是因为像素风格要求无圆角和渐变，确保所有边界都是直角。选错的人可能只关注了尺寸和颜色这两个表面特征，而忽略了像素风格中形状（直角设计）这一关键要素。",
+      "page": 4
+     }
+    ],
+    "generatedAt": "2026-11-12T09:25:38.772Z"
+   },
+   "u2l2": {
+    "title": "像素角色与场景设计",
+    "pages": [
+     {
+      "id": "p1",
+      "title": "像素角色基础",
+      "kind": "concept",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "上一讲我们学习了如何用CSS创建像素图标，今天我们将这些技巧应用到角色设计中"
+       },
+       {
+        "type": "text",
+        "text": "像素角色设计核心：将复杂图形分解为简单像素块，保持清晰边界"
+       },
+       {
+        "type": "code",
+        "code": ".pixel-head {\n  width: 32px;\n  height: 32px;\n  background-color: #FAD7A0;\n  border: 2px solid #3D5A80;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "使用整数尺寸确保像素清晰",
+         "保持颜色一致性",
+         "注意边界对齐"
+        ]
+       }
+      ],
+      "steps": [
+       {
+        "say": "上一讲我们看到如何用CSS创建像素图标，今天我们将这些技巧应用到角色设计中，让我们的网页更加生动有趣。",
+        "reveal": 1
+       },
+       {
+        "say": "像素角色设计核心是将复杂图形分解为简单像素块，保持清晰边界，就像这样，一个简单的头部由一个方块和几个小方块组成。",
+        "reveal": 2
+       },
+       {
+        "say": "请看这段代码，我们创建了一个32x32像素的头部，背景色是#FAD7A0，边框是2像素宽的#3D5A80色，这就是像素角色设计的基础。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p2",
+      "title": "角色身体构建",
+      "kind": "code",
+      "blocks": [
+       {
+        "type": "code",
+        "code": ".pixel-body {\n  width: 24px;\n  height: 32px;\n  background-color: #98C1D9;\n  margin-top: -2px;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "code",
+        "code": ".pixel-leg {\n  width: 8px;\n  height: 16px;\n  background-color: #3D5A80;\n  position: absolute;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "text",
+        "text": "使用position属性精确定位身体部位，确保对齐"
+       },
+       {
+        "type": "compare",
+        "left": {
+         "h": "正确",
+         "items": [
+          "整数尺寸",
+          "颜色一致",
+          "对齐精确"
+         ]
+        },
+        "right": {
+         "h": "错误",
+         "items": [
+          "非整数尺寸",
+          "颜色混杂",
+          "位置偏移"
+         ]
+        }
+       }
+      ],
+      "steps": [
+       {
+        "say": "现在我们开始构建角色身体，这段代码创建了一个24x32像素的身体，使用#98C1D9蓝色，margin-top:-2px确保与头部无缝连接。",
+        "reveal": 1
+       },
+       {
+        "say": "接下来是腿部设计，每个腿部宽8像素，高16像素，使用绝对定位确保它们正确放置在身体下方，颜色使用深蓝色#3D5A80。",
+        "reveal": 3
+       },
+       {
+        "say": "记住，像素角色设计的关键是精确对齐，左边是正确的方法，右边是常见的错误，注意避免这些坑。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p3",
+      "title": "场景设计基础",
+      "kind": "concept",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素场景由多个元素组成，每个元素都是独立的像素块"
+       },
+       {
+        "type": "code",
+        "code": ".pixel-tree {\n  width: 32px;\n  height: 48px;\n  position: relative;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "code",
+        "code": ".pixel-tree::before {\n  content: '';\n  position: absolute;\n  width: 24px;\n  height: 24px;\n  background-color: #98C1D9;\n  top: 0;\n  left: 4px;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "使用伪元素创建复杂形状",
+         "层叠元素形成深度",
+         "保持场景整体协调"
+        ]
+       }
+      ],
+      "steps": [
+       {
+        "say": "现在我们开始学习场景设计，像素场景由多个元素组成，每个元素都是独立的像素块，就像我们今天要创建的这个像素树。",
+        "reveal": 1
+       },
+       {
+        "say": "这段代码定义了一个32x48像素的树容器，使用相对定位，这样我们可以在里面放置其他元素。",
+        "reveal": 2
+       },
+       {
+        "say": "这里使用伪元素创建树的顶部，宽24像素，高24像素，背景色是#98C1D9蓝色，位置在容器顶部居中。",
+        "reveal": 3
+       },
+       {
+        "say": "记住，场景设计的关键是使用层叠元素形成深度，保持场景整体协调，这样我们的像素世界才会生动。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p4",
+      "title": "像素角色与场景判断",
+      "kind": "summary",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素角色与场景设计判断方法"
+       },
+       {
+        "type": "table",
+        "head": [
+         "检查项",
+         "标准",
+         "分值"
+        ],
+        "rows": [
+         [
+          "尺寸",
+          "整数像素值",
+          "10分"
+         ],
+         [
+          "颜色",
+          "纯色无渐变",
+          "10分"
+         ],
+         [
+          "对齐",
+          "精确对齐无偏移",
+          "10分"
+         ],
+         [
+          "边界",
+          "清晰可见直角",
+          "10分"
+         ]
+        ]
+       },
+       {
+        "type": "text",
+        "text": "像素风指数 = 尺寸得分 + 颜色得分 + 对齐得分 + 边界得分"
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "总分 ≥ 30为合格像素风设计"
+       }
+      ],
+      "steps": [
+       {
+        "say": "今天我们学习了如何用CSS创建像素角色和场景，现在我们来总结一下如何判断我们的设计是否合格。",
+        "reveal": 1
+       },
+       {
+        "say": "像素风设计有四个关键检查项：尺寸必须是整数像素值，颜色必须是纯色无渐变，对齐必须精确无偏移，边界必须清晰可见直角。",
+        "reveal": 2
+       },
+       {
+        "say": "每个检查项满分10分，像素风指数就是这四项得分之和，记住，总分≥30才算合格像素风设计。",
+        "reveal": 3
+       },
+       {
+        "say": "像素设计的核心是清晰可见的边界和直角设计，掌握了这一点，你的角色和场景就会呈现出真正的像素风格。",
+        "reveal": 4
+       }
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "id": "q1",
+      "q": "当你设计一个32x32像素的角色头部时，发现边缘模糊不清，应该怎么做来解决这个问题？",
+      "options": [
+       {
+        "text": "增加透明度让边缘自然融合",
+        "distractor": true
+       },
+       {
+        "text": "使用非整数尺寸，如31.5x31.5像素，使边缘更柔和",
+        "distractor": true
+       },
+       {
+        "text": "确保使用整数像素尺寸，并添加清晰的边框",
+        "correct": true
+       }
+      ],
+      "explain": "正确选项强调了使用整数像素尺寸和清晰边框的重要性，这是像素设计的基础；而选择常见误解的人可能误以为非整数尺寸能改善清晰度，实际上这会导致像素边缘模糊。",
+      "page": 1
+     },
+     {
+      "id": "q2",
+      "q": "在设计像素角色腿部时，你希望将腿部精确定位在身体下方，但发现总是出现偏移，应该使用哪个CSS属性来解决这个问题？",
+      "options": [
+       {
+        "text": "使用position: absolute并设置top和left值",
+        "correct": true
+       },
+       {
+        "text": "使用float属性让腿部自然对齐",
+        "distractor": true
+       },
+       {
+        "text": "使用margin-top负值来调整位置",
+        "distractor": true
+       }
+      ],
+      "explain": "正确选项使用position: absolute精确定位，这是像素设计中对齐的关键；而选择常见误解的人可能误以为float能解决定位问题，实际上float会导致布局混乱，不适合精确对齐。",
+      "page": 2
+     },
+     {
+      "id": "q3",
+      "q": "在创建一个像素场景中的树木元素时，你希望树冠和树干完美对齐，但发现总是出现1-2像素的偏移，这最可能是什么原因导致的？",
+      "options": [
+       {
+        "text": "元素尺寸不是整数像素值",
+        "distractor": true
+       },
+       {
+        "text": "没有考虑边框或内边距占用的像素空间",
+        "correct": true
+       },
+       {
+        "text": "浏览器渲染问题，需要刷新页面",
+        "distractor": true
+       }
+      ],
+      "explain": "正确选项指出边框和内边距会影响元素的实际占用空间，这是像素设计中常见的对齐陷阱；而选择常见误解的人可能忽略了边框和内边距的影响，只关注了宽度和高度属性。",
+      "page": 3
+     }
+    ],
+    "generatedAt": "2026-11-12T09:26:01.141Z"
+   },
+   "u2l3": {
+    "title": "像素动画效果实现",
+    "pages": [
+     {
+      "id": "p1",
+      "title": "像素动画基础",
+      "kind": "concept",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素动画原理：通过改变像素位置或颜色实现视觉效果"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "逐帧动画",
+         "CSS过渡效果",
+         "JavaScript定时控制"
+        ]
+       },
+       {
+        "type": "code",
+        "code": ".pixel-eye {\n  width: 8px;\n  height: 8px;\n  background-color: #000;\n  animation: blink 3s infinite;\n}\n@keyframes blink {\n  0%, 90%, 100% { height: 8px; }\n  95% { height: 2px; }\n}",
+        "lang": "css"
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "动画时间控制在0.5-3秒之间，保持像素感"
+       }
+      ],
+      "steps": [
+       {
+        "say": "上一讲我们已经学会了如何创建像素角色和场景，今天我们来让这些角色动起来。",
+        "reveal": 1
+       },
+       {
+        "say": "像素动画的核心原理很简单，就是通过改变像素的位置、颜色或大小来创造视觉上的运动效果。",
+        "reveal": 2
+       },
+       {
+        "say": "我们先来看一个最简单的眨眼动画，这是角色动画中最基础的效果。",
+        "reveal": 3
+       },
+       {
+        "say": "注意这个动画的关键点：动画时间控制在3秒，眨眼时间很短，这样才自然。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p2",
+      "title": "移动动画实现",
+      "kind": "code",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "角色移动动画：使用transform属性实现平滑移动"
+       },
+       {
+        "type": "code",
+        "code": ".pixel-character {\n  position: relative;\n  animation: walk 2s infinite;\n}\n@keyframes walk {\n  0% { transform: translateX(0); }\n  50% { transform: translateX(20px); }\n  100% { transform: translateX(0); }\n}",
+        "lang": "css"
+       },
+       {
+        "type": "table",
+        "head": [
+         "属性",
+         "作用",
+         "像素风注意"
+        ],
+        "rows": [
+         [
+          "transform",
+          "移动/旋转/缩放",
+          "使用整数像素值"
+         ],
+         [
+          "animation",
+          "定义动画序列",
+          "控制时间在0.5-3秒"
+         ],
+         [
+          "keyframes",
+          "动画关键帧",
+          "保持像素对齐"
+         ]
+        ]
+       }
+      ],
+      "steps": [
+       {
+        "say": "接下来我们学习如何让像素角色左右移动，这是游戏中最常见的动画效果。",
+        "reveal": 1
+       },
+       {
+        "say": "使用transform属性可以实现平滑移动，但要注意移动距离必须是整数像素值，这样才能保持像素感。",
+        "reveal": 2
+       },
+       {
+        "say": "这个表格总结了实现像素动画的三个关键属性及其注意事项，记住这些要点能帮你保持像素风格。",
+        "reveal": 3
+       }
+      ]
+     },
+     {
+      "id": "p3",
+      "title": "动画效果对比",
+      "kind": "compare",
+      "blocks": [
+       {
+        "type": "compare",
+        "left": {
+         "h": "简单动画",
+         "items": [
+          "单元素变化",
+          "固定时间间隔",
+          "较少关键帧"
+         ]
+        },
+        "right": {
+         "h": "复杂动画",
+         "items": [
+          "多元素协调",
+          "变速控制",
+          "多个关键帧"
+         ]
+        }
+       },
+       {
+        "type": "code",
+        "code": "/* 简单呼吸效果 */\n.pixel-heart {\n  animation: breathe 1.5s infinite;\n}\n@keyframes breathe {\n  0%, 100% { transform: scale(1); }\n  50% { transform: scale(1.1); }\n}",
+        "lang": "css"
+       },
+       {
+        "type": "callout",
+        "tone": "note",
+        "text": "复杂动画需要考虑元素间的时序关系"
+       }
+      ],
+      "steps": [
+       {
+        "say": "像素动画有简单和复杂之分，我们先来对比一下它们的特点。",
+        "reveal": 1
+       },
+       {
+        "say": "简单动画通常只改变一个元素，时间固定，关键帧少，适合初学者掌握。",
+        "reveal": 2
+       },
+       {
+        "say": "复杂动画需要多个元素协调运动，控制变速，有多个关键帧，能创造更丰富的效果。",
+        "reveal": 3
+       },
+       {
+        "say": "这里是一个简单的呼吸效果，只改变一个元素的大小，适合初学者实践。",
+        "reveal": 3
+       }
+      ]
+     },
+     {
+      "id": "p4",
+      "title": "动画实现流程",
+      "kind": "flow",
+      "blocks": [
+       {
+        "type": "flow",
+        "items": [
+         "确定动画效果",
+         "设计关键帧",
+         "编写CSS动画",
+         "测试调整"
+        ]
+       },
+       {
+        "type": "code",
+        "code": "/* 跳跃动画 */\n.pixel-character {\n  animation: jump 1s infinite;\n}\n@keyframes jump {\n  0%, 100% { transform: translateY(0); }\n  50% { transform: translateY(-20px); }\n}",
+        "lang": "css"
+       },
+       {
+        "type": "table",
+        "head": [
+         "常见问题",
+         "解决方案"
+        ],
+        "rows": [
+         [
+          "动画不流畅",
+          "减少关键帧数"
+         ],
+         [
+          "像素模糊",
+          "使用整数像素值"
+         ],
+         [
+          "动画过快",
+          "延长动画时间"
+         ]
+        ]
+       }
+      ],
+      "steps": [
+       {
+        "say": "实现像素动画需要遵循一个清晰的流程，我们来看看具体步骤。",
+        "reveal": 1
+       },
+       {
+        "say": "首先确定你想要实现的动画效果，比如跳跃、移动或表情变化。",
+        "reveal": 2
+       },
+       {
+        "say": "然后设计关键帧，确定动画的起始、中间和结束状态。",
+        "reveal": 3
+       },
+       {
+        "say": "接下来编写CSS动画代码，使用@keyframes定义动画序列。",
+        "reveal": 3
+       },
+       {
+        "say": "最后测试并调整动画效果，确保符合像素风格的要求。",
+        "reveal": 3
+       }
+      ]
+     },
+     {
+      "id": "p5",
+      "title": "像素动画判断",
+      "kind": "summary",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素动画效果判断方法"
+       },
+       {
+        "type": "table",
+        "head": [
+         "检查项",
+         "标准",
+         "分值"
+        ],
+        "rows": [
+         [
+          "关键帧数量",
+          "3-5个",
+          "10分"
+         ],
+         [
+          "动画时间",
+          "0.5-3秒",
+          "10分"
+         ],
+         [
+          "像素对齐",
+          "整数像素值",
+          "10分"
+         ],
+         [
+          "元素变化",
+          "清晰可见",
+          "10分"
+         ]
+        ]
+       },
+       {
+        "type": "formula",
+        "text": "像素风指数 = 关键帧得分 + 时间得分 + 对齐得分 + 变化得分",
+        "caption": "总分 ≥ 30为合格像素动画"
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "保持简单，避免过度动画破坏像素风格"
+       }
+      ],
+      "steps": [
+       {
+        "say": "今天我们学习了如何为像素角色和场景添加动画效果，从简单的眨眼到复杂的移动。",
+        "reveal": 1
+       },
+       {
+        "say": "判断一个像素动画是否合格，主要看四个方面：关键帧数量、动画时间、像素对齐和元素变化。",
+        "reveal": 2
+       },
+       {
+        "say": "记住，像素动画的核心是保持简单清晰，过多的动画效果会破坏像素风格的整体感。",
+        "reveal": 3
+       },
+       {
+        "say": "下一讲我们将学习如何制作像素风格的按钮和链接，让我们的个人主页更加完整。",
+        "reveal": 4
+       }
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "id": "q1",
+      "q": "你正在为一个像素角色设计眨眼动画，希望动画自然且保持像素风格。以下哪种实现方式最合适？",
+      "options": [
+       {
+        "text": "使用transform: scaleY(0.25)实现眨眼效果，动画时长1秒",
+        "correct": true
+       },
+       {
+        "text": "使用width从8px到0的过渡，动画时长2秒",
+        "distractor": true
+       },
+       {
+        "text": "使用opacity: 0到1的过渡，动画时长0.3秒",
+        "distractor": true
+       }
+      ],
+      "explain": "正确项使用了缩放变换保持像素对齐，且时长在0.5-3秒的推荐范围内。选错的人通常混淆了透明度变化和形状变化，或者没有注意像素动画需要保持整数像素值和对齐。",
+      "page": 1
+     },
+     {
+      "id": "q2",
+      "q": "你正在创建一个像素角色从左到右的行走动画，以下哪种实现方式最符合像素风格？",
+      "options": [
+       {
+        "text": "使用transform: translateX(19.5px)实现移动，动画时长1秒",
+        "distractor": true
+       },
+       {
+        "text": "使用transform: translateX(20px)实现移动，动画时长2秒",
+        "correct": true
+       },
+       {
+        "text": "使用left属性从0px到20px过渡，动画时长1.5秒",
+        "distractor": true
+       }
+      ],
+      "explain": "正确项使用了transform属性并保持整数像素值，符合像素动画要求。选错的人可能没有理解transform更适合动画性能，或者没有注意像素风格需要整数像素值。",
+      "page": 2
+     },
+     {
+      "id": "q3",
+      "q": "你正在评估一个像素动画效果，发现它有关键帧4个、动画时长2.5秒、所有变换都使用整数像素值、元素变化清晰可见。这个像素动画的像素风指数是多少？",
+      "options": [
+       {
+        "text": "关键帧数量过多导致像素风指数降低",
+        "distractor": true
+       },
+       {
+        "text": "30分（刚好合格）",
+        "distractor": true
+       },
+       {
+        "text": "40分（合格像素动画）",
+        "correct": true
+       }
+      ],
+      "explain": "正确项计算正确：关键帧4个(10分)+时长2.5秒(10分)+整数像素值(10分)+变化清晰(10分)=40分≥30分，合格。选错的人可能误解了关键帧数量评分标准或计算错误。",
+      "page": 5
+     }
+    ],
+    "generatedAt": "2026-11-12T09:27:05.393Z"
+   },
+   "u3l1": {
+    "title": "像素风格按钮与链接",
+    "pages": [
+     {
+      "id": "p1",
+      "title": "像素按钮基础",
+      "kind": "concept",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素风按钮与链接设计原则"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "保持像素对齐",
+         "使用有限色彩",
+         "添加悬停反馈",
+         "保持一致性"
+        ]
+       },
+       {
+        "type": "code",
+        "code": ".pixel-btn {\n  width: 80px;\n  height: 32px;\n  background-color: #FF6B6B;\n  border: 2px solid #000;\n  cursor: pointer;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "像素按钮应使用整数像素尺寸"
+       }
+      ],
+      "steps": [
+       {
+        "say": "上一讲我们看到像素动画效果如何为页面增添活力，今天我们学习如何创建像素风格的交互元素。",
+        "reveal": 1
+       },
+       {
+        "say": "像素风按钮设计首先要遵循三个基本原则：保持像素对齐、使用有限色彩和添加悬停反馈。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p2",
+      "title": "按钮悬停效果",
+      "kind": "code",
+      "blocks": [
+       {
+        "type": "code",
+        "code": ".pixel-btn:hover {\n  background-color: #FF8E8E;\n  transform: translateY(-2px);\n  box-shadow: 0 2px 0 #000;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "text",
+        "text": "像素按钮悬停状态变化"
+       },
+       {
+        "type": "compare",
+        "left": {
+         "h": "普通状态",
+         "items": [
+          "原色背景",
+          "无阴影",
+          "位置不变"
+         ]
+        },
+        "right": {
+         "h": "悬停状态",
+         "items": [
+          "颜色变亮",
+          "底部阴影",
+          "上移2px"
+         ]
+        }
+       }
+      ],
+      "steps": [
+       {
+        "say": "现在我们为按钮添加悬停效果，当鼠标移到按钮上时，背景色变亮，按钮向上移动2像素，并在底部添加阴影效果。",
+        "reveal": 1
+       },
+       {
+        "say": "这种微妙的移动和颜色变化能提供清晰的视觉反馈，同时保持像素风格的一致性。",
+        "reveal": 2
+       },
+       {
+        "say": "注意移动距离必须是整数像素值，这样才能保持像素对齐，避免模糊效果。",
+        "reveal": 3
+       }
+      ]
+     },
+     {
+      "id": "p3",
+      "title": "像素链接实现",
+      "kind": "flow",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素风格链接实现步骤"
+       },
+       {
+        "type": "flow",
+        "items": [
+         "设计基础样式",
+         "添加下划线动画",
+         "实现颜色变化",
+         "测试交互效果"
+        ]
+       },
+       {
+        "type": "code",
+        "code": ".pixel-link {\n  color: #4ECDC4;\n  text-decoration: none;\n  position: relative;\n}\n.pixel-link:hover::after {\n  content: '';\n  position: absolute;\n  bottom: -2px;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  background-color: #4ECDC4;\n}",
+        "lang": "css"
+       }
+      ],
+      "steps": [
+       {
+        "say": "链接是网页中常见的交互元素，像素风格的链接需要特别设计下划线动画效果。",
+        "reveal": 1
+       },
+       {
+        "say": "实现步骤包括设计基础样式、添加下划线动画、实现颜色变化和测试交互效果。",
+        "reveal": 2
+       },
+       {
+        "say": "使用伪元素::after创建悬停时的下划线效果，通过绝对定位确保下划线与文字完美对齐。",
+        "reveal": 3
+       }
+      ]
+     },
+     {
+      "id": "p4",
+      "title": "像素交互判断",
+      "kind": "summary",
+      "blocks": [
+       {
+        "type": "table",
+        "head": [
+         "检查项",
+         "标准",
+         "分值"
+        ],
+        "rows": [
+         [
+          "像素对齐",
+          "整数像素值",
+          "10分"
+         ],
+         [
+          "颜色变化",
+          "悬停时可见变化",
+          "10分"
+         ],
+         [
+          "动画流畅",
+          "0.2-0.5秒过渡",
+          "10分"
+         ],
+         [
+          "反馈清晰",
+          "状态变化明显",
+          "10分"
+         ]
+        ]
+       },
+       {
+        "type": "text",
+        "text": "像素风交互元素判断方法"
+       },
+       {
+        "type": "formula",
+        "text": "像素交互指数 = 对齐得分 + 颜色得分 + 动画得分 + 反馈得分",
+        "caption": "总分 ≥ 30为合格像素交互"
+       }
+      ],
+      "steps": [
+       {
+        "say": "判断像素风交互元素是否合格，我们需要从四个维度进行检查：像素对齐、颜色变化、动画流畅度和反馈清晰度。",
+        "reveal": 1
+       },
+       {
+        "say": "每个维度满分10分，总分达到30分以上才算合格的像素风交互元素。",
+        "reveal": 2
+       },
+       {
+        "say": "记住，像素风交互应该简洁明了，避免过度复杂的动画效果破坏整体视觉风格。",
+        "reveal": 3
+       }
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "id": "q1",
+      "q": "小明正在设计一个像素风格的按钮，他不确定应该使用什么尺寸，以下哪种做法最符合像素风格设计原则？",
+      "options": [
+       {
+        "text": "使用81.5px的宽度和32.3px的高度，使按钮看起来更精确",
+        "distractor": true
+       },
+       {
+        "text": "使用80px的宽度和32px的高度，确保所有尺寸都是整数像素",
+        "correct": true
+       },
+       {
+        "text": "使用100px的宽度和40px的高度，这样按钮会更大更容易点击",
+        "distractor": true
+       }
+      ],
+      "explain": "正确选项符合像素风格设计原则中'保持像素对齐'的要求，使用整数像素尺寸能保持像素艺术的清晰度。选错的人通常没有理解像素风格的核心是保持像素对齐，可能会认为更精确的小数尺寸更好。",
+      "page": 1
+     },
+     {
+      "id": "q2",
+      "q": "小红设计了一个像素风格按钮，她希望添加悬停效果，以下哪种做法最符合像素风格交互设计？",
+      "options": [
+       {
+        "text": "悬停时添加平滑过渡动画，持续1秒让按钮缓慢变化",
+        "distractor": true
+       },
+       {
+        "text": "悬停时改变按钮形状，从矩形变为圆形，增加视觉吸引力",
+        "distractor": true
+       },
+       {
+        "text": "悬停时背景颜色变亮，按钮上移2px并添加底部阴影",
+        "correct": true
+       }
+      ],
+      "explain": "正确选项符合像素风格悬停效果的设计，通过颜色变化、位置偏移和阴影创造明显的状态变化。选错的人通常混淆了像素风格与一般UI设计，认为平滑过渡或形状变化更适合，而忽略了像素风格需要保持形状一致。",
+      "page": 2
+     },
+     {
+      "id": "q3",
+      "q": "小李正在评估一个像素风格网站的交互设计，他需要判断哪些元素符合像素风交互标准，以下哪个说法是正确的？",
+      "options": [
+       {
+        "text": "链接悬停时添加2像素高的下划线，从左到右逐渐出现",
+        "correct": true
+       },
+       {
+        "text": "按钮悬停动画持续0.8秒，这样变化更平滑自然",
+        "distractor": true
+       },
+       {
+        "text": "所有交互元素都使用渐变色背景，增强视觉吸引力",
+        "distractor": true
+       }
+      ],
+      "explain": "正确选项符合像素链接实现的设计原则，使用简单的下划线动画创造清晰的交互反馈。选错的人通常没有理解像素风格需要保持简单和清晰，可能会认为更复杂的动画或渐变色更合适，而忽略了像素风格的核心是保持简洁和一致性。",
+      "page": 3
+     }
+    ],
+    "generatedAt": "2026-11-12T09:28:19.323Z"
+   },
+   "u3l2": {
+    "title": "像素风格表单设计",
+    "pages": [
+     {
+      "id": "p1",
+      "title": "像素表单基础",
+      "kind": "concept",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素风格表单元素设计原则"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "保持像素对齐",
+         "使用有限色彩",
+         "添加焦点反馈",
+         "保持一致性"
+        ]
+       },
+       {
+        "type": "code",
+        "code": ".pixel-input {\n  width: 200px;\n  height: 32px;\n  border: 2px solid #000;\n  background-color: #F8F8F8;\n  padding: 0 4px;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "像素表单应使用整数像素尺寸"
+       }
+      ],
+      "steps": [
+       {
+        "say": "上一讲我们已经学习了像素风格按钮与链接的设计，今天我们来看看如何设计像素风格的表单元素。",
+        "reveal": 1
+       },
+       {
+        "say": "像素表单设计需要遵循几个关键原则，首先保持像素对齐，确保所有元素边缘都在整数像素位置上。",
+        "reveal": 2
+       },
+       {
+        "say": "其次，使用有限的调色板，通常不超过8种颜色，这样能保持像素风格的统一性。",
+        "reveal": 3
+       },
+       {
+        "say": "最后，当用户与表单交互时，要有清晰的视觉反馈，比如焦点状态的变化。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p2",
+      "title": "像素输入框实现",
+      "kind": "code",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "基础像素风格输入框代码"
+       },
+       {
+        "type": "code",
+        "code": ".pixel-input {\n  width: 200px;\n  height: 32px;\n  border: 2px solid #000;\n  background-color: #F8F8F8;\n  padding: 0 4px;\n  font-family: monospace;\n  font-size: 14px;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "code",
+        "code": ".pixel-input:focus {\n  outline: none;\n  border-color: #4ECDC4;\n  background-color: #FFFFFF;\n  box-shadow: 0 0 0 2px #4ECDC4;\n}",
+        "lang": "css"
+       }
+      ],
+      "steps": [
+       {
+        "say": "现在让我们来实现一个像素风格的输入框，首先设置基础样式，包括宽度、高度和边框。",
+        "reveal": 1
+       },
+       {
+        "say": "注意使用等宽字体monospace，这样每个字符占据相同宽度，符合像素风格的特点。",
+        "reveal": 2
+       },
+       {
+        "say": "接下来添加焦点状态，当用户点击输入框时，边框颜色变为青色，并添加一个像素边框作为焦点指示器。",
+        "reveal": 3
+       }
+      ]
+     },
+     {
+      "id": "p3",
+      "title": "表单状态对比",
+      "kind": "compare",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素表单不同状态的设计对比"
+       },
+       {
+        "type": "compare",
+        "left": {
+         "h": "普通状态",
+         "items": [
+          "原色背景",
+          "黑色边框",
+          "无阴影效果"
+         ]
+        },
+        "right": {
+         "h": "焦点状态",
+         "items": [
+          "白色背景",
+          "青色边框",
+          "像素边框指示器"
+         ]
+        }
+       },
+       {
+        "type": "code",
+        "code": ".pixel-input:hover {\n  border-color: #4ECDC4;\n}\n\n.pixel-input:disabled {\n  background-color: #E0E0E0;\n  cursor: not-allowed;\n}",
+        "lang": "css"
+       }
+      ],
+      "steps": [
+       {
+        "say": "像素表单需要考虑多种状态，我们先来看看普通状态和焦点状态的对比。",
+        "reveal": 1
+       },
+       {
+        "say": "在普通状态下，输入框使用浅灰色背景和黑色边框，保持简洁的像素风格。",
+        "reveal": 2
+       },
+       {
+        "say": "当获得焦点时，背景变为白色，边框变为青色，并添加2像素的边框作为指示器，让用户清楚知道当前激活的元素。",
+        "reveal": 3
+       },
+       {
+        "say": "我们还可以添加悬停状态和禁用状态，提供更完整的用户体验。",
+        "reveal": 3
+       }
+      ]
+     },
+     {
+      "id": "p4",
+      "title": "像素表单设计总结",
+      "kind": "summary",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素风格表单元素判断方法"
+       },
+       {
+        "type": "table",
+        "head": [
+         "检查项",
+         "标准",
+         "分值"
+        ],
+        "rows": [
+         [
+          "像素对齐",
+          "整数像素值",
+          "10分"
+         ],
+         [
+          "颜色变化",
+          "交互时可见变化",
+          "10分"
+         ],
+         [
+          "状态反馈",
+          "清晰可辨",
+          "10分"
+         ],
+         [
+          "整体一致",
+          "与页面风格统一",
+          "10分"
+         ]
+        ]
+       },
+       {
+        "type": "callout",
+        "tone": "note",
+        "text": "像素表单指数 = 对齐得分 + 颜色得分 + 状态得分 + 一致得分（总分 ≥ 30为合格像素表单）"
+       }
+      ],
+      "steps": [
+       {
+        "say": "最后，我们总结一下如何判断一个像素风格表单是否设计良好。",
+        "reveal": 1
+       },
+       {
+        "say": "像素对齐是基础，确保所有元素边缘都在整数像素位置上，这是像素风格的核心特征。",
+        "reveal": 2
+       },
+       {
+        "say": "颜色变化要明显但不过度，交互时用户能清楚感知状态变化，但又不会过于花哨。",
+        "reveal": 3
+       },
+       {
+        "say": "状态反馈要清晰，无论是焦点、悬停还是禁用状态，用户都能立即识别当前状态。",
+        "reveal": 3
+       },
+       {
+        "say": "最后，整体风格要一致，表单元素要与页面的其他像素风格元素保持统一的设计语言。",
+        "reveal": 3
+       }
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "id": "q1",
+      "q": "在设计像素风格输入框时，如果设置宽度为201.5px，会对设计产生什么影响？",
+      "options": [
+       {
+        "text": "只会影响布局，不会影响输入框本身的视觉效果",
+        "distractor": true
+       },
+       {
+        "text": "会导致边缘模糊，不符合像素艺术的清晰特性",
+        "correct": true
+       },
+       {
+        "text": "会使输入框看起来更现代，增加视觉层次感",
+        "distractor": true
+       }
+      ],
+      "explain": "正确选项对是因为像素风格要求使用整数像素值以确保清晰锐利的边缘。选错的人通常误解了像素艺术的核心原则，认为小数像素可以增加设计感，而实际上这违背了像素艺术的本质。",
+      "page": 1
+     },
+     {
+      "id": "q2",
+      "q": "当用户与像素风格输入框交互时，以下哪种状态反馈设计最符合像素风格原则？",
+      "options": [
+       {
+        "text": "边框颜色从黑色变为青色，背景从浅灰变为白色，添加2像素宽的青色边框指示器",
+        "correct": true
+       },
+       {
+        "text": "边框颜色随机变化，背景闪烁，添加动画效果",
+        "distractor": true
+       },
+       {
+        "text": "边框添加阴影效果，背景渐变过渡，字体大小略微增大",
+        "distractor": true
+       }
+      ],
+      "explain": "正确选项对因为它提供了清晰的状态变化，同时保持了像素风格的简洁和一致性。选错的人通常过度关注视觉效果而忽略了像素风格的核心原则：简洁、一致和明确的状态反馈。",
+      "page": 3
+     },
+     {
+      "id": "q3",
+      "q": "要评估一个表单是否为合格的像素风格表单，以下哪个评估标准最重要？",
+      "options": [
+       {
+        "text": "表单是否使用大量装饰性元素，边框是否使用多种颜色，背景是否有复杂图案",
+        "distractor": true
+       },
+       {
+        "text": "表单元素是否使用最新流行的设计趋势，是否有复杂的动画效果，颜色是否丰富多样",
+        "distractor": true
+       },
+       {
+        "text": "所有元素尺寸是否使用整数像素值，交互时是否有清晰可见的颜色变化，状态反馈是否清晰可辨，整体风格是否一致",
+        "correct": true
+       }
+      ],
+      "explain": "正确选项对因为它涵盖了像素风格表单的核心评估标准。选错的人通常误解了像素风格的本质，认为它与现代设计趋势一致，而实际上像素风格强调的是简洁、一致和功能性。",
+      "page": 4
+     }
+    ],
+    "generatedAt": "2026-11-12T09:28:53.135Z"
+   },
+   "u3l3": {
+    "title": "像素风格导航菜单",
+    "pages": [
+     {
+      "id": "p1",
+      "title": "像素导航基础",
+      "kind": "concept",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素风格导航菜单设计原则"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "保持像素对齐",
+         "使用有限色彩",
+         "添加交互反馈",
+         "保持一致性"
+        ]
+       },
+       {
+        "type": "code",
+        "code": ".nav-menu {\n  display: flex;\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  background-color: #F8F8F8;\n  border: 2px solid #000;\n}",
+        "lang": "css"
+       }
+      ],
+      "steps": [
+       {
+        "say": "上一讲我们学习了像素表单设计，今天我们要为像素风页面添加导航菜单，首先看看像素导航的基本设计原则。",
+        "reveal": 1
+       },
+       {
+        "say": "像素导航需要保持像素对齐，就像我们之前做表单那样，使用有限的色彩，通常不超过3-4种颜色。",
+        "reveal": 2
+       },
+       {
+        "say": "同时，导航菜单需要添加交互反馈，让用户知道当前选中的是哪个选项，保持整体风格的一致性也很重要。",
+        "reveal": 3
+       }
+      ]
+     },
+     {
+      "id": "p2",
+      "title": "导航菜单实现",
+      "kind": "code",
+      "blocks": [
+       {
+        "type": "code",
+        "code": "<nav class=\"pixel-nav\">\n  <ul>\n    <li><a href=\"#home\">首页</a></li>\n    <li><a href=\"#about\">关于</a></li>\n    <li><a href=\"#portfolio\">作品</a></li>\n    <li><a href=\"#contact\">联系</a></li>\n  </ul>\n</nav>",
+        "lang": "html"
+       },
+       {
+        "type": "code",
+        "code": ".pixel-nav ul {\n  display: flex;\n  border: 2px solid #000;\n}\n\n.pixel-nav li {\n  border-right: 2px solid #000;\n}\n\n.pixel-nav a {\n  display: block;\n  padding: 8px 16px;\n  color: #000;\n  text-decoration: none;\n}",
+        "lang": "css"
+       }
+      ],
+      "steps": [
+       {
+        "say": "现在我们来实现一个像素风格的导航菜单，首先创建HTML结构，使用无序列表和链接。",
+        "reveal": 1
+       },
+       {
+        "say": "然后添加CSS样式，使用flex布局让菜单项水平排列，添加像素风格的边框和内边距。",
+        "reveal": 2
+       }
+      ]
+     },
+     {
+      "id": "p3",
+      "title": "导航状态对比",
+      "kind": "compare",
+      "blocks": [
+       {
+        "type": "compare",
+        "left": {
+         "h": "普通状态",
+         "items": [
+          "原色背景",
+          "黑色边框",
+          "无阴影效果"
+         ]
+        },
+        "right": {
+         "h": "悬停状态",
+         "items": [
+          "白色背景",
+          "青色边框",
+          "像素边框指示器"
+         ]
+        }
+       },
+       {
+        "type": "code",
+        "code": ".pixel-nav a:hover {\n  background-color: #FFF;\n  border-color: #4ECDC4;\n}\n\n.pixel-nav a.active {\n  background-color: #4ECDC4;\n  color: #FFF;\n}",
+        "lang": "css"
+       }
+      ],
+      "steps": [
+       {
+        "say": "像素导航需要清晰的状态反馈，我们对比一下普通状态和悬停状态的设计差异。",
+        "reveal": 1
+       },
+       {
+        "say": "当鼠标悬停在菜单项上时，背景变为白色，边框变为青色，这样用户能清楚地看到当前选中的选项。",
+        "reveal": 2
+       },
+       {
+        "say": "我们还可以添加active状态，表示当前页面对应的菜单项，使用青色背景和白色文字来突出显示。",
+        "reveal": 2
+       }
+      ]
+     },
+     {
+      "id": "p4",
+      "title": "像素导航判断方法",
+      "kind": "summary",
+      "blocks": [
+       {
+        "type": "table",
+        "head": [
+         "检查项",
+         "标准",
+         "分值"
+        ],
+        "rows": [
+         [
+          "像素对齐",
+          "整数像素值",
+          "10分"
+         ],
+         [
+          "颜色变化",
+          "交互时可见变化",
+          "10分"
+         ],
+         [
+          "状态反馈",
+          "清晰可辨",
+          "10分"
+         ],
+         [
+          "整体一致",
+          "与页面风格统一",
+          "10分"
+         ]
+        ]
+       },
+       {
+        "type": "text",
+        "text": "像素导航指数 = 对齐得分 + 颜色得分 + 状态得分 + 一致得分"
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "总分 ≥ 30为合格像素导航"
+       }
+      ],
+      "steps": [
+       {
+        "say": "最后，我们总结一下如何判断一个像素导航是否合格，可以从四个方面进行评估。",
+        "reveal": 1
+       },
+       {
+        "say": "像素对齐、颜色变化、状态反馈和整体一致性，每个方面10分，总分达到30分以上才算合格的像素导航。",
+        "reveal": 2
+       },
+       {
+        "say": "记住，像素导航不仅要美观，还要有良好的用户体验，让用户能够清楚地知道当前所在位置和可以进行的操作。",
+        "reveal": 3
+       }
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "id": "q1",
+      "q": "在实现像素风格导航菜单时，以下哪种做法不符合像素对齐原则？",
+      "options": [
+       {
+        "text": "使用百分比定位元素",
+        "distractor": true
+       },
+       {
+        "text": "所有元素的位置使用整数像素值，如left: 10px",
+        "correct": true
+       },
+       {
+        "text": "使用小数像素值如left: 10.5px来创建更精细的视觉效果",
+        "distractor": true
+       }
+      ],
+      "explain": "正确选项符合像素对齐原则，因为像素风格需要精确的像素对齐；选错的人通常认为小数像素值能提供更精细的控制，但实际上这会破坏像素风格的锐利感。",
+      "page": 1
+     },
+     {
+      "id": "q2",
+      "q": "当用户将鼠标悬停在像素导航菜单的链接上时，以下哪种交互反馈最能体现像素风格？",
+      "options": [
+       {
+        "text": "背景变为白色，边框变为青色，并添加像素边框指示器",
+        "correct": true
+       },
+       {
+        "text": "改变字体大小并添加阴影效果",
+        "distractor": true
+       },
+       {
+        "text": "添加平滑的渐变过渡效果，让颜色变化更加柔和",
+        "distractor": true
+       }
+      ],
+      "explain": "正确选项符合像素风格的交互反馈原则，因为突显了颜色变化和像素边框；选错的人通常混淆了像素风格与平滑过渡，不理解像素风格需要锐利的视觉变化。",
+      "page": 3
+     },
+     {
+      "id": "q3",
+      "q": "在评估一个导航菜单是否为合格的像素风格导航时，以下哪项不是判断标准？",
+      "options": [
+       {
+        "text": "导航菜单的交互状态是否清晰可辨",
+        "distractor": true
+       },
+       {
+        "text": "导航菜单的元素是否保持了整数像素对齐",
+        "distractor": true
+       },
+       {
+        "text": "导航菜单是否使用了多种渐变色彩",
+        "correct": true
+       }
+      ],
+      "explain": "正确选项不是判断标准，因为像素风格通常使用有限色彩而非多种渐变；选错的人可能认为色彩丰富是像素风格的特点，而实际上像素风格强调简洁和有限色彩。",
+      "page": 4
+     }
+    ],
+    "generatedAt": "2026-11-12T09:29:23.335Z"
+   },
+   "u4l1": {
+    "title": "像素风页面响应式布局",
+    "pages": [
+     {
+      "id": "p1",
+      "title": "响应式布局基础",
+      "kind": "concept",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "响应式布局让页面在不同设备上都能良好展示"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "使用媒体查询实现",
+         "保持像素风格一致性",
+         "适配不同屏幕尺寸"
+        ]
+       },
+       {
+        "type": "code",
+        "code": "@media (max-width: 768px) {\n  .nav-menu {\n    flex-direction: column;\n  }\n}",
+        "lang": "css"
+       }
+      ],
+      "steps": [
+       {
+        "say": "上一讲我们完成了像素风格导航菜单的设计，现在我们要让这个导航在不同设备上都能正常显示。",
+        "reveal": 1
+       },
+       {
+        "say": "响应式布局的核心是媒体查询，它可以根据屏幕宽度应用不同的CSS样式，让我们的像素风页面在各种设备上保持一致的美感。",
+        "reveal": 3
+       }
+      ]
+     },
+     {
+      "id": "p2",
+      "title": "媒体查询语法",
+      "kind": "formula",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "媒体查询的基本语法结构"
+       },
+       {
+        "type": "formula",
+        "text": "@media (特性:值) { 样式规则 }",
+        "caption": "媒体查询基本结构"
+       },
+       {
+        "type": "table",
+        "head": [
+         "特性",
+         "示例值",
+         "说明"
+        ],
+        "rows": [
+         [
+          "width",
+          "768px",
+          "屏幕宽度"
+         ],
+         [
+          "max-width",
+          "1024px",
+          "最大屏幕宽度"
+         ],
+         [
+          "min-width",
+          "320px",
+          "最小屏幕宽度"
+         ]
+        ]
+       }
+      ],
+      "steps": [
+       {
+        "say": "媒体查询就像给CSS代码添加了一个条件判断，当设备满足特定条件时，才会应用里面的样式。",
+        "reveal": 1
+       },
+       {
+        "say": "常用的特性包括width、max-width和min-width，它们帮助我们针对不同屏幕尺寸设置不同的样式。",
+        "reveal": 3
+       }
+      ]
+     },
+     {
+      "id": "p3",
+      "title": "像素风导航响应式实现",
+      "kind": "code",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "将上一讲的导航菜单改为响应式设计"
+       },
+       {
+        "type": "code",
+        "code": ".nav-menu {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n@media (max-width: 768px) {\n  .nav-menu {\n    flex-direction: column;\n  }\n  .nav-menu li {\n    width: 100%;\n    border-bottom: 2px solid #000;\n  }\n}",
+        "lang": "css"
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "保持像素边框和色彩一致性"
+       }
+      ],
+      "steps": [
+       {
+        "say": "现在我们来实现一个响应式的像素导航，在桌面设备上保持水平排列，在移动设备上变为垂直排列。",
+        "reveal": 1
+       },
+       {
+        "say": "我们添加flex-wrap属性让导航项能够换行，然后在媒体查询中设置flex-direction为column，让导航项垂直排列。",
+        "reveal": 3
+       },
+       {
+        "say": "注意在移动设备上，我们给每个导航项添加底部边框，保持像素风格的一致性，同时确保每个导航项宽度为100%。",
+        "reveal": 3
+       }
+      ]
+     },
+     {
+      "id": "p4",
+      "title": "响应式布局判断方法",
+      "kind": "compare",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "如何判断一个像素风页面是否具有良好的响应式布局"
+       },
+       {
+        "type": "compare",
+        "left": {
+         "h": "合格标准",
+         "items": [
+          "断点设置合理",
+          "像素风格保持一致",
+          "内容可读性良好",
+          "交互体验优化"
+         ]
+        },
+        "right": {
+         "h": "常见问题",
+         "items": [
+          "元素重叠",
+          "文字过小",
+          "导航不可用",
+          "图片变形"
+         ]
+        }
+       },
+       {
+        "type": "table",
+        "head": [
+         "检查项",
+         "标准",
+         "分值"
+        ],
+        "rows": [
+         [
+          "断点设置",
+          "3个以上合理断点",
+          "10分"
+         ],
+         [
+          "像素一致性",
+          "所有设备保持像素风格",
+          "10分"
+         ],
+         [
+          "内容适配",
+          "文字大小可读",
+          "10分"
+         ],
+         [
+          "交互优化",
+          "移动端友好交互",
+          "10分"
+         ]
+        ]
+       }
+      ],
+      "steps": [
+       {
+        "say": "最后，我们来总结如何判断一个像素风页面的响应式布局是否合格。",
+        "reveal": 1
+       },
+       {
+        "say": "响应式布局需要满足几个关键点：设置合理的断点、保持像素风格一致性、确保内容可读性、优化交互体验。",
+        "reveal": 3
+       },
+       {
+        "say": "你可以使用这个评分表来检查你的页面：断点设置、像素一致性、内容适配和交互优化各占10分，总分≥30分为合格。",
+        "reveal": 3
+       }
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "id": "q1",
+      "q": "在设计一个像素风响应式网站时，如果导航菜单在小屏幕上变得拥挤，以下哪种处理方式最符合像素风格且能有效解决问题？",
+      "options": [
+       {
+        "text": "减小导航菜单中文字和图标的大小，使其在更小空间内显示",
+        "distractor": true
+       },
+       {
+        "text": "在小屏幕上隐藏导航菜单，只显示一个按钮",
+        "distractor": true
+       },
+       {
+        "text": "将导航菜单改为垂直排列，保持像素边框和色彩一致性",
+        "correct": true
+       }
+      ],
+      "explain": "正确项符合像素风响应式布局的基本原则，通过改变布局方向而非缩小元素来保持视觉一致性。选错的人通常误解了响应式设计的本质，认为简单缩小元素就能解决问题，而忽略了用户体验和像素风格的保持。",
+      "page": 3
+     },
+     {
+      "id": "q2",
+      "q": "当测试一个像素风网站的响应式布局时，发现某些文字在手机上变得难以阅读，以下哪种做法最合理？",
+      "options": [
+       {
+        "text": "将所有文字转换为图片，确保在任何设备上显示效果一致",
+        "distractor": true
+       },
+       {
+        "text": "为小屏幕设备设置特定的字体大小，确保文字可读性",
+        "correct": true
+       },
+       {
+        "text": "保持所有设备上的字体大小一致，认为用户可以通过缩放页面来阅读",
+        "distractor": true
+       }
+      ],
+      "explain": "正确项考虑了响应式设计中内容可读性的重要性，针对不同设备调整字体大小是标准做法。选错的人可能混淆了保持视觉一致性和功能性的区别，忽视了移动设备上文字可读性的实际需求。",
+      "page": 4
+     },
+     {
+      "id": "q3",
+      "q": "在实现像素风响应式布局时，以下哪种断点设置最合理？",
+      "options": [
+       {
+        "text": "设置多个断点，分别针对手机、平板和桌面设备",
+        "correct": true
+       },
+       {
+        "text": "根据内容需要设置断点，不考虑设备类型",
+        "distractor": true
+       },
+       {
+        "text": "只设置一个断点，认为所有移动设备都使用相同的屏幕尺寸",
+        "distractor": true
+       }
+      ],
+      "explain": "正确项符合响应式布局中设置合理断点的标准做法，针对不同设备类型设置多个断点能更好地适配各种屏幕。选错的人通常低估了移动设备屏幕尺寸的多样性，认为所有移动设备体验可以一概而论。",
+      "page": 4
+     }
+    ],
+    "generatedAt": "2026-11-12T09:29:50.749Z"
+   },
+   "u4l2": {
+    "title": "像素图片优化与加载",
+    "pages": [
+     {
+      "id": "p1",
+      "title": "像素图片优化问题",
+      "kind": "concept",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素风页面加载速度慢的常见原因"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "图片文件过大",
+         "未使用合适的图片格式",
+         "缺少图片压缩",
+         "未使用响应式图片"
+        ]
+       },
+       {
+        "type": "code",
+        "code": "<img src=\"pixel-art.png\" alt=\"像素风图片\">\n<img src=\"pixel-art-small.png\" \n     srcset=\"pixel-art.png 1x, pixel-art-large.png 2x\" \n     alt=\"像素风图片\">",
+        "lang": "html"
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "像素风图片优化是提升页面加载速度的关键"
+       }
+      ],
+      "steps": [
+       {
+        "say": "上一讲我们学习了响应式布局，让像素风页面在不同设备上都能良好展示，但图片加载速度仍然是个问题。",
+        "reveal": 1
+       },
+       {
+        "say": "想象一下，你的像素风主页加载需要5秒，而竞争对手只需要2秒，用户很可能在你页面加载完成前就离开了。",
+        "reveal": 2
+       },
+       {
+        "say": "解决这个问题的关键在于使用响应式图片和合适的图片格式，我来给你展示如何实现。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p2",
+      "title": "图片加载时间计算",
+      "kind": "formula",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "图片加载时间计算公式"
+       },
+       {
+        "type": "formula",
+        "text": "加载时间 = 文件大小 ÷ 网络速度",
+        "caption": "计算图片加载时间的基本公式"
+       },
+       {
+        "type": "table",
+        "head": [
+         "文件大小",
+         "网络速度",
+         "加载时间"
+        ],
+        "rows": [
+         [
+          "1MB",
+          "1Mbps",
+          "8秒"
+         ],
+         [
+          "500KB",
+          "1Mbps",
+          "4秒"
+         ],
+         [
+          "200KB",
+          "1Mbps",
+          "1.6秒"
+         ]
+        ]
+       },
+       {
+        "type": "callout",
+        "tone": "note",
+        "text": "文件大小减少60%，加载时间减少75%"
+       }
+      ],
+      "steps": [
+       {
+        "say": "我们来看一个具体的例子，假设你的像素风图片文件大小为1MB，用户网络速度为1Mbps，那么加载时间需要8秒。",
+        "reveal": 1
+       },
+       {
+        "say": "如果我们将图片优化到200KB，同样的网络条件下，加载时间只需要1.6秒，用户体验大幅提升。",
+        "reveal": 2
+       },
+       {
+        "say": "这就是为什么像素风图片优化如此重要，文件大小与加载时间并非线性关系，而是成反比。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p3",
+      "title": "像素图片优化方法",
+      "kind": "code",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素风图片优化方法"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "使用PNG格式保留像素清晰度",
+         "应用图片压缩工具",
+         "使用WebP格式",
+         "实现响应式图片"
+        ]
+       },
+       {
+        "type": "code",
+        "code": "<picture>\n  <source srcset=\"pixel-art.webp\" type=\"image/webp\">\n  <source srcset=\"pixel-art.png\" type=\"image/png\">\n  <img src=\"pixel-art.png\" alt=\"像素风图片\">\n</picture>",
+        "lang": "html"
+       },
+       {
+        "type": "compare",
+        "left": {
+         "h": "优化前",
+         "items": [
+          "文件大小: 800KB",
+          "加载时间: 6.4秒",
+          "格式: PNG"
+         ]
+        },
+        "right": {
+         "h": "优化后",
+         "items": [
+          "文件大小: 200KB",
+          "加载时间: 1.6秒",
+          "格式: WebP"
+         ]
+        }
+       }
+      ],
+      "steps": [
+       {
+        "say": "对于像素风图片，我推荐使用PNG格式来保持像素的清晰度，但我们可以通过压缩来减小文件大小。",
+        "reveal": 1
+       },
+       {
+        "say": "更好的选择是使用WebP格式，它能在保持相同质量的情况下，文件大小比PNG小约30%。",
+        "reveal": 2
+       },
+       {
+        "say": "你可以使用picture元素来实现响应式图片，根据浏览器支持情况自动选择最佳格式。",
+        "reveal": 3
+       },
+       {
+        "say": "通过这些优化，我们可以将800KB的像素风图片压缩到200KB，加载时间从6.4秒减少到1.6秒。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p4",
+      "title": "像素图片优化流程",
+      "kind": "flow",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素风图片优化完整流程"
+       },
+       {
+        "type": "flow",
+        "items": [
+         "选择合适格式",
+         "压缩图片",
+         "实现响应式图片",
+         "测试加载速度"
+        ]
+       },
+       {
+        "type": "code",
+        "code": "img {\n  image-rendering: pixelated;\n  image-rendering: -moz-crisp-edges;\n  image-rendering: crisp-edges;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "callout",
+        "tone": "warn",
+        "text": "不要过度压缩，否则像素风效果会受损"
+       }
+      ],
+      "steps": [
+       {
+        "say": "现在我们来总结一下像素风图片优化的完整流程，首先选择合适的格式，我推荐PNG或WebP。",
+        "reveal": 1
+       },
+       {
+        "say": "第二步是使用工具压缩图片，但要注意不要过度压缩，否则会损害像素风的独特效果。",
+        "reveal": 2
+       },
+       {
+        "say": "第三步是实现响应式图片，根据设备屏幕大小提供不同分辨率的图片。",
+        "reveal": 3
+       },
+       {
+        "say": "最后一步是测试加载速度，确保优化后的图片在不同网络条件下都能快速加载。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p5",
+      "title": "像素图片优化判断方法",
+      "kind": "summary",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "如何判断像素图片优化是否合格"
+       },
+       {
+        "type": "table",
+        "head": [
+         "检查项",
+         "标准",
+         "分值"
+        ],
+        "rows": [
+         [
+          "文件大小",
+          "原图70%以下",
+          "20分"
+         ],
+         [
+          "格式选择",
+          "WebP或PNG",
+          "15分"
+         ],
+         [
+          "响应式实现",
+          "srcset或picture",
+          "25分"
+         ],
+         [
+          "加载速度",
+          "2秒内完成",
+          "30分"
+         ]
+        ]
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "总分80分以上为合格"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "使用Chrome DevTools测试加载性能",
+         "检查不同设备上的显示效果",
+         "验证像素风格是否保持"
+        ]
+       }
+      ],
+      "steps": [
+       {
+        "say": "判断你的像素图片优化是否合格，可以通过检查文件大小、格式选择、响应式实现、加载速度和像素清晰度这五个方面。",
+        "reveal": 1
+       },
+       {
+        "say": "文件大小应控制在原图的70%以下，格式选择WebP或PNG，并实现响应式图片。",
+        "reveal": 2
+       },
+       {
+        "say": "加载速度应在2秒内完成，同时保持像素风格的清晰度。",
+        "reveal": 3
+       },
+       {
+        "say": "你可以使用Chrome DevTools测试加载性能，检查不同设备上的显示效果，确保像素风格始终保持一致。",
+        "reveal": 4
+       },
+       {
+        "say": "记住，像素风图片优化不是简单地减小文件大小，而是要在保持独特视觉效果的前提下提升加载速度。",
+        "reveal": 4
+       }
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "id": "q1",
+      "q": "你正在开发一个像素艺术游戏网站，发现一张800KB的PNG像素风图片在1Mbps网络下加载时间过长。你决定优化它，将其转换为WebP格式并压缩到200KB。现在这张图片在相同网络条件下的加载时间应该是多少？",
+      "options": [
+       {
+        "text": "6.4秒，因为WebP格式在像素风图片上效果不好，需要更大的文件大小",
+        "distractor": true
+       },
+       {
+        "text": "0.8秒，因为文件大小减少75%，加载时间也会相应减少",
+        "distractor": true
+       },
+       {
+        "text": "1.6秒",
+        "correct": true
+       }
+      ],
+      "explain": "正确答案是1.6秒，因为加载时间=文件大小÷网络速度，200KB÷1Mbps=1.6秒。选错的人通常混淆了文件大小减少与加载时间减少的比例关系，或者错误地认为WebP格式不适合像素风图片。",
+      "page": 2
+     },
+     {
+      "id": "q2",
+      "q": "你正在为不同设备设计像素风图片展示，需要实现响应式图片功能。以下哪种实现方式最适合像素风图片的响应式展示？",
+      "options": [
+       {
+        "text": "使用<picture>元素，优先加载WebP格式，并提供PNG作为备选",
+        "correct": true
+       },
+       {
+        "text": "使用简单的<img>标签，通过CSS的image-rendering: pixelated属性保持像素效果",
+        "distractor": true
+       },
+       {
+        "text": "使用<img>标签的srcset属性，但只提供不同尺寸的PNG格式图片",
+        "distractor": true
+       }
+      ],
+      "explain": "正确答案是使用<picture>元素，因为它能根据浏览器支持情况选择最佳格式，同时保持像素风效果。选错的人可能认为CSS的image-rendering属性能解决响应式问题，或者忽略了使用更高效的WebP格式的可能性。",
+      "page": 3
+     },
+     {
+      "id": "q3",
+      "q": "你正在评估一个像素风网站的图片优化效果，根据标准检查项，以下哪项优化结果不合格？",
+      "options": [
+       {
+        "text": "文件大小为原图的80%，使用PNG格式，实现了响应式图片，加载时间为2.5秒",
+        "distractor": true
+       },
+       {
+        "text": "文件大小为原图的65%，使用WebP格式，实现了响应式图片，加载时间为1.5秒",
+        "correct": true
+       },
+       {
+        "text": "文件大小为原图的75%，使用PNG格式，未实现响应式图片，加载时间为3秒",
+        "distractor": true
+       }
+      ],
+      "explain": "正确答案是文件大小为原图的65%，使用WebP格式，实现了响应式图片，加载时间为1.5秒，因为总分超过了80分的合格标准。选错的人可能只关注单一优化指标，而忽略了综合评估的重要性，或者错误地认为只要有一项达标就足够了。",
+      "page": 5
+     }
+    ],
+    "generatedAt": "2026-11-12T09:30:23.559Z"
+   },
+   "u4l3": {
+    "title": "像素风格页面性能优化",
+    "pages": [
+     {
+      "id": "p1",
+      "title": "CSS优化问题",
+      "kind": "concept",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "CSS文件过大导致页面加载缓慢"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "CSS选择器过于复杂",
+         "未使用CSS压缩",
+         "重复代码未清除",
+         "未使用CSS预处理器"
+        ]
+       },
+       {
+        "type": "code",
+        "code": "/* 优化前 */\n.pixel-container {\n  background: #ffffff;\n  padding: 10px;\n  margin: 5px;\n}\n\n/* 优化后 */\n.pixel-container {\n  background: #fff;\n  padding: 10px;\n  margin: 5px;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "CSS文件减少40%，可提升页面加载速度30%"
+       }
+      ],
+      "steps": [
+       {
+        "say": "上一讲我们看到图片优化能显著提升页面性能，但CSS同样会影响加载速度。",
+        "reveal": 1
+       },
+       {
+        "say": "看看这个例子，一个简单的像素风页面，CSS文件竟然有150KB，这会导致什么问题呢？",
+        "reveal": 2
+       },
+       {
+        "say": "没错，在1Mbps网络下，仅CSS就需要加载12秒，这会让用户失去耐心。",
+        "reveal": 3
+       },
+       {
+        "say": "我们可以通过简化选择器、移除重复代码和压缩CSS来解决这个问题。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p2",
+      "title": "CSS优化方法",
+      "kind": "code",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素风页面CSS优化技巧"
+       },
+       {
+        "type": "code",
+        "code": "/* 使用简写属性 */\n.pixel-box {\n  margin: 5px 10px;\n}\n\n/* 移除重复样式 */\n.pixel-box {\n  background: #fff;\n}\n\n/* 使用CSS变量 */\n:root {\n  --pixel-size: 10px;\n}",
+        "lang": "css"
+       },
+       {
+        "type": "compare",
+        "left": {
+         "h": "优化前",
+         "items": [
+          "文件大小: 150KB",
+          "选择器: 20个",
+          "重复代码: 15处"
+         ]
+        },
+        "right": {
+         "h": "优化后",
+         "items": [
+          "文件大小: 60KB",
+          "选择器: 12个",
+          "重复代码: 3处"
+         ]
+        }
+       },
+       {
+        "type": "table",
+        "head": [
+         "优化方法",
+         "效果",
+         "难度"
+        ],
+        "rows": [
+         [
+          "CSS压缩",
+          "减少40%",
+          "简单"
+         ],
+         [
+          "选择器优化",
+          "减少30%",
+          "中等"
+         ],
+         [
+          "移除冗余",
+          "减少20%",
+          "简单"
+         ]
+        ]
+       }
+      ],
+      "steps": [
+       {
+        "say": "看这个优化后的代码，我们使用了简写属性、移除了重复代码，并引入了CSS变量。",
+        "reveal": 1
+       },
+       {
+        "say": "对比表格显示，优化后CSS文件大小从150KB减少到60KB，减少了60%。",
+        "reveal": 2
+       },
+       {
+        "say": "在1Mbps网络下，CSS加载时间从12秒减少到4.8秒，提升了60%的速度。",
+        "reveal": 3
+       },
+       {
+        "say": "这些优化不会影响像素风的视觉效果，却能显著提升用户体验。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p3",
+      "title": "JavaScript优化问题",
+      "kind": "concept",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "JavaScript执行阻塞页面渲染"
+       },
+       {
+        "type": "bullets",
+        "items": [
+         "脚本加载顺序不当",
+         "未使用异步加载",
+         "DOM操作频繁",
+         "缺少事件节流"
+        ]
+       },
+       {
+        "type": "code",
+        "code": "// 优化前\nfunction updatePixelArt() {\n  const elements = document.querySelectorAll('.pixel');\n  elements.forEach(el => {\n    el.style.background = '#fff';\n  });\n}\n\n// 优化后\nfunction updatePixelArt() {\n  requestAnimationFrame(() => {\n    const elements = document.querySelectorAll('.pixel');\n    elements.forEach(el => {\n      el.style.background = '#fff';\n    });\n  });",
+        "lang": "javascript"
+       },
+       {
+        "type": "callout",
+        "tone": "warn",
+        "text": "JavaScript执行时间过长会导致页面卡顿，影响用户体验"
+       }
+      ],
+      "steps": [
+       {
+        "say": "除了CSS，JavaScript也是影响像素风页面性能的重要因素。",
+        "reveal": 1
+       },
+       {
+        "say": "看这个例子，在优化前，JavaScript直接操作DOM会导致页面卡顿，特别是在处理大量像素元素时。",
+        "reveal": 2
+       },
+       {
+        "say": "使用requestAnimationFrame可以将DOM操作安排在浏览器重绘前执行，减少阻塞。",
+        "reveal": 3
+       },
+       {
+        "say": "对于频繁触发的事件，如滚动或点击，应该使用节流函数来限制执行频率。",
+        "reveal": 4
+       }
+      ]
+     },
+     {
+      "id": "p4",
+      "title": "性能优化总结",
+      "kind": "summary",
+      "blocks": [
+       {
+        "type": "text",
+        "text": "像素风页面性能优化检查表"
+       },
+       {
+        "type": "table",
+        "head": [
+         "检查项",
+         "标准",
+         "分值"
+        ],
+        "rows": [
+         [
+          "CSS文件大小",
+          "原文件50%以下",
+          "20分"
+         ],
+         [
+          "JavaScript优化",
+          "使用异步加载",
+          "25分"
+         ],
+         [
+          "图片优化",
+          "WebP格式+响应式",
+          "30分"
+         ],
+         [
+          "加载速度",
+          "1.5秒内完成",
+          "25分"
+         ]
+        ]
+       },
+       {
+        "type": "flow",
+        "items": [
+         "检查CSS大小",
+         "优化JavaScript",
+         "测试加载速度",
+         "调整优化策略"
+        ]
+       },
+       {
+        "type": "callout",
+        "tone": "key",
+        "text": "总分80分以上为合格，使用Chrome DevTools测试性能"
+       }
+      ],
+      "steps": [
+       {
+        "say": "现在我们已经学习了像素风页面的全面优化方法，包括图片、CSS和JavaScript。",
+        "reveal": 1
+       },
+       {
+        "say": "通过这个检查表，你可以评估自己的优化效果，确保页面在各种设备上都能快速加载。",
+        "reveal": 2
+       },
+       {
+        "say": "记住，优化不是一次性的工作，应该定期检查和调整，以保持最佳性能。",
+        "reveal": 3
+       },
+       {
+        "say": "恭喜你完成了像素风个人主页制作的全部课程，现在你已经掌握了创建高性能像素风页面的所有技能！",
+        "reveal": 4
+       }
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "id": "q1",
+      "q": "在优化像素风格页面时，以下哪种CSS优化方法能最大程度减少文件大小？",
+      "options": [
+       {
+        "text": "增加更多的CSS类来组织样式",
+        "distractor": true
+       },
+       {
+        "text": "使用简写属性合并多个CSS声明",
+        "correct": true
+       },
+       {
+        "text": "使用注释解释每个CSS规则的作用",
+        "distractor": true
+       }
+      ],
+      "explain": "正确选项是因为简写属性能显著减少代码量，如将margin-top、margin-right等合并为一个margin声明。选错的人通常认为增加类名或注释能优化文件大小，实际上这些会增加文件大小而非减少。",
+      "page": 2
+     },
+     {
+      "id": "q2",
+      "q": "当像素风格页面中的JavaScript代码频繁更新DOM元素时，以下哪种方法能最好地提升性能？",
+      "options": [
+       {
+        "text": "使用requestAnimationFrame批量更新DOM",
+        "correct": true
+       },
+       {
+        "text": "每次更新后立即调用console.log调试",
+        "distractor": true
+       },
+       {
+        "text": "将所有DOM操作放在一个大的循环中一次性完成",
+        "distractor": true
+       }
+      ],
+      "explain": "正确选项是因为requestAnimationFrame会在浏览器重绘之前执行DOM更新，减少重绘次数，提高性能。选错的人通常认为添加调试代码或集中所有操作能提升性能，实际上这会增加额外的计算和渲染负担。",
+      "page": 3
+     },
+     {
+      "id": "q3",
+      "q": "在评估像素风格页面性能优化效果时，以下哪个指标最能反映用户体验？",
+      "options": [
+       {
+        "text": "CSS文件中的选择器数量",
+        "distractor": true
+       },
+       {
+        "text": "JavaScript代码的行数",
+        "distractor": true
+       },
+       {
+        "text": "页面首次内容绘制时间",
+        "correct": true
+       }
+      ],
+      "explain": "正确选项是因为首次内容绘制时间直接反映了用户何时能看到页面内容，是用户体验的关键指标。选错的人通常关注代码量而非实际用户体验，认为选择器数量或代码行数能代表性能，但实际上这些只是间接指标。",
+      "page": 4
+     }
+    ],
+    "generatedAt": "2026-11-12T09:30:46.311Z"
+   }
+  },
+  "createdAt": "2026-11-12T09:23:53.062Z",
+  "updatedAt": "2026-11-13T02:51:14.116Z",
+  "terminals": {
+   "u1": {
+    "kind": "code",
+    "scene": "作品集页面的「已就绪」计数总是把所有条目都算进去",
+    "fnName": "readyCount",
+    "code": "function readyCount(items) {\n  let n = 0\n  for (const it of items) {\n    if (it.ready = true) n++\n  }\n  return n\n}",
+    "brokenLine": 4,
+    "fix": "    if (it.ready === true) n++",
+    "tests": [
+     {
+      "call": "readyCount([{ ready: true }, { ready: false }, { ready: true }])",
+      "value": 2
+     },
+     {
+      "call": "readyCount([])",
+      "value": 0
+     },
+     {
+      "call": "readyCount([{ ready: false }])",
+      "value": 0
+     }
+    ],
+    "hint": "这个判断每次都在改写 it.ready，而不是在比较——一个等号两个等号差很多",
+    "why": "赋值表达式的值恒为 true，所以每一项都会被算进去",
+    "source": "fallback"
+   },
+   "u2": {
+    "scene": "像素风个人主页的动画效果计算",
+    "fnName": "calculatePixelAnimation",
+    "code": "function calculatePixelAnimation(frames, speed) {\n  let totalDuration = 0;\n  for (let i = 0; i <= frames.length; i++) {\n    totalDuration += frames[i] * speed;\n  }\n  return totalDuration;\n}",
+    "brokenLine": 3,
+    "fix": "  for (let i = 0; i < frames.length; i++) {",
+    "tests": [
+     {
+      "call": "calculatePixelAnimation([100, 200, 300], 10)",
+      "value": 6000
+     },
+     {
+      "call": "calculatePixelAnimation([50, 100], 5)",
+      "value": 750
+     },
+     {
+      "call": "calculatePixelAnimation([10, 20, 30, 40], 2)",
+      "value": 200
+     }
+    ],
+    "hint": "检查循环的边界条件，数组索引是否越界",
+    "why": "循环条件使用了 <= 导致数组索引越界，访问了不存在的元素",
+    "kind": "code",
+    "brokenCount": 3,
+    "source": "model"
+   },
+   "u3": {
+    "scene": "像素风导航菜单的激活状态判断",
+    "fnName": "isActiveMenuItem",
+    "code": "function isActiveMenuItem(menuItems, activeIndex) {\n  let activeCount = 0;\n  for (let i = 0; i <= menuItems.length; i++) {\n    if (i === activeIndex) activeCount++;\n  }\n  return activeCount === 1;\n}",
+    "brokenLine": 3,
+    "fix": "  for (let i = 0; i < menuItems.length; i++) {",
+    "tests": [
+     {
+      "call": "isActiveMenuItem(['home', 'about', 'contact'], 1)",
+      "value": true
+     },
+     {
+      "call": "isActiveMenuItem(['home', 'about', 'contact'], 3)",
+      "value": false
+     },
+     {
+      "call": "isActiveMenuItem(['home', 'about'], 1)",
+      "value": true
+     }
+    ],
+    "hint": "检查循环边界条件，数组索引的有效范围是什么？",
+    "why": "循环条件使用了 <= 导致数组越界，当 activeIndex 等于数组长度时会多执行一次循环",
+    "kind": "code",
+    "brokenCount": 1,
+    "source": "model"
+   },
+   "u4": {
+    "scene": "在像素风个人主页的图片懒加载功能中",
+    "fnName": "shouldLoadImage",
+    "code": "function shouldLoadImage(imageTop, viewportTop, viewportHeight) {\n  const imageBottom = imageTop + 100;\n  const viewportBottom = viewportTop + viewportHeight;\n  if (imageTop >= viewportBottom || imageBottom <= viewportTop) return false;\n  return true;\n}",
+    "brokenLine": 4,
+    "fix": "  if (imageTop > viewportBottom || imageBottom < viewportTop) return false;",
+    "tests": [
+     {
+      "call": "shouldLoadImage(100, 0, 200)",
+      "value": true
+     },
+     {
+      "call": "shouldLoadImage(300, 0, 200)",
+      "value": false
+     },
+     {
+      "call": "shouldLoadImage(200, 0, 200)",
+      "value": true
+     }
+    ],
+    "hint": "想想边界条件判断时，应该使用严格比较还是宽松比较？",
+    "why": "边界条件判断使用了 >= 和 <= 而不是 > 和 <，导致刚好在边界上的图片被错误地判断为不需要加载",
+    "kind": "code",
+    "brokenCount": 1,
+    "source": "model"
+   }
+  },
+  "game": {
+   "stars": {},
+   "cleared": [],
+   "attempts": {},
+   "terminals": {},
+   "builds": {}
+  },
+  "track": "frontend",
+  "crafts": {
+   "u1l3": {
+    "type": "order",
+    "title": "排列像素代码",
+    "lang": "html",
+    "lines": [
+     "</div>",
+     "<h1 style=\"font-size: 24px; color: #3D5A80;\">像素风主页</h1>",
+     "<p style=\"font-size: 16px; color: #293241;\">这是一段像素风格的文字</p>",
+     "<div class=\"pixel-text\">",
+     "<p style=\"font-size: 12px; color: #98C1D9;\">副标题内容</p>"
+    ],
+    "answer": [
+     3,
+     1,
+     2,
+     4,
+     0
+    ],
+    "hint": "注意HTML元素的正确嵌套顺序",
+    "why": "HTML元素必须正确嵌套，外层div包裹所有内容；标题应在段落前显示；不同大小的文本应按层级排列。"
+   },
+   "u3l3": {
+    "type": "order",
+    "title": "还原导航结构",
+    "lang": "html",
+    "lines": [
+     "<ul>",
+     "</ul>",
+     "<li><a href=\"#about\">关于</a></li>",
+     "</nav>",
+     "<li><a href=\"#home\">首页</a></li>",
+     "<nav class=\"pixel-nav\">"
+    ],
+    "answer": [
+     5,
+     0,
+     4,
+     2,
+     1,
+     3
+    ],
+    "hint": "导航需要正确的嵌套结构",
+    "why": "nav元素包含ul列表，列表项包含链接，这种嵌套结构不能错乱。缺少任何一行都会导致结构不完整。"
+   },
+   "u4l2": {
+    "type": "order",
+    "title": "排回响应式图片",
+    "lang": "html",
+    "lines": [
+     "</picture>",
+     "<source srcset=\"pixel-art.webp\" type=\"image/webp\">",
+     "<source srcset=\"pixel-art.png\" type=\"image/png\">",
+     "<picture>",
+     "<img src=\"pixel-art.png\" alt=\"像素风图片\">"
+    ],
+    "answer": [
+     3,
+     1,
+     2,
+     4,
+     0
+    ],
+    "hint": "注意picture标签的正确嵌套顺序",
+    "why": "source标签必须在img标签之前，浏览器会按顺序检查可用的图片格式。picture标签必须正确闭合，否则无法显示图片。"
+   },
+   "u1l2": {
+    "type": "match",
+    "title": "算准像素尺寸",
+    "left": [
+     "box-sizing",
+     "position: absolute",
+     "border-radius: 0",
+     "box-shadow: 4px 4px 0"
+    ],
+    "right": [
+     "模糊值为 0，得到不带过渡的硬边阴影",
+     "去掉圆角，这是像素风的直角边界",
+     "相对最近的定位祖先摆放，父级要 relative",
+     "设为 border-box 后宽高包含内边距和边框"
+    ],
+    "pairs": [
+     3,
+     2,
+     1,
+     0
+    ],
+    "hint": "宽度算不准，多半是盒模型在跟你耍花招。",
+    "why": "像素风最怕半像素：尺寸只要带小数，边缘就会发虚。所以宽高要算准、圆角要归零。"
+   },
+   "u2l1": {
+    "type": "match",
+    "title": "拆解像素图标",
+    "left": [
+     "伪元素 ::before",
+     "整数宽高",
+     "纯色填充",
+     "多重 box-shadow"
+    ],
+    "right": [
+     "不加 DOM 节点就能多画一块图形",
+     "只用单一颜色填形，不要渐变过渡",
+     "一组零模糊阴影，拼出好几个像素块",
+     "尺寸取整数像素，避免半像素被浏览器模糊化"
+    ],
+    "pairs": [
+     0,
+     3,
+     1,
+     2
+    ],
+    "hint": "一个像素图标，往往只是几个方块叠出来的。",
+    "why": "图标不要贴图：用纯色方块一点点拼，放大缩小都不糊。"
+   },
+   "u2l3": {
+    "type": "match",
+    "title": "让像素动起来",
+    "left": [
+     "@keyframes",
+     "animation",
+     "transform: translateX()",
+     "steps()"
+    ],
+    "right": [
+     "把关键帧挂到元素上，并设定时长与循环",
+     "描述动画从起始到结束要经过哪些状态",
+     "把动画切成几格跳变，模拟逐帧而不是平滑滑动",
+     "沿水平方向移动，比改 left 少一次重排"
+    ],
+    "pairs": [
+     1,
+     0,
+     3,
+     2
+    ],
+    "hint": "像素动画要一格一格跳，不是慢慢滑。",
+    "why": "平滑过渡会让像素边缘糊掉；按帧跳变才像老游戏。"
+   },
+   "u3l1": {
+    "type": "match",
+    "title": "做出按下去的手感",
+    "left": [
+     ":hover",
+     "translate(2px, 2px)",
+     "box-shadow",
+     "cursor: pointer"
+    ],
+    "right": [
+     "按下时微微位移，恰好吃掉阴影的距离",
+     "鼠标移上去时的样式，用来给即时反馈",
+     "按下时收为 0，按钮看起来被压进页面里",
+     "鼠标变成手形，告诉用户这里能点"
+    ],
+    "pairs": [
+     1,
+     0,
+     2,
+     3
+    ],
+    "hint": "按钮按下时，位移和阴影是一起变的。",
+    "why": "像素按钮的立体感全靠硬阴影撑着，按下时把阴影收掉，它才像真的被压进去。"
+   },
+   "u3l2": {
+    "type": "match",
+    "title": "设计像素表单",
+    "left": [
+     ":focus",
+     "outline: none",
+     "placeholder",
+     "disabled"
+    ],
+    "right": [
+     "去掉浏览器默认焦点框，但必须补一个自定义边框",
+     "输入框为空时显示在里面的提示文字",
+     "输入框被选中时的样式，要让人一眼看出光标在哪",
+     "不可输入的状态，要同时降低对比度让人看出来"
+    ],
+    "pairs": [
+     2,
+     0,
+     1,
+     3
+    ],
+    "hint": "焦点框不能直接删掉，要换一个看得见的。",
+    "why": "去掉默认 outline 却不给替代，键盘用户就不知道光标在哪。换，而不是删。"
+   },
+   "u4l1": {
+    "type": "match",
+    "title": "让布局随屏幕变",
+    "left": [
+     "@media",
+     "flex-direction: column",
+     "flex-wrap: wrap",
+     "viewport"
+    ],
+    "right": [
+     "满足括号里的条件时，才套用这一组样式",
+     "一行放不下就换行，不要硬挤在一起",
+     "让移动端按设备宽度渲染，否则整页会被当成 980px 缩小",
+     "把横排改成竖排，小屏导航常用"
+    ],
+    "pairs": [
+     0,
+     3,
+     1,
+     2
+    ],
+    "hint": "小屏不是把东西缩小，是换个排法。",
+    "why": "移动端先按设备宽度渲染，再用媒体查询改排法；把整页缩小只会让字看不清。"
+   },
+   "u4l3": {
+    "type": "match",
+    "title": "让页面更快",
+    "left": [
+     "CSS 压缩",
+     "CSS 变量",
+     "async",
+     "事件节流"
+    ],
+    "right": [
+     "去掉空格和注释，减小的是下载体积",
+     "高频事件按固定间隔触发，减少回调执行次数",
+     "脚本下载时不阻塞 HTML 解析，下载完立即执行",
+     "把重复的颜色尺寸存在一处，改一个地方全局生效"
+    ],
+    "pairs": [
+     0,
+     3,
+     2,
+     1
+    ],
+    "hint": "先测量，再优化；不要凭感觉删代码。",
+    "why": "性能优化要先知道瓶颈在哪：压缩省的是下载，节流省的是执行，两者不是一回事。"
+   },
+   "u1l1": {
+    "type": "match",
+    "title": "认对页面骨架",
+    "left": [
+     "<main>",
+     "<section>",
+     "<header>",
+     "<div>"
+    ],
+    "right": [
+     "按主题切分正文，每一块自带标题",
+     "页面主体内容的容器，整页只能有一个",
+     "存放页面或区块的标题与导航",
+     "没有语义的通用容器，找不到合适标签时才用"
+    ],
+    "pairs": [
+     1,
+     0,
+     2,
+     3
+    ],
+    "hint": "先问这块内容是什么，再决定用哪个标签。",
+    "why": "骨架选错标签，样式和结构都要返工。div 能装下一切，但它什么也没说明。"
+   },
+   "u2l2": {
+    "type": "match",
+    "title": "摆好像素角色",
+    "left": [
+     "父级 relative",
+     "z-index",
+     "transform: scale()",
+     "position: absolute"
+    ],
+    "right": [
+     "给绝对定位的子元素一个坐标参照系",
+     "决定重叠时谁压住谁，比如手要盖在身体前面",
+     "按坐标把头部、身体逐个钉在容器里",
+     "整体放大角色，像素边缘依然锐利"
+    ],
+    "pairs": [
+     0,
+     1,
+     3,
+     2
+    ],
+    "hint": "角色是一层层叠起来的，谁在前谁在后要想清楚。",
+    "why": "角色就是几个绝对定位的方块：父级给坐标系，z-index 决定遮挡，缩放不能糊。"
+   }
+  }
+ }
+}

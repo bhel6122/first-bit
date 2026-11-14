@@ -1,0 +1,3716 @@
+[
+ {
+  "s": "回到课程",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 9
+ },
+ {
+  "s": "回首页",
+  "kind": "text",
+  "file": "battle.js",
+  "n": 6
+ },
+ {
+  "s": "回地图",
+  "kind": "text",
+  "file": "battle.js",
+  "n": 6
+ },
+ {
+  "s": "跟课学",
+  "kind": "str",
+  "file": "core.js",
+  "n": 6
+ },
+ {
+  "s": "发送",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 5
+ },
+ {
+  "s": "已保存",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 5
+ },
+ {
+  "s": "关闭",
+  "kind": "str",
+  "file": "core.js",
+  "n": 4
+ },
+ {
+  "s": "自由学",
+  "kind": "text",
+  "file": "home.js",
+  "n": 4
+ },
+ {
+  "s": "上移",
+  "kind": "str",
+  "file": "home.js",
+  "n": 4
+ },
+ {
+  "s": "下移",
+  "kind": "str",
+  "file": "home.js",
+  "n": 4
+ },
+ {
+  "s": "项目名",
+  "kind": "str",
+  "file": "home.js",
+  "n": 4
+ },
+ {
+  "s": "兴趣问卷",
+  "kind": "str",
+  "file": "world.js",
+  "n": 4
+ },
+ {
+  "s": "语速",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 3
+ },
+ {
+  "s": "找不到这门课",
+  "kind": "text",
+  "file": "course.js",
+  "n": 3
+ },
+ {
+  "s": "交付物",
+  "kind": "text",
+  "file": "course.js",
+  "n": 3
+ },
+ {
+  "s": "故障终端",
+  "kind": "text",
+  "file": "map.js",
+  "n": 3
+ },
+ {
+  "s": "再打一次",
+  "kind": "text",
+  "file": "battle.js",
+  "n": 2
+ },
+ {
+  "s": "这里容易想岔",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 2
+ },
+ {
+  "s": "空格 播放 / 暂停 · ← → 翻页 · Q 直接做题 · 右侧随时提问",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "不打断播放",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "生成没有完成，请再试一次。",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "不看板书，直接做这一讲的题（Q）",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "重新生成这一讲",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "这一讲还没生成内容。",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "先等这一讲生成完。",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "这一讲还没出题，等它生成完。",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "这一讲的内容是空的，请重新生成。",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "上一页（←）",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "播放 / 暂停（空格）",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "下一页（→）",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "旁白开关",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "让导师换一种说法，把这一页重讲一次",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "例如：这里为什么要除以 n？",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "语音提问",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "板书",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "这一讲还没出题，等它生成完再试。",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "这一讲讲透了",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "笔记已保存",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "已复制到剪贴板",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "已复制",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 2
+ },
+ {
+  "s": "再试一次",
+  "kind": "text",
+  "file": "core.js",
+  "n": 2
+ },
+ {
+  "s": "练习",
+  "kind": "str",
+  "file": "core.js",
+  "n": 2
+ },
+ {
+  "s": "课程资料",
+  "kind": "text",
+  "file": "course.js",
+  "n": 2
+ },
+ {
+  "s": "哪里断了，回哪里补",
+  "kind": "text",
+  "file": "course.js",
+  "n": 2
+ },
+ {
+  "s": "答错的题按 1→3→7→14→30 天间隔安排复习",
+  "kind": "str",
+  "file": "course.js",
+  "n": 2
+ },
+ {
+  "s": "不看板书，直接答题",
+  "kind": "str",
+  "file": "course.js",
+  "n": 2
+ },
+ {
+  "s": "项目式学习",
+  "kind": "str",
+  "file": "course.js",
+  "n": 2
+ },
+ {
+  "s": "这个单元还没有生成练习题。先打开一讲，生成后再来。",
+  "kind": "str",
+  "file": "course.js",
+  "n": 2
+ },
+ {
+  "s": "现在没有到期的错题。先去学几讲、做做题。",
+  "kind": "str",
+  "file": "course.js",
+  "n": 2
+ },
+ {
+  "s": "选择模式",
+  "kind": "text",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "你的情况",
+  "kind": "text",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "修改大纲",
+  "kind": "text",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "开始学习",
+  "kind": "text",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "返回",
+  "kind": "text",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "推荐",
+  "kind": "text",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "例如：用 6 周搞懂 HTTP 缓存",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "先写一个想学的主题，两个字以上。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "移除",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "中文",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "把教学大纲、周次安排或课件要点粘在这里…",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "粘贴的内容太短了，至少一段。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "粘贴的内容",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "已加入材料",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "示例大纲已载入",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "先写一个课程名或主题。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "跟课学需要至少一份材料，或者写清课程名。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "例如：下个月面试后端，缓存这块总被问住；或者：期末想从 70 分到 85 分。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "主题丢了，请返回上一步填写。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "课程标题",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "一句话说明这门课的不同",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "课程副标题",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "保存大纲，回到课程",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "确认大纲，开始建课",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "单元标题",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "这个单元要解决的核心问题",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "单元目标",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "看不懂这个单元？直接问",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "删除单元",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "讲次标题",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "分钟",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "看不懂这一讲？直接问",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "删除",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "做什么、为什么值得做",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "项目说明",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "保存中…",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "最多 6 个单元。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "新的讲次",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "至少保留一个单元。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "每个单元最多 5 讲。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "每个单元至少保留一讲。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "系统课程至少需要三讲。可以再加一讲，或返回上一步改成精简规模。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "例如：标题里的这个词是什么意思？为什么放在第一讲？",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "先写下你的问题。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "这一行已经不在草案里了，刷新后再试。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "标题已按建议修改，自动保存中。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 2
+ },
+ {
+  "s": "3-6 小时",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 2
+ },
+ {
+  "s": "直接挑战",
+  "kind": "text",
+  "file": "map.js",
+  "n": 2
+ },
+ {
+  "s": "取消",
+  "kind": "text",
+  "file": "map.js",
+  "n": 2
+ },
+ {
+  "s": "前一个地标还没点亮，路暂时通不过去。",
+  "kind": "str",
+  "file": "map.js",
+  "n": 2
+ },
+ {
+  "s": "故障终端 · 改一行真代码，跑测试用例",
+  "kind": "str",
+  "file": "map.js",
+  "n": 2
+ },
+ {
+  "s": "还没生成题目",
+  "kind": "str",
+  "file": "map.js",
+  "n": 2
+ },
+ {
+  "s": "收起",
+  "kind": "str",
+  "file": "tutor.js",
+  "n": 2
+ },
+ {
+  "s": "卡在哪一步？直接问，比如：这个循环为什么少算一个",
+  "kind": "str",
+  "file": "tutor.js",
+  "n": 2
+ },
+ {
+  "s": "上一段",
+  "kind": "text",
+  "file": "world.js",
+  "n": 2
+ },
+ {
+  "s": "标准学期 · 12 讲",
+  "kind": "str",
+  "file": "world.js",
+  "n": 2
+ },
+ {
+  "s": "六维兴趣雷达图",
+  "kind": "str",
+  "file": "world.js",
+  "n": 2
+ },
+ {
+  "s": "页面没加载出来",
+  "kind": "text",
+  "file": "app.js",
+  "n": 1
+ },
+ {
+  "s": "回到首页",
+  "kind": "text",
+  "file": "app.js",
+  "n": 1
+ },
+ {
+  "s": "first-bit · 课程工坊",
+  "kind": "str",
+  "file": "app.js",
+  "n": 1
+ },
+ {
+  "s": "进不去",
+  "kind": "text",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "正在布阵",
+  "kind": "text",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "把题目搬进战斗…",
+  "kind": "text",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "这一关还没准备好",
+  "kind": "text",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "没有题目",
+  "kind": "text",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "这一关还没有可用的题目，先把这一讲的板书读完。",
+  "kind": "text",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "撤出去",
+  "kind": "text",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "答错可以再答一次，第二次再错才会掉第二颗心。",
+  "kind": "text",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "心用完了。",
+  "kind": "text",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "看结果",
+  "kind": "text",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "这一页找不到了。",
+  "kind": "text",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "这一页暂时打不开。",
+  "kind": "text",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "失败不扣经验，题目顺序会打乱，再打一次就行。",
+  "kind": "text",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "（这一题他已经答过一次）",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "这一讲还没生成，先回去读板书。",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "本讲",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "复习",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "追击",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "这个区域还没有足够的题目，先读完几讲。",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "区域",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "区域守关者",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "回源幽灵",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "答对了，伤害打满",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "这次对了，但已经不算一次命中",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "翻页中…",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "结算这场",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "下一回合",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "答错的题还能再答一次，但这次的星级已经记下了。",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "这场没打完",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "区域守关者倒下了",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "这一关通了",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "心用完了，再来一次。",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "三颗星，一次没错。",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "过了，但还有两处能补。",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "过了，星不多。",
+  "kind": "str",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "我是这一场的导师。卡住就把题目发我，我先帮你看它在考什么，再给一个你自己能往下走的提示——答案还得你自己选。",
+  "kind": "tpl",
+  "file": "battle.js",
+  "n": 1
+ },
+ {
+  "s": "找不到这一讲",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "当前是演示模式，不能生成新的讲次。可以体验内置示例课程，或配置模型后再来。",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "去看示例课程",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "返回课程",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "这一讲还没有内容",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "第一次打开时，会现场生成板书、讲解词和三道练习题。",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "生成过程中可以切走，任务会在后台继续。",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "生成完成后，这里会出现",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "逐句讲解稿和随时提问的入口。",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "旁白",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "讲解",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "追问",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "Enter 发送 · Shift+Enter 换行",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "这一页哪里没讲清楚？",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "直接问，助教会贴着当前板书回答。",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "也可以按麦克风用说的。",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "正在看当前这一页…",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "再听一遍",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "这一讲学完了",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "板书笔记",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "可以改，再导出或保存",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "复制",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "保存",
+  "kind": "text",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "概念",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "推导",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "代码",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "对比",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "流程",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "收束",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "演示",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "开场",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "正在写这一讲",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "梳理这一讲的脉络",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "写板书",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "配讲解词",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "出三道练习题",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "第一次打开需要 20-40 秒。之后再进来会直接读已生成的内容；不满意可以重新生成。",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "这一讲",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "暂停（空格）",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "播放（空格）",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "基本掌握，还有一个点要补",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "回到板书上再看一遍",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "三道题都答对了。板书可以导出成笔记，方便课后复盘。",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "答错的那道题已经标记，回到对应页再听一遍，收益最大。",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "这是最后一讲，可以回到课程做单元测试。",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "还未保存",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "这一页没听懂，重讲",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "重新生成这一讲？当前的板书内容会被替换，笔记和练习记录会保留。",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "重写这一讲",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "重新梳理脉络",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "重写板书",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "重新配讲解",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "出新练习题",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "旧内容会被新内容替换。如果新的不如旧的，只能再生成一次。",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "已暂停讲解",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "这一页我没听懂，请换一种说法重讲。",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "这个浏览器不支持语音识别，可以打字提问",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "在听…",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "没听清，再试一次",
+  "kind": "str",
+  "file": "classroom.js",
+  "n": 1
+ },
+ {
+  "s": "课程工坊",
+  "kind": "text",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "先回去",
+  "kind": "text",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "上一题",
+  "kind": "text",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "服务未就绪",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "我的课程",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "闯关地图",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "演示模式 · 内置课程",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "生成需要 20-40 秒。大纲和每一讲之后都可以改，不会锁死。",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "把请求发给课程设计师",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "完成",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "生成失败",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "等了太久，任务可能卡住了。可以再试一次。",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "检查一下",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "答对了",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "继续，下一题会稍难一点。",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "先弄懂，再往下走。",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "选一个最接近你想法的答案。",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "查看结果",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "下一题",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "助教正在看这道题…",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "基本掌握了",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "还有几个点要回看",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "全部正确。可以进入下一讲，或者把板书导出成笔记。",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "大部分理解到位。错的那道题对应的板书值得再看一遍。",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "建议回到讲错的那一页重新听一遍，再来做一次。",
+  "kind": "str",
+  "file": "core.js",
+  "n": 1
+ },
+ {
+  "s": "回到我的课程",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "示例课程 · 无需模型也能体验",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "学习进度",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "直接看板书",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "“先能讲出来，才算真的会。”",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "每一讲最后都有三道情境题。答错不是扣分，是把你送回讲这个知识点的那一页。课程不会因为答错而卡住。",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "学习统计",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "已完成讲次",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "练习题正确率",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "课堂时长",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "完成项目",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "大纲和术语按这些材料生成。",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "课程管理",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "大纲可以随时回来改。已经生成的讲次会保留；改了标题的讲次可以重新生成内容。",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "删除这门课",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "挑战",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "怎么算做好",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "项目不强制提交，做完自己打勾即可。",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "正在读你的错题和选错的那个选项…（约 10-20 秒）",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "薄弱讲次（按严重程度）",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "这个单元还没有错题记录，先做完单元测试再来看。",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "错题已自动进入间隔复习（1 → 3 → 7 → 14 → 30 天）。",
+  "kind": "text",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "自由学课程",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "开始第一讲",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "继续学习",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "还没有开始。点开第一讲，老师会开口讲，板书跟着写。",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "全部讲次都学完了。可以回头做单元测试，或者重看任意一节。",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "建议按顺序学：后一讲默认前一讲已经掌握。",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "板书课已生成，点开继续。",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "第一次打开时生成板书与讲解，约 20-40 秒。",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "项目已完成",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "删除「{name}」？进度、笔记和已生成的讲次都会一并删除。",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "取消完成标记",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "标记为已完成",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "这个单元通了",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "大体掌握",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "建议回看几讲",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "全部答对。可以去下一个单元，或者把某一讲的板书导出成笔记。",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "错题已经记下来。点「诊断薄弱点」可以看到断在哪一讲；答错的题会按间隔自动安排复习。",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "诊断薄弱点",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "SPACED REVIEW · 错题间隔复习",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "这批错题清零了",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "还剩几道没拿下",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "答对的题已经推后到更远的日期，明天不会再出现。",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "没答对的题明天还会再出现；答对的部分已经推后。错题反复出现不是坏事——那就是你真正的断点。",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "AI 诊断",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "本地诊断",
+  "kind": "str",
+  "file": "course.js",
+  "n": 1
+ },
+ {
+  "s": "FIRST-BIT · 点题单",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "让学习的开始",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "不再犹豫",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "不必再花时间挑选学习路线，只需要输入学习主题，即刻为你生成可行的学习路线和课程。让学习不再停留在“不知从何做起”这一步。",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "自由学 · 闯关地图",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "想学软件开发但不知道学什么？先答 18 道兴趣题，然后找到你的专属探险路线吧！",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "约 3 分钟问卷 · 结果可以改",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "把大纲 / 课件拖到这里",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "，或点击选择文件",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "支持 txt · md · html · csv · PDF；PPT 请复制文字粘贴",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "已经有想学的主题，也可以从书架里接着上次的课往下学。",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "课程书架",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "还没有课程。",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "在左边写下一个主题，四步就能开始。",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "草案 · 待确认",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "示例",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "先决定这门课从哪来。",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "没有资料也能从零搭；有教学大纲或课件，就按你学校的内容和术语来。",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "直接输入想学的主题。适合转行、补基础、准备面试，或者单纯好奇。",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "上传教学大纲、课件、作业，按学校的进度和术语建课。也可以之后导入 LMS 材料。",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "一句话就够",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "拖入文件",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "，或点击选择（txt / md / html / csv / PDF）",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "最多 5 份。PPT 请把文字复制出来粘贴；扫描版 PDF 读不出文字。",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "载入一份示例大纲",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "五个问题，决定这门课怎么讲。",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "同一门「概率论」，零基础的人要具体例子，考研的人要题型。你的答案决定从哪讲起、讲到多深、练什么。每题都有推荐答案，不同意再改。",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "无材料 · AI 从零搭",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "修改主题 / 材料",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "用你自己的话说说目标",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "可选，但很有用",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "下一步只是草案。单元、讲次、项目都能改，改完确认才会开始写课。",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "重新建一门",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "草案不是固定的，先改到顺眼。",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "学完能做到什么",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "会显示在课程首页",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "这份草案",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "单元",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "讲次",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "预计时长",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "确认后，每一讲会在你第一次打开时现场生成板书与讲解。之后仍可回来改大纲，已生成的讲次会保留。",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "放弃这门课",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "分",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "交付物（一行一个）",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "看不懂的标题直接问。答案会讲清楚它教什么、为什么排在这里；如果标题本身写得绕，会给出更直白的改法，一键替换。",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "顾问正在看整份大纲…（约 5-15 秒）",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "建议这样改",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "标题改为",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "用这个改法",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "先不改",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "大纲本身没问题。如果还是觉得别扭，可以直接在标题输入框里手动改。",
+  "kind": "text",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "用 6 周搞懂 HTTP 缓存",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "线性代数：从直觉到计算",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "SQL 从会写到会优化",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "博弈论入门：看懂策略",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "要跟的课",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "想学的主题",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "课程名，例如：高等数学（上）",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "添加学校材料",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "附上资料",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "大纲 / 课件 / 作业",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "没有也行，从零搭",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "还是空的。左边点一个题就能开课。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "演示模式：内置课程可完整体验，接上 API Key 就能生成自己的课",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "完全零基础",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "没学过这门课，也没做过相关练习",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "看过，没练过",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "读过教材或文章，没独立做完过一道题",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "跟着能做，独立卡住",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "照示例能走完，离开示例写不出下一步",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "独立做完整过",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "自己完成过一个作品，但说不清边界情况",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "只差几个点",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "能说出具体卡住的是哪 1-3 个知识点",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "讲透原理",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "每个结论都给推导，练习以解释为主",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "动手实战",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "每讲都有要写的代码，讲完就能跑起来",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "考试导向",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "按考点排序，配真题和易错点",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "项目作品",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "全课围绕一个作品，每讲加一块",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "从零做出一个作品",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "结课时能从空目录做出能跑的东西",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "能讲清整门课",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "结课时能不看资料画出这门课的概念图",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "考试拿分",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "结课时能限时做完一套真题并达标",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "解决手上的问题",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "结课时能处理你带来的那个具体问题",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "精简入门",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "3 单元 · 6 讲 · 约 2 小时",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "标准学期",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "4 单元 · 12 讲 · 约 3 小时",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "系统深入",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "5 单元 · 15 讲 · 约 5 小时",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "板书、讲解和题目都用中文",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "课程名",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "你想学什么",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "例如：高等数学（上）",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "手上已有的资料",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "至少一份，或把大纲文字粘在下面",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "可选，有就按资料来",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "你说卡住的是具体几个点，先把那几个点的原理拆开",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "零基础先上手跑通一次，比先看推导更容易建立感觉",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "多数人卡住是因为原理没打通，而不是练得少",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "你选了考试导向，目标按分数衡量",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "你选了项目作品，目标就是把它做出来",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "动手练到最后应该能独立做出东西",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "讲透原理的终点是能自己复述整门课",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "零基础先走完一条短路径，再决定要不要加深",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "12 讲是能覆盖一门课主干、又不至于半途而废的规模",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "和你现在的界面语言一致",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "你目前的基础处于什么水平？",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "这门课应该更偏哪一边？",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "你希望学完达到什么？",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "你希望课程有多大规模？",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "课程内容用什么语言？",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "正在搭你的课程草案",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "先读懂你的基础，再决定从哪里开始",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "读懂基础与目标",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "拆解知识结构",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "安排单元与项目",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "核对讲次顺序",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "生成需要 20-40 秒。草案出来后你可以逐条修改，确认后才开始写每一讲。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "这是一门已经在学的课。改动只影响大纲和未生成的讲次，已经学过的记录会保留。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "已经会的讲次直接删掉；看不懂的标题点行尾的问号，问完可以一键改；标题、顺序、项目都能改，改完再确认。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "确认时自动补全",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "未保存",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "有改动…",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "新的单元",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "综合项目",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "用本单元的知识做一个小作品，并说明你的取舍。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "可运行的成果或可查看的文档",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "一页设计说明",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "能正确用上本单元的核心方法",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "说明了取舍与边界",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "删除「{name}」及其中的讲次？",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "放弃这门课？大纲会被删除。",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "这个标题到底在讲什么？",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "为什么这门课需要这一讲？",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "标题能不能换个更直白的说法？",
+  "kind": "str",
+  "file": "home.js",
+  "n": 1
+ },
+ {
+  "s": "完全不想",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "不太想",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "说不清",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "想试试",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "很想试",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "动手",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "东西坏了你更想拆开修，而不是先查半天资料",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "探究",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "你想知道事情为什么这样运作，而不只是怎么用",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "艺术",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "你在意成品看起来、用起来是什么感觉",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "助人",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "你会先想别人用起来会卡在哪一步",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "推动",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "你愿意把东西推出去，让别人接受它",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "秩序",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "你受不了混乱，喜欢把东西收拾到有秩序",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "亲手把一段代码跑起来，看着页面出效果",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "拆开一个能用的网站，弄清它的零件怎么拼的",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "反复调试，直到报错消失",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "追问「为什么这样写更快」",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "读文档或源码，把一个机制搞明白",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "比较几种做法，挑出更优的那个",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "调颜色、间距、字体，让界面好看",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "给一个产品想有记忆点的视觉风格",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "用动效或插画表达一个概念",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "看别人怎么用产品，找出他们卡住的地方",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "把技术讲给完全不懂的人听",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "和同伴一起把想法讨论清楚",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "说服别人接受你的方案",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "主导一个小项目，定计划、催进度",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "把作品包装成能拿出去展示的东西",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "把代码整理得结构清晰、命名统一",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "按规范写测试和文档",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "管数据和配置，让系统稳定可维护",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "第一段 · 入门大厅",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "门开着，里面有三条路。先说你想不想。",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "第二段 · 工坊",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "桌上有半成品、有零件、也有别人留下的图纸。",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "第三段 · 夜航",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "灯只剩一盏。你打算用它照哪里。",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "前端",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "界面工匠",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "看得见的成品，改一行就能看到变化",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "从零做一个像素风个人主页",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "一个小作品装下布局、样式和交互",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "用 HTML+CSS 复刻一个你天天用的界面",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "对着真实产品练还原度",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "让页面动起来：CSS 动画实战",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "把审美变成能跑的代码",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "后端",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "机房守夜人",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "别人看不见的那层，由你保证它不塌",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "给一个小网站搭 API：从请求到数据",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "走通一次完整的请求链路",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "用 JSON 文件做一个能存数据的小服务",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "不依赖数据库也能理解持久化",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "登录是怎么实现的：会话与权限入门",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "最常被问到、也最容易做错的一块",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "UI 设计",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "色板旅人",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "同样的功能，你决定它看起来值多少钱",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "给一款工具 App 重做视觉规范",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "从零建立一套可复用的规则",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "从草图到高保真：一个界面的完整设计流程",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "走完设计与交付的全过程",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "信息架构：让用户三步找到想要的东西",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "结构对了，界面才不靠猜",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "做过网页或界面",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "写过 HTML/CSS，或改过别人的页面",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "碰过接口或数据",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "调过 API，或写过读写数据的脚本",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "做过视觉或排版",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "画过稿、做过海报，或调过设计规范",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "都没做过",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "基本从零开始，这样最好",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "不到 3 小时",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "6 讲，三个区域",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "12 讲，四个区域",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "6 小时以上",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "15 讲，五个区域",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "按 O*NET 兴趣量表（RIASEC 六维）结构改编的 18 题版本，不是官方验证量表。结果是兴趣起点，不是能力判定。",
+  "kind": "str",
+  "file": "inventory.js",
+  "n": 1
+ },
+ {
+  "s": "地图还是空的",
+  "kind": "text",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "这门课还没有生成单元。",
+  "kind": "text",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "看课程大纲",
+  "kind": "text",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "已通关",
+  "kind": "text",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "现在这里",
+  "kind": "text",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "未解锁",
+  "kind": "text",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "区域 Boss",
+  "kind": "text",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "点亮一格，路才通到下一格",
+  "kind": "text",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "课程大纲与项目",
+  "kind": "text",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "重测兴趣 · 换一门课",
+  "kind": "text",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "点地标看这一关，可以跳过板书直接挑战。",
+  "kind": "text",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "可修",
+  "kind": "text",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "终端里放着一段能跑的代码，只坏了一行。把它改对，用例一条条变绿就算修好。",
+  "kind": "text",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "真代码、真运行，测试在浏览器里跑，不是选择题",
+  "kind": "text",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "5 次尝试：第 3 次失败给提示，第 5 次直接给答案",
+  "kind": "text",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "失败不扣心、不卡关——终端是练手，不是关卡屏障",
+  "kind": "text",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "学习者",
+  "kind": "str",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "点亮的关卡才能往前走。",
+  "kind": "str",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "这一关打过了，再打一次可以刷星，星星只升不降。",
+  "kind": "str",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "可以直接挑战，不用先看板书。答错时会就地展开讲这道题的那一页。",
+  "kind": "str",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "这一讲还没生成板书，第一次进来要先生成内容，题目跟着一起出。",
+  "kind": "str",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "先看板书",
+  "kind": "str",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "生成板书并阅读",
+  "kind": "str",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "这一区",
+  "kind": "str",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "再打开看看",
+  "kind": "str",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "开始检修",
+  "kind": "str",
+  "file": "map.js",
+  "n": 1
+ },
+ {
+  "s": "闯关",
+  "kind": "str",
+  "file": "pixel.js",
+  "n": 1
+ },
+ {
+  "s": "回到课程书架",
+  "kind": "str",
+  "file": "pixel.js",
+  "n": 1
+ },
+ {
+  "s": "← 首页",
+  "kind": "str",
+  "file": "pixel.js",
+  "n": 1
+ },
+ {
+  "s": "学徒",
+  "kind": "str",
+  "file": "pixel.js",
+  "n": 1
+ },
+ {
+  "s": "终端自检中，正在读这一区域的代码…",
+  "kind": "text",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "第一次进来要现出一道题，大约十几秒。",
+  "kind": "text",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "终端没启动",
+  "kind": "text",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "运行",
+  "kind": "text",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "按 Ctrl+Enter 也能跑。只改这一行，别动别的。",
+  "kind": "text",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "要个提示",
+  "kind": "text",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "提示",
+  "kind": "text",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "全绿了。",
+  "kind": "text",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "答案贴进去了：",
+  "kind": "text",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "。点一下运行，这一关算过。",
+  "kind": "text",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "用例没过",
+  "kind": "text",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "故障终端 · 设计走查",
+  "kind": "text",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "失败不扣经验，可以再试。",
+  "kind": "text",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "我是这一关的导师。把你不确定的地方发我——我会先告诉你这一行/这条用例在验什么，改法你自己写。",
+  "kind": "str",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "这是设计走查选择题。",
+  "kind": "str",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "（还没动）",
+  "kind": "str",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "看看这一行在判断什么，你写的是不是它想表达的意思。",
+  "kind": "str",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "这个浏览器跑不了 Worker",
+  "kind": "str",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "跑太久了，可能是死循环",
+  "kind": "str",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "代码没能解析",
+  "kind": "str",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "改对了。",
+  "kind": "str",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "看对了",
+  "kind": "str",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "不是这处",
+  "kind": "str",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "终端恢复",
+  "kind": "str",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "还没修好",
+  "kind": "str",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "一次就修好了。",
+  "kind": "str",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "再想想这一行在做什么。",
+  "kind": "str",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "通过",
+  "kind": "tpl",
+  "file": "terminal.js",
+  "n": 1
+ },
+ {
+  "s": "问导师",
+  "kind": "text",
+  "file": "tutor.js",
+  "n": 1
+ },
+ {
+  "s": "AI 导师",
+  "kind": "text",
+  "file": "tutor.js",
+  "n": 1
+ },
+ {
+  "s": "看得见你这一屏",
+  "kind": "text",
+  "file": "tutor.js",
+  "n": 1
+ },
+ {
+  "s": "导师正在看…",
+  "kind": "text",
+  "file": "tutor.js",
+  "n": 1
+ },
+ {
+  "s": "这题在考什么",
+  "kind": "str",
+  "file": "tutor.js",
+  "n": 1
+ },
+ {
+  "s": "这题到底在考哪个知识点？先说考什么，别给答案。",
+  "kind": "str",
+  "file": "tutor.js",
+  "n": 1
+ },
+ {
+  "s": "给我一个提示",
+  "kind": "str",
+  "file": "tutor.js",
+  "n": 1
+ },
+ {
+  "s": "给我一个能往下走的提示，但不要直接告诉我答案。",
+  "kind": "str",
+  "file": "tutor.js",
+  "n": 1
+ },
+ {
+  "s": "我错在哪",
+  "kind": "str",
+  "file": "tutor.js",
+  "n": 1
+ },
+ {
+  "s": "帮我看看我的思路偏在哪一步，指出来我自己改。",
+  "kind": "str",
+  "file": "tutor.js",
+  "n": 1
+ },
+ {
+  "s": "我是这门课的导师。你把卡住的那一步发给我，我先帮你看清它在考什么，再给你一个能自己往下走的提示。",
+  "kind": "str",
+  "file": "tutor.js",
+  "n": 1
+ },
+ {
+  "s": "正在进入世界",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "FREELAB · 兴趣定线",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "先说你喜欢什么，",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "再决定这学期学什么。",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "十八道题，没有正确答案，只问你想不想做。答完会给你一个方向和一个角色，然后照这个方向编一门课，课学完是能看见进度的一条地图。",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "三个角色，对应三条线。",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "答完才知道你拿到哪个。",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "怎么走",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "1 · 三段问卷，每段六题，中途可以退出去吃饭",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "2 · 得到兴趣画像和推荐方向，你可以改",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "3 · 选一个主题，生成课程，进入闯关地图",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "开始答题",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "先不答了",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "答完这一段才能继续。进度自动存，关掉页面也不丢。",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "最后两步 · 这两题决定课多长",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "你以前碰过这些东西吗？",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "做过就不推同一条路——那是在浪费你的时间。可以多选。",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "每周能投入多久",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "看我的方向 →",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "前两码",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "选一条路 · 点一下就换",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "混合",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "这门课讲什么 · 选一个，或者让 AI 照你的画像现编",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "让 AI 按我的画像现编一个",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "会多花十几秒，编不出来就退回上面三个",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "这门课更偏哪边",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "学完想做到什么",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "生成我的课程 →",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "重新测一次",
+  "kind": "text",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "下一段",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "最后两步",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "刚刚测的",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "把原理讲透",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "多动手",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "做一个作品",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "能独立做东西",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "建立体系",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "解决手头的问题",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "正在按你的画像现编…",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "没编出来",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "按你的兴趣画像现编",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "现编好了，不满意可以再点一次或者选上面三个",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "正在编你的课",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "读你的兴趣画像",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "设计课程骨架",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "检查讲次与前置",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "写回课程库",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "生成需要 20-40 秒。大纲出来后可以逐条改，确认后才开始写每一讲。",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "精简入门 · 6 讲",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ },
+ {
+  "s": "系统深入 · 15 讲",
+  "kind": "str",
+  "file": "world.js",
+  "n": 1
+ }
+]

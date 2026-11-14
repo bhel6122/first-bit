@@ -1,0 +1,117 @@
+{
+  "空格 播放 / 暂停 · ← → 翻页 · Q 直接做题 · 右侧随时提问":
+    "Space play/pause · ← → pages · Q quiz · ask on the right",
+  "重新生成这一讲？当前的板书内容会被替换，笔记和练习记录会保留。":
+    "Regenerate this lesson? The board is replaced; notes and practice records are kept.",
+  "第一次打开需要 20-40 秒。之后再进来会直接读已生成的内容；不满意可以重新生成。":
+    "First open takes 20-40s. After that it reads the generated content; regenerate if you don't like it.",
+  "旧内容会被新内容替换。如果新的不如旧的，只能再生成一次。":
+    "The old content is replaced. If the new one is worse, you can only generate again.",
+  "当前是演示模式，不能生成新的讲次。可以体验内置示例课程，或配置模型后再来。":
+    "Demo mode can't generate lessons. Try the built-in course, or come back once a model is configured.",
+
+  "例如：下个月面试后端，缓存这块总被问住；或者：期末想从 70 分到 85 分。":
+    "e.g. a backend interview next month and caching keeps coming up; or 70 → 85 on the final.",
+  "系统课程至少需要三讲。可以再加一讲，或返回上一步改成精简规模。":
+    "A full course needs at least three lessons. Add one, or go back and pick a compact size.",
+  "四个问题定起点，草案随手可改；每一讲都是能听、能问的板书课。":
+    "Four questions set the starting point, the draft stays editable, and every lesson is a board you can hear and question.",
+  "不知道学什么？先答 18 道兴趣题，拿一个方向和一个像素角色，再照这个方向编一门课。学完一讲打一场，进度画在地图上。":
+    "Don't know what to learn? Answer 18 interest questions, get a track and a pixel character, then build a course along it. Finish a lesson, win a fight, watch the map fill in.",
+  "支持 txt · md · html · csv · PDF；PPT 请复制文字粘贴":
+    "txt · md · html · csv · PDF; for PPT, copy the text out",
+  "没有资料也能从零搭；有教学大纲或课件，就按你学校的内容和术语来。":
+    "No materials? Build from scratch. Have a syllabus or slides? The course follows your school's content and terms.",
+  "直接输入想学的主题。适合转行、补基础、准备面试，或者单纯好奇。":
+    "Type the topic you want. Good for a career switch, filling gaps, interview prep, or plain curiosity.",
+  "上传教学大纲、课件、作业，按学校的进度和术语建课。也可以之后导入 LMS 材料。":
+    "Upload a syllabus, slides or homework and build the course at your school's pace and vocabulary. LMS material can come later.",
+  "，或点击选择（txt / md / html / csv / PDF）": ", or click to pick (txt / md / html / csv / PDF)",
+  "最多 5 份。PPT 请把文字复制出来粘贴；扫描版 PDF 读不出文字。":
+    "Five files max. For PPT, paste the text; scanned PDFs have no extractable text.",
+  "同一门「概率论」，零基础想要例子，考研的人想要题型。你的答案会改变顺序、深度和练习。":
+    "The same “probability” course differs for a beginner wanting examples and an exam candidate wanting question types. Your answers change the order, depth and practice.",
+  "下一步只是草案。单元、讲次、项目都能改，改完确认才会开始写课。":
+    "The next step is only a draft. Units, lessons and projects stay editable — nothing is written until you confirm.",
+  "确认后，每一讲会在你第一次打开时现场生成板书与讲解。之后仍可回来改大纲，已生成的讲次会保留。":
+    "After confirming, each lesson generates its board and narration the first time you open it. You can still edit the outline later; generated lessons are kept.",
+  "看不懂的标题直接问。答案会讲清楚它教什么、为什么排在这里；如果标题本身写得绕，会给出更直白的改法，一键替换。":
+    "Ask about a title you don't understand. The answer says what it teaches and why it sits here — and if the title is muddled it offers a plainer one you can apply in a click.",
+  "大纲本身没问题。如果还是觉得别扭，可以直接在标题输入框里手动改。":
+    "The outline holds up. If it still reads oddly, edit the title field by hand.",
+  "演示模式：内置课程可完整体验，接上 API Key 就能生成自己的课":
+    "Demo mode: the built-in course works end to end; connect an API key to generate your own",
+  "生成需要 20-40 秒。草案出来后你可以逐条修改，确认后才开始写每一讲。":
+    "Generation takes 20-40s. Edit the draft line by line; nothing is written until you confirm.",
+  "这是一门已经在学的课。改动只影响大纲和未生成的讲次，已经学过的记录会保留。":
+    "This course is already running. Edits affect the outline and ungenerated lessons only; your progress is kept.",
+  "已经会的讲次直接删掉；看不懂的标题点行尾的问号，问完可以一键改；标题、顺序、项目都能改，改完再确认。":
+    "Delete lessons you already know; tap the question mark on a title you don't, then apply the fix in one click. Titles, order and projects are all editable.",
+  "当前没有配置模型，无法生成新课程。 可以先体验内置示例课程。要现在试试内置课程吗？":
+    "No model is configured, so new courses can't be generated. You can try the built-in demo course. Open it now?",
+
+  "按 O*NET 兴趣量表（RIASEC 六维）结构改编的 18 题版本，不是官方验证量表。结果是兴趣起点，不是能力判定。":
+    "18 questions adapted from the O*NET RIASEC structure — not a validated instrument. The result marks where interest starts, not what you can do.",
+
+  "终端里放着一段能跑的代码，只坏了一行。把它改对，用例一条条变绿就算修好。":
+    "The terminal holds working code with one broken line. Fix it and watch the tests turn green.",
+  "5 次尝试：第 3 次失败给提示，第 5 次直接给答案":
+    "Five tries: a hint on the third failure, the answer on the fifth",
+  "可以直接挑战，不用先看板书。答错时会就地展开讲这道题的那一页。":
+    "You can fight before reading the board. A miss expands the page that explains it.",
+  "这一讲还没生成板书，第一次进来要先生成内容，题目跟着一起出。":
+    "No board yet — the first visit generates the content, and the questions come with it.",
+
+  "按 Ctrl+Enter 也能跑。只改这一行，别动别的。": "Ctrl+Enter also runs it. Change this line only.",
+  "生成需要 20-40 秒。大纲和每一讲之后都可以改，不会锁死。":
+    "Generation takes 20-40s. The outline and each lesson stay editable afterwards.",
+  "每一讲最后都有三道情境题。答错不是扣分，是把你送回讲这个知识点的那一页。课程不会因为答错而卡住。":
+    "Every lesson ends with three scenario questions. A miss doesn't cost marks — it sends you back to the page that taught the point. Nothing gets blocked.",
+  "大纲可以随时回来改。已经生成的讲次会保留；改了标题的讲次可以重新生成内容。":
+    "The outline stays editable. Generated lessons are kept; a renamed lesson can be regenerated.",
+  "正在读你的错题和选错的那个选项…（约 10-20 秒）":
+    "Reading your misses and the options you picked… (10-20s)",
+  "错题已自动进入间隔复习（1 → 3 → 7 → 14 → 30 天）。":
+    "Misses entered spaced review automatically (1 → 3 → 7 → 14 → 30 days).",
+  "全部讲次都学完了。可以回头做单元测试，或者重看任意一节。":
+    "Every lesson is done. Take the unit tests, or replay any lesson.",
+  "全部答对。可以去下一个单元，或者把某一讲的板书导出成笔记。":
+    "All correct. Move to the next unit, or export a board as notes.",
+  "错题已经记下来。点「诊断薄弱点」可以看到断在哪一讲；答错的题会按间隔自动安排复习。":
+    "Misses are recorded. Diagnose weak spots shows which lesson broke; the questions come back on schedule.",
+  "没答对的题明天还会再出现；答对的部分已经推后。错题反复出现不是坏事——那就是你真正的断点。":
+    "What you missed returns tomorrow; what you got right moved further out. Repetition isn't failure — it marks the real break point.",
+
+  "我是这一关的导师。把你不确定的地方发我——我会先告诉你这一行/这条用例在验什么，改法你自己写。":
+    "I'm your tutor here. Send me what's unclear — I'll say what this line or test is checking, and you write the fix.",
+  "我是这一场的导师。卡住就把题目发我，我先帮你看它在考什么，再给一个你自己能往下走的提示——答案还得你自己选。":
+    "I'm your tutor for this fight. Send me the question and I'll name what it's testing, then a nudge you can act on — the answer is still yours to pick.",
+  "我是这门课的导师。你把卡住的那一步发给我，我先帮你看清它在考什么，再给你一个能自己往下走的提示。":
+    "I'm the tutor for this course. Send me the step you're stuck on; I'll name what it's testing, then give a nudge you can act on.",
+
+  "十八道题，没有正确答案，只问你想不想做。答完会给你一个方向和一个角色，然后照这个方向编一门课，课学完是能看见进度的一条地图。":
+    "Eighteen questions, no right answers — only whether you want to. You get a track and a character, a course along that track, and a map that shows the progress.",
+  "这门课讲什么 · 选一个，或者让 AI 照你的画像现编":
+    "What this course covers · pick one, or have the AI write one from your profile",
+  "生成需要 20-40 秒。大纲出来后可以逐条改，确认后才开始写每一讲。":
+    "Generation takes 20-40s. Edit the outline line by line; nothing is written until you confirm.",
+
+  "；每一讲都会现场生成板书和讲解。": "; each lesson generates its board and narration on demand.",
+  "← 回岛屿": "← Back to island",
+  "旁白": "Voice",
+  "课程内容用什么语言？": "What language should the course be in?",
+  "板书、讲解和题目都用中文": "Board, narration and questions in Chinese",
+  "中文": "Chinese",
+  "直接粘贴大纲": "Paste the outline instead",
+  "加入为材料": "Add as material",
+  "增加一个单元": "Add a unit",
+  "自动开讲": "Auto-play",
+  "快速答题": "Quick quiz",
+  "开始讲解": "Start",
+  "新建": "New",
+  "地图进度": "Map progress",
+  "接着上次的地方往下学": "pick up where you left off",
+  "这门课更偏哪一边 · 选一个，或者让 AI 照你的画像现编": "Which way it leans · pick one, or have the AI write one",
+  "个区域": "regions",
+  "门": "courses"
+}
