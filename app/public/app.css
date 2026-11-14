@@ -1022,17 +1022,6 @@ h2.section { font-family: var(--serif); font-size: 26px; letter-spacing: -0.01em
 .auth-say { max-width: 520px; }
 .auth-say .desk-title { font-size: clamp(30px, 3.6vw, 46px); line-height: 1.24; margin: 14px 0 18px; }
 .auth-say .desk-note { max-width: 42ch; }
-.auth-points { list-style: none; margin-top: 30px; display: grid; gap: 13px; }
-.auth-points li {
-  display: grid;
-  grid-template-columns: 20px 1fr;
-  gap: 10px;
-  align-items: start;
-  font-size: 13.5px;
-  color: var(--ink-2);
-  line-height: 1.6;
-}
-.auth-points svg { color: var(--accent); margin-top: 2px; }
 
 .auth-card {
   background: var(--surface);
@@ -1066,7 +1055,6 @@ h2.section { font-family: var(--serif); font-size: 26px; letter-spacing: -0.01em
 
 @media (max-width: 900px) {
   .auth { grid-template-columns: 1fr; gap: 34px; padding: 40px 22px 56px; }
-  .auth-points { display: none; }
   .who-name { display: none; }
   .who { padding-right: 4px; }
 }

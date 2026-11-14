@@ -16,12 +16,6 @@ export async function renderLogin(app) {
       <div class="desk-kicker">FIRST-BIT · 课程工坊</div>
       <h1 class="desk-title">让学习的开始<br>不再犹豫</h1>
       <p class="desk-note">不必再花时间挑选学习路线，只需要输入学习主题，即刻为你生成可行的学习路线和课程。让学习不再停留在“不知从何做起”这一步。</p>
-
-      <ul class="auth-points">
-        <li>${icon("book", 15, 2)} 每个账号有自己的书架，别人看不到，也改不了</li>
-        <li>${icon("compass", 15, 2)} 进度、笔记、答题记录跟着账号走，换设备也在</li>
-        <li>${icon("arrow", 15, 2)} 内置示例课对所有人可见，可以先看再决定学什么</li>
-      </ul>
     </section>
 
     <section class="auth-card">
