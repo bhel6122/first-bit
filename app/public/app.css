@@ -1024,13 +1024,17 @@ h2.section { font-family: var(--serif); font-size: 26px; letter-spacing: -0.01em
 .auth-say .desk-note { max-width: 42ch; }
 
 .auth-card {
+  position: relative;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
   padding: 34px 32px 28px;
   box-shadow: var(--shadow-md);
 }
-.auth-card h2 { font-family: var(--serif); font-size: 23px; font-weight: 600; letter-spacing: -0.01em; }
+/* The sign-in page has no topbar, so the switch lives in the card — otherwise a
+   visitor who lands here signed out can never change the interface language. */
+.auth-lang { position: absolute; top: 24px; right: 24px; }
+.auth-card h2 { font-family: var(--serif); font-size: 23px; font-weight: 600; letter-spacing: -0.01em; padding-right: 52px; }
 .auth-sub { color: var(--muted); font-size: 13px; margin: 7px 0 24px; }
 .auth-field { display: block; margin-bottom: 16px; }
 .auth-field span { display: block; font-size: 12.5px; color: var(--muted); margin-bottom: 7px; }

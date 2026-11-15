@@ -6,6 +6,7 @@
    to you and are invisible to the next person who opens the link. */
 
 import { state, api, esc, icon } from "./core.js";
+import { langSwitch } from "./i18n.js";
 
 export async function renderLogin(app) {
   const registering = location.hash.includes("register");
@@ -19,6 +20,7 @@ export async function renderLogin(app) {
     </section>
 
     <section class="auth-card">
+      <div class="auth-lang">${langSwitch()}</div>
       <h2>${registering ? "建一个账号" : "登录"}</h2>
       <p class="auth-sub">${registering ? "用户名会显示在顶栏，之后改不了。" : "接着上次的课往下走。"}</p>
 
